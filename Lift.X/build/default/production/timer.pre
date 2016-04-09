@@ -818,11 +818,17 @@ extern __bit __powerdown;
 extern __bit __timeout;
 
 # 11 "timer.h"
-void initTimer(void);
+extern unsigned int msPassed;
+
+void InitTimer(void);
 
 # 6 "timer.c"
-void initTimer()
+unsigned int msPassed;
+
+void InitTimer()
 {
+msPassed = 0;
+
 
 T1CON = 0;
 

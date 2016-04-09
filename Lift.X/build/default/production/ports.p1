@@ -11,7 +11,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S35 . . ]
 "898
 [v _TRISAbits `VS35 ~T0 @X0 0 e@133 ]
-"948
+"69 ports.h
+[v _TurnOnButtons `(v ~T0 @X0 0 ef ]
+"948 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic16f628a.h
 [s S38 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S38 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
 "947
@@ -27,6 +29,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S8 . . ]
 "238
 [v _PORTBbits `VS8 ~T0 @X0 0 e@6 ]
+"166
+[s S7 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S7 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+"165
+[u S6 `S7 1 ]
+[n S6 . . ]
+"177
+[v _PORTAbits `VS6 ~T0 @X0 0 e@5 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -595,55 +605,68 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 186: extern unsigned char __resetbits;
 [; ;pic.h: 187: extern __bit __powerdown;
 [; ;pic.h: 188: extern __bit __timeout;
-[; ;defines.h: 76: enum{
-[; ;defines.h: 77: BUTTON_0_POS,
-[; ;defines.h: 78: BUTTON_1_POS,
-[; ;defines.h: 79: BUTTON_2_POS,
-[; ;defines.h: 80: SAFETY_1_POS,
-[; ;defines.h: 81: SAFETY_2_POS,
-[; ;defines.h: 82: SAFETY_3_POS,
-[; ;defines.h: 83: DELIMITER_DOWN_POS,
-[; ;defines.h: 84: DELIMITER_UP_POS,
-[; ;defines.h: 85: COUNTER_POS,
-[; ;defines.h: 86: INPUT_MAX
-[; ;defines.h: 87: };
-[; ;ports.h: 14: void initPorts(void);
-[; ;ports.h: 15: unsigned char debounceInput(unsigned char input, unsigned char *tempState, unsigned char currentState);
+[; ;defines.h: 22: enum{
+[; ;defines.h: 23: STATE_IDLE,
+[; ;defines.h: 24: STOP,
+[; ;defines.h: 25: CHECK,
+[; ;defines.h: 26: GO,
+[; ;defines.h: 27: WAIT,
+[; ;defines.h: 28: REACHED
+[; ;defines.h: 29: };
+[; ;defines.h: 33: enum{
+[; ;defines.h: 34: SAFETY_1_POS,
+[; ;defines.h: 35: SAFETY_2_POS,
+[; ;defines.h: 36: SAFETY_3_POS,
+[; ;defines.h: 37: DELIMITER_DOWN_POS,
+[; ;defines.h: 38: DELIMITER_UP_POS,
+[; ;defines.h: 39: COUNTER_POS,
+[; ;defines.h: 40: BUTTON_0_POS,
+[; ;defines.h: 41: BUTTON_1_POS,
+[; ;defines.h: 42: BUTTON_2_POS,
+[; ;defines.h: 44: INPUT_MAX
+[; ;defines.h: 45: };
+[; ;ports.h: 65: extern unsigned char buttonPressed;
+[; ;ports.h: 66: extern unsigned char buttonMode;
+[; ;ports.h: 68: void InitPorts(void);
+[; ;ports.h: 69: void TurnOnButtons(void);
+[; ;ports.h: 70: void TurnOnLeds(void);
+[; ;ports.h: 71: void SetLeds(unsigned char leds);
+[; ;ports.h: 73: unsigned char DebounceInput(unsigned char input, unsigned char *tempState, unsigned char currentState);
 "9 ports.c
 [v _debounceStates `uc ~T0 @X0 -> 10 `i e ]
 [; ;ports.c: 9: unsigned char debounceStates[10];
+"10
+[v _buttonMode `uc ~T0 @X0 1 e ]
+[; ;ports.c: 10: unsigned char buttonMode;
 "11
-[v _initPorts `(v ~T0 @X0 1 ef ]
-"12
-{
-[; ;ports.c: 11: void initPorts()
-[; ;ports.c: 12: {
-[e :U _initPorts ]
-[f ]
-[; ;ports.c: 14: TRISA = 0xFF;
+[v _buttonPressed `uc ~T0 @X0 1 e ]
+[; ;ports.c: 11: unsigned char buttonPressed;
+"13
+[v _InitPorts `(v ~T0 @X0 1 ef ]
 "14
+{
+[; ;ports.c: 13: void InitPorts()
+[; ;ports.c: 14: {
+[e :U _InitPorts ]
+[f ]
+[; ;ports.c: 16: TRISA = 0xFF;
+"16
 [e = _TRISA -> -> 255 `i `uc ]
-[; ;ports.c: 15: TRISB = 0xFF;
-"15
-[e = _TRISB -> -> 255 `i `uc ]
-[; ;ports.c: 17: TRISAbits.TRISA2 = 0;
+[; ;ports.c: 17: TRISB = 0xFF;
 "17
-[e = . . _TRISAbits 0 2 -> -> 0 `i `uc ]
-[; ;ports.c: 18: TRISAbits.TRISA3 = 0;
-"18
-[e = . . _TRISAbits 0 3 -> -> 0 `i `uc ]
-[; ;ports.c: 19: TRISAbits.TRISA4 = 0;
+[e = _TRISB -> -> 255 `i `uc ]
+[; ;ports.c: 19: TRISAbits.TRISA2 = 0;
 "19
-[e = . . _TRISAbits 0 4 -> -> 0 `i `uc ]
-[; ;ports.c: 21: TRISAbits.TRISA5 = 1;
+[e = . . _TRISAbits 0 2 -> -> 0 `i `uc ]
+[; ;ports.c: 20: TRISAbits.TRISA3 = 0;
+"20
+[e = . . _TRISAbits 0 3 -> -> 0 `i `uc ]
+[; ;ports.c: 21: TRISAbits.TRISA4 = 0;
 "21
-[e = . . _TRISAbits 0 5 -> -> 1 `i `uc ]
-[; ;ports.c: 22: TRISBbits.TRISB0 = 1;
-"22
-[e = . . _TRISBbits 0 0 -> -> 1 `i `uc ]
-[; ;ports.c: 23: TRISBbits.TRISB3 = 1;
+[e = . . _TRISAbits 0 4 -> -> 0 `i `uc ]
+[; ;ports.c: 23: TurnOnButtons();
 "23
-[e = . . _TRISBbits 0 3 -> -> 1 `i `uc ]
+[e ( _TurnOnButtons ..  ]
 [; ;ports.c: 25: TRISBbits.TRISB6 = 1;
 "25
 [e = . . _TRISBbits 0 6 -> -> 1 `i `uc ]
@@ -659,84 +682,147 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ports.c: 30: PORTBbits.RB5 = 0;
 "30
 [e = . . _PORTBbits 0 5 -> -> 0 `i `uc ]
-[; ;ports.c: 32: TRISBbits.TRISB6 = 1;
+[; ;ports.c: 32: TRISAbits.TRISA7 = 1;
 "32
-[e = . . _TRISBbits 0 6 -> -> 1 `i `uc ]
-[; ;ports.c: 33: TRISBbits.TRISB7 = 1;
-"33
-[e = . . _TRISBbits 0 7 -> -> 1 `i `uc ]
-[; ;ports.c: 34: TRISAbits.TRISA6 = 1;
-"34
-[e = . . _TRISAbits 0 6 -> -> 1 `i `uc ]
-[; ;ports.c: 36: TRISAbits.TRISA7 = 1;
-"36
 [e = . . _TRISAbits 0 7 -> -> 1 `i `uc ]
-[; ;ports.c: 37: TRISAbits.TRISA0 = 1;
-"37
+[; ;ports.c: 33: TRISAbits.TRISA0 = 1;
+"33
 [e = . . _TRISAbits 0 0 -> -> 1 `i `uc ]
-[; ;ports.c: 39: TRISAbits.TRISA1 = 1;
-"39
+[; ;ports.c: 35: TRISAbits.TRISA1 = 1;
+"35
 [e = . . _TRISAbits 0 1 -> -> 1 `i `uc ]
-[; ;ports.c: 40: }
-"40
+[; ;ports.c: 36: }
+"36
 [e :UE 52 ]
 }
-"42
-[v _debounceInput `(uc ~T0 @X0 1 ef3`uc`*uc`uc ]
-"43
+"38
+[v _TurnOnButtons `(v ~T0 @X0 1 ef ]
+"39
 {
-[; ;ports.c: 42: unsigned char debounceInput(unsigned char input, unsigned char *tempState, unsigned char currentState)
-[; ;ports.c: 43: {
-[e :U _debounceInput ]
+[; ;ports.c: 38: void TurnOnButtons()
+[; ;ports.c: 39: {
+[e :U _TurnOnButtons ]
+[f ]
+[; ;ports.c: 40: buttonMode = 1;
+"40
+[e = _buttonMode -> -> 1 `i `uc ]
+[; ;ports.c: 42: TRISAbits.TRISA5 = 1;
 "42
+[e = . . _TRISAbits 0 5 -> -> 1 `i `uc ]
+[; ;ports.c: 43: TRISBbits.TRISB0 = 1;
+"43
+[e = . . _TRISBbits 0 0 -> -> 1 `i `uc ]
+[; ;ports.c: 44: TRISBbits.TRISB3 = 1;
+"44
+[e = . . _TRISBbits 0 3 -> -> 1 `i `uc ]
+[; ;ports.c: 45: }
+"45
+[e :UE 53 ]
+}
+"47
+[v _TurnOnLeds `(v ~T0 @X0 1 ef ]
+"48
+{
+[; ;ports.c: 47: void TurnOnLeds()
+[; ;ports.c: 48: {
+[e :U _TurnOnLeds ]
+[f ]
+[; ;ports.c: 49: buttonMode = 0;
+"49
+[e = _buttonMode -> -> 0 `i `uc ]
+[; ;ports.c: 51: TRISAbits.TRISA5 = 0;
+"51
+[e = . . _TRISAbits 0 5 -> -> 0 `i `uc ]
+[; ;ports.c: 52: TRISBbits.TRISB0 = 0;
+"52
+[e = . . _TRISBbits 0 0 -> -> 0 `i `uc ]
+[; ;ports.c: 53: TRISBbits.TRISB3 = 0;
+"53
+[e = . . _TRISBbits 0 3 -> -> 0 `i `uc ]
+[; ;ports.c: 54: }
+"54
+[e :UE 54 ]
+}
+"56
+[v _SetLeds `(v ~T0 @X0 1 ef1`uc ]
+"57
+{
+[; ;ports.c: 56: void SetLeds(unsigned char leds)
+[; ;ports.c: 57: {
+[e :U _SetLeds ]
+"56
+[v _leds `uc ~T0 @X0 1 r1 ]
+"57
+[f ]
+[; ;ports.c: 58: PORTAbits.RA5 = leds & 0x01;
+"58
+[e = . . _PORTAbits 0 5 -> & -> _leds `i -> 1 `i `uc ]
+[; ;ports.c: 59: PORTBbits.RB0 = (leds >> 1) & 0x01;
+"59
+[e = . . _PORTBbits 0 0 -> & >> -> _leds `i -> 1 `i -> 1 `i `uc ]
+[; ;ports.c: 60: PORTBbits.RB3 = (leds >> 2) & 0x01;
+"60
+[e = . . _PORTBbits 0 3 -> & >> -> _leds `i -> 2 `i -> 1 `i `uc ]
+[; ;ports.c: 61: }
+"61
+[e :UE 55 ]
+}
+"63
+[v _DebounceInput `(uc ~T0 @X0 1 ef3`uc`*uc`uc ]
+"64
+{
+[; ;ports.c: 63: unsigned char DebounceInput(unsigned char input, unsigned char *tempState, unsigned char currentState)
+[; ;ports.c: 64: {
+[e :U _DebounceInput ]
+"63
 [v _input `uc ~T0 @X0 1 r1 ]
 [v _tempState `*uc ~T0 @X0 1 r2 ]
 [v _currentState `uc ~T0 @X0 1 r3 ]
-"43
+"64
 [f ]
-[; ;ports.c: 44: *tempState <<= 1;
-"44
+[; ;ports.c: 65: *tempState <<= 1;
+"65
 [e =<< *U _tempState -> 1 `i ]
-[; ;ports.c: 45: *tempState |= input;
-"45
+[; ;ports.c: 66: *tempState |= input;
+"66
 [e =| *U _tempState _input ]
-[; ;ports.c: 47: if ( 0 == 0xFF & debounceStates[0])
-"47
-[e $ ! != & -> == -> 0 `i -> 255 `i `i -> *U + &U _debounceStates * -> -> -> 0 `i `ui `ux -> -> # *U &U _debounceStates `ui `ux `i -> 0 `i 54  ]
-[; ;ports.c: 48: {
-"48
+[; ;ports.c: 68: if ( 0 == 0xFF & *tempState)
+"68
+[e $ ! != & -> == -> 0 `i -> 255 `i `i -> *U _tempState `i -> 0 `i 57  ]
+[; ;ports.c: 69: {
+"69
 {
-[; ;ports.c: 49: return 0;
-"49
+[; ;ports.c: 70: return 0;
+"70
 [e ) -> -> 0 `i `uc ]
-[e $UE 53  ]
-"50
+[e $UE 56  ]
+"71
 }
-[; ;ports.c: 50: }
-[e $U 55  ]
-"51
-[e :U 54 ]
-[; ;ports.c: 51: else if ( 0xFF == 0xFF & debounceStates[0])
-[e $ ! != & -> == -> 255 `i -> 255 `i `i -> *U + &U _debounceStates * -> -> -> 0 `i `ui `ux -> -> # *U &U _debounceStates `ui `ux `i -> 0 `i 56  ]
-[; ;ports.c: 52: {
-"52
-{
-[; ;ports.c: 53: return 1;
-"53
-[e ) -> -> 1 `i `uc ]
-[e $UE 53  ]
-"54
-}
-[; ;ports.c: 54: }
-[e $U 57  ]
-"55
-[e :U 56 ]
-[; ;ports.c: 55: else return currentState;
-[e ) _currentState ]
-[e $UE 53  ]
+[; ;ports.c: 71: }
+[e $U 58  ]
+"72
 [e :U 57 ]
-[e :U 55 ]
-[; ;ports.c: 56: }
-"56
-[e :UE 53 ]
+[; ;ports.c: 72: else if ( 0xFF == 0xFF & *tempState)
+[e $ ! != & -> == -> 255 `i -> 255 `i `i -> *U _tempState `i -> 0 `i 59  ]
+[; ;ports.c: 73: {
+"73
+{
+[; ;ports.c: 74: return 1;
+"74
+[e ) -> -> 1 `i `uc ]
+[e $UE 56  ]
+"75
+}
+[; ;ports.c: 75: }
+[e $U 60  ]
+"76
+[e :U 59 ]
+[; ;ports.c: 76: else return currentState;
+[e ) _currentState ]
+[e $UE 56  ]
+[e :U 60 ]
+[e :U 58 ]
+[; ;ports.c: 77: }
+"77
+[e :UE 56 ]
 }

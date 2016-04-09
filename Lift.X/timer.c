@@ -3,8 +3,12 @@
 
 #include "timer.h"
 
-void initTimer()
+unsigned int msPassed;
+
+void InitTimer()
 {
+    msPassed = 0;
+    
     // clear the register
     T1CON = 0;
     
@@ -19,5 +23,5 @@ void initTimer()
     T1CONbits.TMR1ON = 1;   
     
     // enable the interrupt
-    PIE1bits.TMR1IE = 1; 
+    PIE1bits.TMR1IE = 1;     
 }

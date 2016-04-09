@@ -817,28 +817,49 @@ extern unsigned char __resetbits;
 extern __bit __powerdown;
 extern __bit __timeout;
 
-# 76 "defines.h"
+# 22 "defines.h"
 enum{
-BUTTON_0_POS,
-BUTTON_1_POS,
-BUTTON_2_POS,
+STATE_IDLE,
+STOP,
+CHECK,
+GO,
+WAIT,
+REACHED
+};
+
+
+
+enum{
 SAFETY_1_POS,
 SAFETY_2_POS,
 SAFETY_3_POS,
 DELIMITER_DOWN_POS,
 DELIMITER_UP_POS,
 COUNTER_POS,
+BUTTON_0_POS,
+BUTTON_1_POS,
+BUTTON_2_POS,
+
 INPUT_MAX
 };
 
-# 14 "ports.h"
-void initPorts(void);
-unsigned char debounceInput(unsigned char input, unsigned char *tempState, unsigned char currentState);
+# 65 "ports.h"
+extern unsigned char buttonPressed;
+extern unsigned char buttonMode;
+
+void InitPorts(void);
+void TurnOnButtons(void);
+void TurnOnLeds(void);
+void SetLeds(unsigned char leds);
+
+unsigned char DebounceInput(unsigned char input, unsigned char *tempState, unsigned char currentState);
 
 # 9 "ports.c"
 unsigned char debounceStates[10];
+unsigned char buttonMode;
+unsigned char buttonPressed;
 
-void initPorts()
+void InitPorts()
 {
 
 TRISA = 0xFF;
@@ -848,9 +869,7 @@ TRISAbits.TRISA2 = 0;
 TRISAbits.TRISA3 = 0;
 TRISAbits.TRISA4 = 0;
 
-TRISAbits.TRISA5 = 1;
-TRISBbits.TRISB0 = 1;
-TRISBbits.TRISB3 = 1;
+TurnOnButtons();
 
 TRISBbits.TRISB6 = 1;
 TRISBbits.TRISB7 = 1;
@@ -859,26 +878,47 @@ TRISAbits.TRISA6 = 1;
 PORTBbits.RB4 = 0;
 PORTBbits.RB5 = 0;
 
-TRISBbits.TRISB6 = 1;
-TRISBbits.TRISB7 = 1;
-TRISAbits.TRISA6 = 1;
-
 TRISAbits.TRISA7 = 1;
 TRISAbits.TRISA0 = 1;
 
 TRISAbits.TRISA1 = 1;
 }
 
-unsigned char debounceInput(unsigned char input, unsigned char *tempState, unsigned char currentState)
+void TurnOnButtons()
+{
+buttonMode = 1;
+
+TRISAbits.TRISA5 = 1;
+TRISBbits.TRISB0 = 1;
+TRISBbits.TRISB3 = 1;
+}
+
+void TurnOnLeds()
+{
+buttonMode = 0;
+
+TRISAbits.TRISA5 = 0;
+TRISBbits.TRISB0 = 0;
+TRISBbits.TRISB3 = 0;
+}
+
+void SetLeds(unsigned char leds)
+{
+PORTAbits.RA5 = leds & 0x01;
+PORTBbits.RB0 = (leds >> 1) & 0x01;
+PORTBbits.RB3 = (leds >> 2) & 0x01;
+}
+
+unsigned char DebounceInput(unsigned char input, unsigned char *tempState, unsigned char currentState)
 {
 *tempState <<= 1;
 *tempState |= input;
 
-if ( 0 == 0xFF & debounceStates[0])
+if ( 0 == 0xFF & *tempState)
 {
 return 0;
 }
-else if ( 0xFF == 0xFF & debounceStates[0])
+else if ( 0xFF == 0xFF & *tempState)
 {
 return 1;
 }

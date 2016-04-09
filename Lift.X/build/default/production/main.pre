@@ -949,60 +949,174 @@ extern unsigned char __resetbits;
 extern __bit __powerdown;
 extern __bit __timeout;
 
-# 76 "defines.h"
+# 22 "defines.h"
 enum{
-BUTTON_0_POS,
-BUTTON_1_POS,
-BUTTON_2_POS,
+STATE_IDLE,
+STOP,
+CHECK,
+GO,
+WAIT,
+REACHED
+};
+
+
+
+enum{
 SAFETY_1_POS,
 SAFETY_2_POS,
 SAFETY_3_POS,
 DELIMITER_DOWN_POS,
 DELIMITER_UP_POS,
 COUNTER_POS,
+BUTTON_0_POS,
+BUTTON_1_POS,
+BUTTON_2_POS,
+
 INPUT_MAX
 };
 
-# 14 "ports.h"
-void initPorts(void);
-unsigned char debounceInput(unsigned char input, unsigned char *tempState, unsigned char currentState);
+# 65 "ports.h"
+extern unsigned char buttonPressed;
+extern unsigned char buttonMode;
+
+void InitPorts(void);
+void TurnOnButtons(void);
+void TurnOnLeds(void);
+void SetLeds(unsigned char leds);
+
+unsigned char DebounceInput(unsigned char input, unsigned char *tempState, unsigned char currentState);
 
 # 11 "timer.h"
-void initTimer(void);
+extern unsigned int msPassed;
 
-# 22 "main.c"
-unsigned char mainState;
-unsigned int msPassed;
+void InitTimer(void);
+
+# 18 "main.c"
+void debounce();
+
+# 24
 unsigned char inputs[INPUT_MAX];
 unsigned char tempInput[INPUT_MAX];
+unsigned char readCurrentState;
+unsigned int waiting;
 
 int main(int argc, char** argv)
 {
-initPorts();
-initTimer();
+unsigned char currentLevel = 0;
+unsigned char mainState = STATE_IDLE;
+unsigned char movingDirection = 0;
+unsigned char emergencyStop = 0;
 
-mainState = 0;
+InitPorts();
+InitTimer();
 
 
 while (1)
 {
+readCurrentState = mainState;
+
 switch (mainState)
 {
-case 0 :
+case STATE_IDLE :
 {
 
 ;
 }
 break;
-case 1 :
+case STOP :
 {
 
+PORTBbits.RB4 = PORTBbits.RB5 = 0;
+
+if (0 != movingDirection)
+{
+TurnOnButtons();
+movingDirection = 0;
+}
+
+if (buttonPressed != currentLevel && buttonPressed != 0)
+{
+TurnOnLeds();
+SetLeds(buttonPressed);
+
+if (buttonPressed > currentLevel)
+{
+movingDirection = 1;
+}
+else
+{
+movingDirection = 2;
+}
+
+mainState = CHECK;
+}
+}
+break;
+case CHECK :
+{
+
+if ( ( 1 == inputs[SAFETY_1_POS] ) &&
+( 1 == inputs[SAFETY_1_POS] ) &&
+( 1 == inputs[SAFETY_1_POS] ) )
+{
+mainState = STOP;
+emergencyStop = 1;
+PORTBbits.RB4 = PORTBbits.RB5 = 0;
+SetLeds(0);
+}
+else if ( currentLevel == buttonPressed )
+{
+waiting = 0;
+PORTBbits.RB4 = PORTBbits.RB5 = 0;
+mainState = REACHED;
+}
+else
+{
+mainState = GO;
+}
+}
+break;
+case GO :
+{
+emergencyStop = 0;
+if ( 1 == movingDirection )
+{
+PORTBbits.RB5 = 0;
+PORTBbits.RB4 = 1;
+}
+else
+{
+PORTBbits.RB5 = 1;
+PORTBbits.RB4 = 0;
+}
+
+
+mainState = CHECK;
+
+
+;
+}
+break;
+case REACHED :
+{
+PORTBbits.RB4 = PORTBbits.RB5 = 0;
+
+if ( 5000 < waiting )
+{
+SetLeds(0);
+TurnOnButtons();
+mainState = STOP;
+}
+else
+{
+mainState = REACHED;
+}
 
 }
 break;
 default:
 {
-mainState = 0;
+mainState = STATE_IDLE;
 }
 }
 }
@@ -1010,26 +1124,43 @@ mainState = 0;
 return (0);
 }
 
+void Debounce()
+{
+inputs[SAFETY_1_POS] = DebounceInput(PORTBbits.RB6,tempInput + SAFETY_1_POS, inputs[SAFETY_1_POS]);
+inputs[SAFETY_2_POS] = DebounceInput(PORTBbits.RB7,tempInput + SAFETY_2_POS, inputs[SAFETY_2_POS]);
+inputs[SAFETY_3_POS] = DebounceInput(PORTAbits.RA6,tempInput + SAFETY_3_POS, inputs[SAFETY_3_POS]);
+inputs[DELIMITER_DOWN_POS] = DebounceInput(PORTAbits.RA7,tempInput + DELIMITER_DOWN_POS, inputs[DELIMITER_DOWN_POS]);
+inputs[DELIMITER_UP_POS] = DebounceInput(PORTAbits.RA0,tempInput + DELIMITER_UP_POS, inputs[DELIMITER_UP_POS]);
+inputs[COUNTER_POS] = DebounceInput(PORTAbits.RA1,tempInput + COUNTER_POS, inputs[COUNTER_POS]);
 
+if (1 == buttonMode)
+{
+buttonPressed = 0;
+inputs[BUTTON_0_POS] = DebounceInput(PORTAbits.RA5,tempInput + BUTTON_0_POS, inputs[BUTTON_0_POS]);
+buttonPressed = inputs[BUTTON_0_POS];
+inputs[BUTTON_1_POS] = DebounceInput(PORTBbits.RB0,tempInput + BUTTON_1_POS, inputs[BUTTON_1_POS]);
+buttonPressed |= (inputs[BUTTON_1_POS] << 1);
+inputs[BUTTON_2_POS] = DebounceInput(PORTBbits.RB3,tempInput + BUTTON_2_POS, inputs[BUTTON_2_POS]);
+buttonPressed |= (inputs[BUTTON_2_POS] << 2);
 
-void interrupt mainInterrupt()
+}
+}
+
+void interrupt MainInterrupt()
 {
 
 if ( 1 == PIR1bits.TMR1IF )
 {
 msPassed++;
 
-if (0 == msPassed % 4)
+if ( REACHED == readCurrentState )
 {
-inputs[BUTTON_0_POS] = debounceInput(PORTAbits.RA5,tempInput + BUTTON_0_POS, inputs[BUTTON_0_POS]);
-inputs[BUTTON_1_POS] = debounceInput(PORTAbits.RA5,tempInput + BUTTON_1_POS, inputs[BUTTON_1_POS]);
-inputs[BUTTON_2_POS] = debounceInput(PORTAbits.RA5,tempInput + BUTTON_2_POS, inputs[BUTTON_2_POS]);
-inputs[SAFETY_1_POS] = debounceInput(PORTAbits.RA5,tempInput + SAFETY_1_POS, inputs[SAFETY_1_POS]);
-inputs[SAFETY_2_POS] = debounceInput(PORTAbits.RA5,tempInput + SAFETY_2_POS, inputs[SAFETY_2_POS]);
-inputs[SAFETY_3_POS] = debounceInput(PORTAbits.RA5,tempInput + SAFETY_3_POS, inputs[SAFETY_3_POS]);
-inputs[DELIMITER_DOWN_POS] = debounceInput(PORTAbits.RA5,tempInput + DELIMITER_DOWN_POS, inputs[DELIMITER_DOWN_POS]);
-inputs[DELIMITER_UP_POS] = debounceInput(PORTAbits.RA5,tempInput + DELIMITER_UP_POS, inputs[DELIMITER_UP_POS]);
-inputs[COUNTER_POS] = debounceInput(PORTAbits.RA5,tempInput + COUNTER_POS, inputs[COUNTER_POS]);
+waiting++;
+}
+
+if (msPassed % 4 == 0)
+{
+Debounce();
 }
 }
 

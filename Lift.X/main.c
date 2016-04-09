@@ -15,28 +15,31 @@
 #include "ports.h"
 #include "timer.h"
 
+void  debounce();
+
 /*
  * 
  */
 
-unsigned char mainState;
-unsigned int msPassed;
 unsigned char inputs[INPUT_MAX];
 unsigned char tempInput[INPUT_MAX];
-unsigned char moving = 0;
+unsigned char readCurrentState;
+unsigned int waiting;
 
 int main(int argc, char** argv) 
 {
-    initPorts();    
-    initTimer();
+    unsigned char currentLevel = 0;
+    unsigned char mainState = STATE_IDLE;
+    unsigned char movingDirection = NOT_MOVING;
+    unsigned char emergencyStop = 0;
     
-    mainState = STATE_IDLE;
-    moving = 0;
+    InitPorts();    
+    InitTimer();
     
     // infinite loop
     while (1)
-    {
-        mainState = setState(mainState);
+    {        
+        readCurrentState = mainState;
         
         switch (mainState)
         {
@@ -46,7 +49,96 @@ int main(int argc, char** argv)
                 ;
             }
             break;
-            
+            case STOP :
+            {
+                // STOP everything
+                UP = DOWN = 0;
+                // check for button press
+                if (NOT_MOVING != movingDirection)
+                {
+                    TurnOnButtons();
+                    movingDirection = NOT_MOVING;
+                }
+                
+                if (buttonPressed != currentLevel && buttonPressed != 0)
+                {
+                    TurnOnLeds();
+                    SetLeds(buttonPressed);
+                    
+                    if (buttonPressed > currentLevel)
+                    {
+                        movingDirection = GOING_UP;
+                    }
+                    else
+                    {
+                        movingDirection = GOING_DOWN;
+                    }
+                    
+                    mainState = CHECK;
+                }
+            }
+            break;
+            case CHECK :
+            {
+                // check for security glitches
+                if (    ( PRESSED == inputs[SAFETY_1_POS] ) &&
+                        ( PRESSED == inputs[SAFETY_1_POS] ) &&
+                        ( PRESSED == inputs[SAFETY_1_POS] ) )
+                {
+                    mainState = STOP;
+                    emergencyStop = 1;
+                    UP = DOWN = 0;
+                    SetLeds(0);
+                }
+                else if ( currentLevel == buttonPressed )
+                {
+                    waiting = 0;
+                    UP = DOWN = 0;
+                    mainState = REACHED;
+                }
+                else
+                {
+                    mainState = GO;
+                }
+            }
+            break;
+            case GO :
+            {
+                emergencyStop = 0;
+                if ( GOING_UP == movingDirection )
+                {
+                    DOWN = 0;
+                    UP = 1;
+                }
+                else
+                {
+                    DOWN = 1;
+                    UP = 0;
+                }
+                
+                // just go and check for destination
+                mainState = CHECK;
+                
+                //currentLevel = getLevel();
+                ;
+            }            
+            break;
+            case REACHED :
+            {
+                UP = DOWN = 0;
+                
+                if ( WAIT_FOR_MS < waiting )
+                {                 
+                    SetLeds(0);   
+                    TurnOnButtons();
+                    mainState = STOP;
+                }
+                else
+                {
+                    mainState = REACHED;
+                }
+                
+            }
             break;
             default:
             {
@@ -58,37 +150,43 @@ int main(int argc, char** argv)
     return (EXIT_SUCCESS);
 }
 
-unsigned char setState(unsigned char currentState)
+void Debounce()
 {
-    if (RELEASED == inputs[SAFETY_1_POS] || RELEASED == inputs[SAFETY_2_POS] || RELEASED == inputs[SAFETY_3_POS])
+    inputs[SAFETY_1_POS]         = DebounceInput(SAFETY_1,tempInput + SAFETY_1_POS,             inputs[SAFETY_1_POS]);
+    inputs[SAFETY_2_POS]         = DebounceInput(SAFETY_2,tempInput + SAFETY_2_POS,             inputs[SAFETY_2_POS]);
+    inputs[SAFETY_3_POS]         = DebounceInput(SAFETY_3,tempInput + SAFETY_3_POS,             inputs[SAFETY_3_POS]);
+    inputs[DELIMITER_DOWN_POS]   = DebounceInput(DELIMITER_DOWN,tempInput + DELIMITER_DOWN_POS, inputs[DELIMITER_DOWN_POS]);
+    inputs[DELIMITER_UP_POS]     = DebounceInput(DELIMITER_UP,tempInput + DELIMITER_UP_POS,     inputs[DELIMITER_UP_POS]);
+    inputs[COUNTER_POS]          = DebounceInput(COUNTER,tempInput + COUNTER_POS,               inputs[COUNTER_POS]); 
+    
+    if (1 == buttonMode)
     {
-        return STOP;
-    }
-    else
-        if(1 == moving && PRESSED);
+        buttonPressed = 0;        
+        inputs[BUTTON_0_POS]     = DebounceInput(BUTTON_0,tempInput + BUTTON_0_POS,             inputs[BUTTON_0_POS]);
+        buttonPressed = inputs[BUTTON_0_POS];
+        inputs[BUTTON_1_POS]     = DebounceInput(BUTTON_1,tempInput + BUTTON_1_POS,             inputs[BUTTON_1_POS]);
+        buttonPressed |= (inputs[BUTTON_1_POS] << 1);
+        inputs[BUTTON_2_POS]     = DebounceInput(BUTTON_2,tempInput + BUTTON_2_POS,             inputs[BUTTON_2_POS]);
+        buttonPressed |= (inputs[BUTTON_2_POS] << 2);
         
-        return STATE_IDLE;
+    }
 }
 
-
-void interrupt mainInterrupt()
+void interrupt MainInterrupt()
 {
     // timer 1 interrupt
     if ( 1 == PIR1bits.TMR1IF )
     {
         msPassed++;
         
-        if (0 == msPassed % 4)
+        if ( REACHED == readCurrentState )
         {
-            inputs[BUTTON_0_POS]         = debounceInput(BUTTON_0,tempInput + BUTTON_0_POS,         inputs[BUTTON_0_POS]);
-            inputs[BUTTON_1_POS]         = debounceInput(BUTTON_0,tempInput + BUTTON_1_POS,         inputs[BUTTON_1_POS]);
-            inputs[BUTTON_2_POS]         = debounceInput(BUTTON_0,tempInput + BUTTON_2_POS,         inputs[BUTTON_2_POS]);
-            inputs[SAFETY_1_POS]         = debounceInput(BUTTON_0,tempInput + SAFETY_1_POS,         inputs[SAFETY_1_POS]);
-            inputs[SAFETY_2_POS]         = debounceInput(BUTTON_0,tempInput + SAFETY_2_POS,         inputs[SAFETY_2_POS]);
-            inputs[SAFETY_3_POS]         = debounceInput(BUTTON_0,tempInput + SAFETY_3_POS,         inputs[SAFETY_3_POS]);
-            inputs[DELIMITER_DOWN_POS]   = debounceInput(BUTTON_0,tempInput + DELIMITER_DOWN_POS,   inputs[DELIMITER_DOWN_POS]);
-            inputs[DELIMITER_UP_POS]     = debounceInput(BUTTON_0,tempInput + DELIMITER_UP_POS,     inputs[DELIMITER_UP_POS]);
-            inputs[COUNTER_POS]          = debounceInput(BUTTON_0,tempInput + COUNTER_POS,          inputs[COUNTER_POS]);
+            waiting++;
+        }
+        
+        if (msPassed % 4 == 0)
+        {
+            Debounce();
         }
     }
     

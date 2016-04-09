@@ -598,34 +598,41 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 186: extern unsigned char __resetbits;
 [; ;pic.h: 187: extern __bit __powerdown;
 [; ;pic.h: 188: extern __bit __timeout;
-[; ;timer.h: 11: void initTimer(void);
+[; ;timer.h: 11: extern unsigned int msPassed;
+[; ;timer.h: 13: void InitTimer(void);
 "6 timer.c
-[v _initTimer `(v ~T0 @X0 1 ef ]
-"7
-{
-[; ;timer.c: 6: void initTimer()
-[; ;timer.c: 7: {
-[e :U _initTimer ]
-[f ]
-[; ;timer.c: 9: T1CON = 0;
+[v _msPassed `ui ~T0 @X0 1 e ]
+[; ;timer.c: 6: unsigned int msPassed;
+"8
+[v _InitTimer `(v ~T0 @X0 1 ef ]
 "9
-[e = _T1CON -> -> 0 `i `uc ]
-[; ;timer.c: 12: T1CONbits.T1CKPS = 0b11;
-"12
-[e = . . _T1CONbits 0 4 -> -> 3 `i `uc ]
-[; ;timer.c: 13: TMR1 = 0xFFFF - 625;
+{
+[; ;timer.c: 8: void InitTimer()
+[; ;timer.c: 9: {
+[e :U _InitTimer ]
+[f ]
+[; ;timer.c: 10: msPassed = 0;
+"10
+[e = _msPassed -> -> 0 `i `ui ]
+[; ;timer.c: 13: T1CON = 0;
 "13
-[e = _TMR1 -> - -> 65535 `ui -> -> 625 `i `ui `us ]
-[; ;timer.c: 16: PIR1bits.TMR1IF = 0;
+[e = _T1CON -> -> 0 `i `uc ]
+[; ;timer.c: 16: T1CONbits.T1CKPS = 0b11;
 "16
+[e = . . _T1CONbits 0 4 -> -> 3 `i `uc ]
+[; ;timer.c: 17: TMR1 = 0xFFFF - 625;
+"17
+[e = _TMR1 -> - -> 65535 `ui -> -> 625 `i `ui `us ]
+[; ;timer.c: 20: PIR1bits.TMR1IF = 0;
+"20
 [e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
-[; ;timer.c: 19: T1CONbits.TMR1ON = 1;
-"19
-[e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
-[; ;timer.c: 22: PIE1bits.TMR1IE = 1;
-"22
-[e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
-[; ;timer.c: 23: }
+[; ;timer.c: 23: T1CONbits.TMR1ON = 1;
 "23
+[e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
+[; ;timer.c: 26: PIE1bits.TMR1IE = 1;
+"26
+[e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
+[; ;timer.c: 27: }
+"27
 [e :UE 52 ]
 }

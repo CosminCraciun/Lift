@@ -8,7 +8,9 @@
 #ifndef TIMER_H
 #define	TIMER_H
 
-void initTimer(void);
+extern unsigned int msPassed;
+
+void InitTimer(void);
 
 #endif	/* TIMER_H */
 
