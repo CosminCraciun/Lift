@@ -949,14 +949,12 @@ extern unsigned char __resetbits;
 extern __bit __powerdown;
 extern __bit __timeout;
 
-# 22 "defines.h"
+# 24 "defines.h"
 enum{
-STATE_IDLE,
-STOP,
-CHECK,
-GO,
-WAIT,
-REACHED
+STATE_STOP,
+STATE_CHECK,
+STATE_RUN,
+STATE_REACHED
 };
 
 
@@ -993,8 +991,9 @@ void InitTimer(void);
 
 # 18 "main.c"
 void debounce();
+unsigned char checkLevelChange();
 
-# 24
+# 25
 unsigned char inputs[INPUT_MAX];
 unsigned char tempInput[INPUT_MAX];
 unsigned char readCurrentState;
@@ -1003,7 +1002,7 @@ unsigned int waiting;
 int main(int argc, char** argv)
 {
 unsigned char currentLevel = 0;
-unsigned char mainState = STATE_IDLE;
+unsigned char mainState = STATE_STOP;
 unsigned char movingDirection = 0;
 unsigned char emergencyStop = 0;
 
@@ -1017,27 +1016,19 @@ readCurrentState = mainState;
 
 switch (mainState)
 {
-case STATE_IDLE :
-{
-
-;
-}
-break;
-case STOP :
+case STATE_STOP :
 {
 
 PORTBbits.RB4 = PORTBbits.RB5 = 0;
 
-if (0 != movingDirection)
+if ( 0 == buttonMode )
 {
 TurnOnButtons();
-movingDirection = 0;
 }
 
 if (buttonPressed != currentLevel && buttonPressed != 0)
 {
 TurnOnLeds();
-SetLeds(buttonPressed);
 
 if (buttonPressed > currentLevel)
 {
@@ -1048,37 +1039,44 @@ else
 movingDirection = 2;
 }
 
-mainState = CHECK;
+mainState = STATE_CHECK;
 }
 }
 break;
-case CHECK :
+case STATE_CHECK :
 {
 
 if ( ( 1 == inputs[SAFETY_1_POS] ) &&
 ( 1 == inputs[SAFETY_1_POS] ) &&
 ( 1 == inputs[SAFETY_1_POS] ) )
 {
-mainState = STOP;
-emergencyStop = 1;
+mainState = STATE_STOP;
 PORTBbits.RB4 = PORTBbits.RB5 = 0;
 SetLeds(0);
 }
 else if ( currentLevel == buttonPressed )
 {
 waiting = 0;
-PORTBbits.RB4 = PORTBbits.RB5 = 0;
-mainState = REACHED;
+mainState = STATE_REACHED;
+}
+else if ( 2 == movingDirection && 0 != inputs[PORTAbits.RA7] )
+{
+mainState = STATE_STOP;
+currentLevel = 1;
+}
+else if ( 1 == movingDirection && 0 != inputs[PORTAbits.RA0] )
+{
+mainState = STATE_STOP;
+currentLevel = 3;
 }
 else
 {
-mainState = GO;
+mainState = STATE_RUN;
 }
 }
 break;
-case GO :
+case STATE_RUN :
 {
-emergencyStop = 0;
 if ( 1 == movingDirection )
 {
 PORTBbits.RB5 = 0;
@@ -1089,15 +1087,18 @@ else
 PORTBbits.RB5 = 1;
 PORTBbits.RB4 = 0;
 }
+if ( 1 == movingDirection)
+{
+currentLevel += checkLevelChange();
+}
+else
+{
+currentLevel -= checkLevelChange();
+}
 
-
-mainState = CHECK;
-
-
-;
 }
 break;
-case REACHED :
+case STATE_REACHED :
 {
 PORTBbits.RB4 = PORTBbits.RB5 = 0;
 
@@ -1105,18 +1106,18 @@ if ( 5000 < waiting )
 {
 SetLeds(0);
 TurnOnButtons();
-mainState = STOP;
+mainState = STATE_STOP;
 }
 else
 {
-mainState = REACHED;
+mainState = STATE_REACHED;
 }
 
 }
 break;
 default:
 {
-mainState = STATE_IDLE;
+mainState = STATE_STOP;
 }
 }
 }
@@ -1146,6 +1147,26 @@ buttonPressed |= (inputs[BUTTON_2_POS] << 2);
 }
 }
 
+unsigned char checkLevelChange()
+{
+static unsigned char pastCounter;
+unsigned char returnValue = 0;
+
+if ( 1 == pastCounter && 0 == inputs[COUNTER_POS])
+{
+
+}
+else if ( 0 == pastCounter && 1 == inputs[COUNTER_POS])
+{
+
+returnValue = 1;
+}
+
+pastCounter = inputs[COUNTER_POS];
+
+return returnValue;
+}
+
 void interrupt MainInterrupt()
 {
 
@@ -1153,7 +1174,7 @@ if ( 1 == PIR1bits.TMR1IF )
 {
 msPassed++;
 
-if ( REACHED == readCurrentState )
+if ( STATE_REACHED == readCurrentState )
 {
 waiting++;
 }

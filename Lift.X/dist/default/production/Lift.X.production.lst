@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.37 build -260352376 
-                                                                                               Sat Apr 09 15:58:51 2016
+                                                                                               Tue Apr 12 11:42:16 2016
 
 Microchip Technology Omniscient Code Generator v1.37 (Free mode) build 201603110536
      1                           	processor	16F628A
@@ -21,1053 +21,1053 @@ Microchip Technology Omniscient Code Generator v1.37 (Free mode) build 201603110
     15                           	psect	text4,local,class=CODE,merge=1,delta=2
     16                           	psect	text5,local,class=CODE,merge=1,delta=2
     17                           	psect	text6,local,class=CODE,merge=1,delta=2
-    18                           	psect	intentry,global,class=CODE,delta=2
-    19                           	psect	text7,local,class=CODE,merge=1,delta=2
+    18                           	psect	text7,local,class=CODE,merge=1,delta=2
+    19                           	psect	intentry,global,class=CODE,delta=2
     20                           	psect	text8,local,class=CODE,merge=1,delta=2
-    21                           	dabs	1,0x7E,2
-    22  0000                     	;# 
-    23  0001                     	;# 
-    24  0002                     	;# 
-    25  0003                     	;# 
-    26  0004                     	;# 
-    27  0005                     	;# 
-    28  0006                     	;# 
-    29  000A                     	;# 
-    30  000B                     	;# 
-    31  000C                     	;# 
-    32  000E                     	;# 
+    21                           	psect	text9,local,class=CODE,merge=1,delta=2
+    22                           	dabs	1,0x7E,2
+    23  0000                     	;# 
+    24  0001                     	;# 
+    25  0002                     	;# 
+    26  0003                     	;# 
+    27  0004                     	;# 
+    28  0005                     	;# 
+    29  0006                     	;# 
+    30  000A                     	;# 
+    31  000B                     	;# 
+    32  000C                     	;# 
     33  000E                     	;# 
-    34  000F                     	;# 
-    35  0010                     	;# 
-    36  0011                     	;# 
-    37  0012                     	;# 
-    38  0015                     	;# 
+    34  000E                     	;# 
+    35  000F                     	;# 
+    36  0010                     	;# 
+    37  0011                     	;# 
+    38  0012                     	;# 
     39  0015                     	;# 
-    40  0016                     	;# 
-    41  0017                     	;# 
-    42  0018                     	;# 
-    43  0019                     	;# 
-    44  001A                     	;# 
-    45  001F                     	;# 
-    46  0081                     	;# 
-    47  0085                     	;# 
-    48  0086                     	;# 
-    49  008C                     	;# 
-    50  008E                     	;# 
-    51  0092                     	;# 
-    52  0098                     	;# 
-    53  0099                     	;# 
-    54  009A                     	;# 
-    55  009B                     	;# 
-    56  009C                     	;# 
-    57  009D                     	;# 
-    58  009F                     	;# 
-    59  0000                     	;# 
-    60  0001                     	;# 
-    61  0002                     	;# 
-    62  0003                     	;# 
-    63  0004                     	;# 
-    64  0005                     	;# 
-    65  0006                     	;# 
-    66  000A                     	;# 
-    67  000B                     	;# 
-    68  000C                     	;# 
-    69  000E                     	;# 
+    40  0015                     	;# 
+    41  0016                     	;# 
+    42  0017                     	;# 
+    43  0018                     	;# 
+    44  0019                     	;# 
+    45  001A                     	;# 
+    46  001F                     	;# 
+    47  0081                     	;# 
+    48  0085                     	;# 
+    49  0086                     	;# 
+    50  008C                     	;# 
+    51  008E                     	;# 
+    52  0092                     	;# 
+    53  0098                     	;# 
+    54  0099                     	;# 
+    55  009A                     	;# 
+    56  009B                     	;# 
+    57  009C                     	;# 
+    58  009D                     	;# 
+    59  009F                     	;# 
+    60  0000                     	;# 
+    61  0001                     	;# 
+    62  0002                     	;# 
+    63  0003                     	;# 
+    64  0004                     	;# 
+    65  0005                     	;# 
+    66  0006                     	;# 
+    67  000A                     	;# 
+    68  000B                     	;# 
+    69  000C                     	;# 
     70  000E                     	;# 
-    71  000F                     	;# 
-    72  0010                     	;# 
-    73  0011                     	;# 
-    74  0012                     	;# 
-    75  0015                     	;# 
+    71  000E                     	;# 
+    72  000F                     	;# 
+    73  0010                     	;# 
+    74  0011                     	;# 
+    75  0012                     	;# 
     76  0015                     	;# 
-    77  0016                     	;# 
-    78  0017                     	;# 
-    79  0018                     	;# 
-    80  0019                     	;# 
-    81  001A                     	;# 
-    82  001F                     	;# 
-    83  0081                     	;# 
-    84  0085                     	;# 
-    85  0086                     	;# 
-    86  008C                     	;# 
-    87  008E                     	;# 
-    88  0092                     	;# 
-    89  0098                     	;# 
-    90  0099                     	;# 
-    91  009A                     	;# 
-    92  009B                     	;# 
-    93  009C                     	;# 
-    94  009D                     	;# 
-    95  009F                     	;# 
-    96  0000                     	;# 
-    97  0001                     	;# 
-    98  0002                     	;# 
-    99  0003                     	;# 
-   100  0004                     	;# 
-   101  0005                     	;# 
-   102  0006                     	;# 
-   103  000A                     	;# 
-   104  000B                     	;# 
-   105  000C                     	;# 
-   106  000E                     	;# 
+    77  0015                     	;# 
+    78  0016                     	;# 
+    79  0017                     	;# 
+    80  0018                     	;# 
+    81  0019                     	;# 
+    82  001A                     	;# 
+    83  001F                     	;# 
+    84  0081                     	;# 
+    85  0085                     	;# 
+    86  0086                     	;# 
+    87  008C                     	;# 
+    88  008E                     	;# 
+    89  0092                     	;# 
+    90  0098                     	;# 
+    91  0099                     	;# 
+    92  009A                     	;# 
+    93  009B                     	;# 
+    94  009C                     	;# 
+    95  009D                     	;# 
+    96  009F                     	;# 
+    97  0000                     	;# 
+    98  0001                     	;# 
+    99  0002                     	;# 
+   100  0003                     	;# 
+   101  0004                     	;# 
+   102  0005                     	;# 
+   103  0006                     	;# 
+   104  000A                     	;# 
+   105  000B                     	;# 
+   106  000C                     	;# 
    107  000E                     	;# 
-   108  000F                     	;# 
-   109  0010                     	;# 
-   110  0011                     	;# 
-   111  0012                     	;# 
-   112  0015                     	;# 
+   108  000E                     	;# 
+   109  000F                     	;# 
+   110  0010                     	;# 
+   111  0011                     	;# 
+   112  0012                     	;# 
    113  0015                     	;# 
-   114  0016                     	;# 
-   115  0017                     	;# 
-   116  0018                     	;# 
-   117  0019                     	;# 
-   118  001A                     	;# 
-   119  001F                     	;# 
-   120  0081                     	;# 
-   121  0085                     	;# 
-   122  0086                     	;# 
-   123  008C                     	;# 
-   124  008E                     	;# 
-   125  0092                     	;# 
-   126  0098                     	;# 
-   127  0099                     	;# 
-   128  009A                     	;# 
-   129  009B                     	;# 
-   130  009C                     	;# 
-   131  009D                     	;# 
-   132  009F                     	;# 
-   133                           
-   134                           	psect	nvBANK0
-   135  004D                     __pnvBANK0:	
-   136  004D                     _buttonMode:	
-   137  004D                     	ds	1
-   138  004E                     _readCurrentState:	
-   139  004E                     	ds	1
-   140  000E                     _TMR1	set	14
-   141  000C                     _PIR1	set	12
-   142  000C                     _PIR1bits	set	12
-   143  0005                     _PORTAbits	set	5
-   144  0006                     _PORTBbits	set	6
-   145  0010                     _T1CON	set	16
-   146  0010                     _T1CONbits	set	16
-   147  008C                     _PIE1bits	set	140
-   148  0085                     _TRISA	set	133
-   149  0085                     _TRISAbits	set	133
-   150  0086                     _TRISB	set	134
-   151  0086                     _TRISBbits	set	134
-   152                           
-   153                           	psect	cinit
-   154  0011                     start_initialization:	
-   155                           ; #config settings
-   156                           
-   157  0011                     __initialization:	
-   158                           
-   159                           ; Clear objects allocated to BANK0
-   160  0011  1383               	bcf	3,7	;select IRP bank0
-   161  0012  3020               	movlw	low __pbssBANK0
-   162  0013  0084               	movwf	4
-   163  0014  3041               	movlw	low (__pbssBANK0+33)
-   164  0015  21FF               	fcall	clear_ram0
-   165  0016                     end_of_initialization:	
-   166                           ;End of C runtime variable initialization code
-   167                           
-   168  0016                     __end_of__initialization:	
-   169  0016  0183               	clrf	3
-   170  0017  28D3               	ljmp	_main	;jump to C main() function
-   171                           
-   172                           	psect	bssBANK0
-   173  0020                     __pbssBANK0:	
-   174  0020                     _debounceStates:	
-   175  0020                     	ds	10
-   176  002A                     _inputs:	
-   177  002A                     	ds	9
-   178  0033                     _msPassed:	
-   179  0033                     	ds	2
-   180  0035                     _waiting:	
-   181  0035                     	ds	2
-   182  0037                     _buttonPressed:	
-   183  0037                     	ds	1
-   184  0038                     _tempInput:	
-   185  0038                     	ds	9
-   186                           
-   187                           	psect	clrtext
-   188  01FF                     clear_ram0:	
-   189                           ;	Called with FSR containing the base address, and
-   190                           ;	W with the last address+1
-   191                           
-   192  01FF  0064               	clrwdt	;clear the watchdog before getting into this loop
-   193  0200                     clrloop0:	
-   194  0200  0180               	clrf	0	;clear RAM location pointed to by FSR
-   195  0201  0A84               	incf	4,f	;increment pointer
-   196  0202  0604               	xorwf	4,w	;XOR with final address
-   197  0203  1903               	btfsc	3,2	;have we reached the end yet?
-   198  0204  3400               	retlw	0	;all done for this memory range, return
-   199  0205  0604               	xorwf	4,w	;XOR again to restore value
-   200  0206  2A00               	goto	clrloop0	;do the next byte
-   201                           
-   202                           	psect	cstackCOMMON
-   203  0070                     __pcstackCOMMON:	
-   204  0070                     ?_InitPorts:	
-   205  0070                     ?_InitTimer:	
-   206                           ; 1 bytes @ 0x0
-   207                           
-   208  0070                     ?_TurnOnButtons:	
+   114  0015                     	;# 
+   115  0016                     	;# 
+   116  0017                     	;# 
+   117  0018                     	;# 
+   118  0019                     	;# 
+   119  001A                     	;# 
+   120  001F                     	;# 
+   121  0081                     	;# 
+   122  0085                     	;# 
+   123  0086                     	;# 
+   124  008C                     	;# 
+   125  008E                     	;# 
+   126  0092                     	;# 
+   127  0098                     	;# 
+   128  0099                     	;# 
+   129  009A                     	;# 
+   130  009B                     	;# 
+   131  009C                     	;# 
+   132  009D                     	;# 
+   133  009F                     	;# 
+   134                           
+   135                           	psect	nvBANK0
+   136  004E                     __pnvBANK0:	
+   137  004E                     _buttonMode:	
+   138  004E                     	ds	1
+   139  004F                     _readCurrentState:	
+   140  004F                     	ds	1
+   141  000E                     _TMR1	set	14
+   142  000C                     _PIR1	set	12
+   143  000C                     _PIR1bits	set	12
+   144  0005                     _PORTAbits	set	5
+   145  0006                     _PORTBbits	set	6
+   146  0010                     _T1CON	set	16
+   147  0010                     _T1CONbits	set	16
+   148  008C                     _PIE1bits	set	140
+   149  0085                     _TRISA	set	133
+   150  0085                     _TRISAbits	set	133
+   151  0086                     _TRISB	set	134
+   152  0086                     _TRISBbits	set	134
+   153                           
+   154                           	psect	cinit
+   155  0011                     start_initialization:	
+   156                           ; #config settings
+   157                           
+   158  0011                     __initialization:	
+   159                           
+   160                           ; Clear objects allocated to BANK0
+   161  0011  1383               	bcf	3,7	;select IRP bank0
+   162  0012  3020               	movlw	low __pbssBANK0
+   163  0013  0084               	movwf	4
+   164  0014  3042               	movlw	low (__pbssBANK0+34)
+   165  0015  223F               	fcall	clear_ram0
+   166  0016                     end_of_initialization:	
+   167                           ;End of C runtime variable initialization code
+   168                           
+   169  0016                     __end_of__initialization:	
+   170  0016  0183               	clrf	3
+   171  0017  28D3               	ljmp	_main	;jump to C main() function
+   172                           
+   173                           	psect	bssBANK0
+   174  0020                     __pbssBANK0:	
+   175  0020                     _debounceStates:	
+   176  0020                     	ds	10
+   177  002A                     _inputs:	
+   178  002A                     	ds	9
+   179  0033                     _msPassed:	
+   180  0033                     	ds	2
+   181  0035                     _waiting:	
+   182  0035                     	ds	2
+   183  0037                     _buttonPressed:	
+   184  0037                     	ds	1
+   185  0038                     checkLevelChange@pastCounter:	
+   186  0038                     	ds	1
+   187  0039                     _tempInput:	
+   188  0039                     	ds	9
+   189                           
+   190                           	psect	clrtext
+   191  023F                     clear_ram0:	
+   192                           ;	Called with FSR containing the base address, and
+   193                           ;	W with the last address+1
+   194                           
+   195  023F  0064               	clrwdt	;clear the watchdog before getting into this loop
+   196  0240                     clrloop0:	
+   197  0240  0180               	clrf	0	;clear RAM location pointed to by FSR
+   198  0241  0A84               	incf	4,f	;increment pointer
+   199  0242  0604               	xorwf	4,w	;XOR with final address
+   200  0243  1903               	btfsc	3,2	;have we reached the end yet?
+   201  0244  3400               	retlw	0	;all done for this memory range, return
+   202  0245  0604               	xorwf	4,w	;XOR again to restore value
+   203  0246  2A40               	goto	clrloop0	;do the next byte
+   204                           
+   205                           	psect	cstackCOMMON
+   206  0070                     __pcstackCOMMON:	
+   207  0070                     ?_InitPorts:	
+   208  0070                     ?_InitTimer:	
    209                           ; 1 bytes @ 0x0
    210                           
-   211  0070                     ?_TurnOnLeds:	
+   211  0070                     ?_TurnOnButtons:	
    212                           ; 1 bytes @ 0x0
    213                           
-   214  0070                     ?_SetLeds:	
+   214  0070                     ?_TurnOnLeds:	
    215                           ; 1 bytes @ 0x0
    216                           
-   217  0070                     ?_DebounceInput:	
+   217  0070                     ?_SetLeds:	
    218                           ; 1 bytes @ 0x0
    219                           
-   220  0070                     ?_Debounce:	
+   220  0070                     ?_checkLevelChange:	
    221                           ; 1 bytes @ 0x0
    222                           
-   223  0070                     ?_MainInterrupt:	
+   223  0070                     ?_DebounceInput:	
    224                           ; 1 bytes @ 0x0
    225                           
-   226  0070                     DebounceInput@tempState:	
+   226  0070                     ?_Debounce:	
    227                           ; 1 bytes @ 0x0
    228                           
-   229                           
+   229  0070                     ?_MainInterrupt:	
    230                           ; 1 bytes @ 0x0
-   231  0070                     	ds	1
-   232  0071                     DebounceInput@currentState:	
-   233                           
-   234                           ; 1 bytes @ 0x1
-   235  0071                     	ds	1
-   236  0072                     ??_DebounceInput:	
-   237                           
-   238                           ; 1 bytes @ 0x2
-   239  0072                     	ds	1
-   240  0073                     DebounceInput@input:	
-   241                           
-   242                           ; 1 bytes @ 0x3
-   243  0073                     	ds	1
-   244  0074                     ??_Debounce:	
-   245                           
-   246                           ; 1 bytes @ 0x4
-   247  0074                     	ds	4
-   248  0078                     ??_MainInterrupt:	
-   249                           
-   250                           ; 1 bytes @ 0x8
-   251  0078                     	ds	6
-   252                           
-   253                           	psect	cstackBANK0
-   254  0041                     __pcstackBANK0:	
-   255  0041                     ??_InitPorts:	
-   256  0041                     ??_InitTimer:	
-   257                           ; 1 bytes @ 0x0
+   231                           
+   232  0070                     DebounceInput@tempState:	
+   233                           ; 1 bytes @ 0x0
+   234                           
+   235                           
+   236                           ; 1 bytes @ 0x0
+   237  0070                     	ds	1
+   238  0071                     DebounceInput@currentState:	
+   239                           
+   240                           ; 1 bytes @ 0x1
+   241  0071                     	ds	1
+   242  0072                     ??_DebounceInput:	
+   243                           
+   244                           ; 1 bytes @ 0x2
+   245  0072                     	ds	1
+   246  0073                     DebounceInput@input:	
+   247                           
+   248                           ; 1 bytes @ 0x3
+   249  0073                     	ds	1
+   250  0074                     ??_Debounce:	
+   251                           
+   252                           ; 1 bytes @ 0x4
+   253  0074                     	ds	4
+   254  0078                     ??_MainInterrupt:	
+   255                           
+   256                           ; 1 bytes @ 0x8
+   257  0078                     	ds	6
    258                           
-   259  0041                     ??_TurnOnButtons:	
-   260                           ; 1 bytes @ 0x0
-   261                           
-   262  0041                     ??_TurnOnLeds:	
+   259                           	psect	cstackBANK0
+   260  0042                     __pcstackBANK0:	
+   261  0042                     ??_InitPorts:	
+   262  0042                     ??_InitTimer:	
    263                           ; 1 bytes @ 0x0
    264                           
-   265  0041                     ??_SetLeds:	
+   265  0042                     ??_TurnOnButtons:	
    266                           ; 1 bytes @ 0x0
    267                           
-   268                           
+   268  0042                     ??_SetLeds:	
    269                           ; 1 bytes @ 0x0
-   270  0041                     	ds	2
-   271  0043                     SetLeds@leds:	
-   272                           
-   273                           ; 1 bytes @ 0x2
-   274  0043                     	ds	1
-   275  0044                     ?_main:	
-   276  0044                     main@argc:	
-   277                           ; 2 bytes @ 0x3
+   270                           
+   271  0042                     ??_checkLevelChange:	
+   272                           ; 1 bytes @ 0x0
+   273                           
+   274                           
+   275                           ; 1 bytes @ 0x0
+   276  0042                     	ds	1
+   277  0043                     checkLevelChange@returnValue:	
    278                           
-   279                           
-   280                           ; 2 bytes @ 0x3
-   281  0044                     	ds	2
-   282  0046                     main@argv:	
-   283                           
-   284                           ; 2 bytes @ 0x5
-   285  0046                     	ds	2
-   286  0048                     ??_main:	
-   287                           
-   288                           ; 1 bytes @ 0x7
-   289  0048                     	ds	1
-   290  0049                     main@emergencyStop:	
+   279                           ; 1 bytes @ 0x1
+   280  0043                     	ds	1
+   281  0044                     SetLeds@leds:	
+   282                           
+   283                           ; 1 bytes @ 0x2
+   284  0044                     	ds	1
+   285  0045                     ??_TurnOnLeds:	
+   286  0045                     ?_main:	
+   287                           ; 1 bytes @ 0x3
+   288                           
+   289  0045                     main@argc:	
+   290                           ; 2 bytes @ 0x3
    291                           
-   292                           ; 1 bytes @ 0x8
-   293  0049                     	ds	1
-   294  004A                     main@movingDirection:	
-   295                           
-   296                           ; 1 bytes @ 0x9
-   297  004A                     	ds	1
-   298  004B                     main@currentLevel:	
-   299                           
-   300                           ; 1 bytes @ 0xA
-   301  004B                     	ds	1
-   302  004C                     main@mainState:	
-   303                           
-   304                           ; 1 bytes @ 0xB
-   305  004C                     	ds	1
-   306                           
-   307                           	psect	maintext
-   308  00D3                     __pmaintext:	
-   309 ;;
-   310 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
-   311 ;;
-   312 ;; *************** function _main *****************
-   313 ;; Defined at:
-   314 ;;		line 29 in file "main.c"
-   315 ;; Parameters:    Size  Location     Type
-   316 ;;  argc            2    3[BANK0 ] int 
-   317 ;;  argv            2    5[BANK0 ] PTR PTR unsigned char 
-   318 ;; Auto vars:     Size  Location     Type
-   319 ;;  mainState       1   11[BANK0 ] unsigned char 
-   320 ;;  currentLevel    1   10[BANK0 ] unsigned char 
-   321 ;;  movingDirect    1    9[BANK0 ] unsigned char 
-   322 ;;  emergencySto    1    8[BANK0 ] unsigned char 
-   323 ;; Return value:  Size  Location     Type
-   324 ;;                  2    3[BANK0 ] int 
-   325 ;; Registers used:
-   326 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
-   327 ;; Tracked objects:
-   328 ;;		On entry : B00/0
-   329 ;;		On exit  : 0/0
-   330 ;;		Unchanged: 0/0
-   331 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
-   332 ;;      Params:         0       4       0       0
-   333 ;;      Locals:         0       4       0       0
-   334 ;;      Temps:          0       1       0       0
-   335 ;;      Totals:         0       9       0       0
-   336 ;;Total ram usage:        9 bytes
-   337 ;; Hardware stack levels required when called:    5
-   338 ;; This function calls:
-   339 ;;		_InitPorts
-   340 ;;		_InitTimer
-   341 ;;		_SetLeds
-   342 ;;		_TurnOnButtons
-   343 ;;		_TurnOnLeds
-   344 ;; This function is called by:
-   345 ;;		Startup code after reset
-   346 ;; This function uses a non-reentrant model
-   347 ;;
-   348                           
-   349                           
-   350                           ;psect for function _main
-   351  00D3                     _main:	
-   352                           
-   353                           ;main.c: 31: unsigned char currentLevel = 0;
-   354                           
-   355                           ;incstack = 0
-   356                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
-   357  00D3  1283               	bcf	3,5	;RP0=0, select bank0
-   358  00D4  1303               	bcf	3,6	;RP1=0, select bank0
-   359  00D5  01CB               	clrf	main@currentLevel
-   360                           
-   361                           ;main.c: 32: unsigned char mainState = STATE_IDLE;
-   362  00D6  01CC               	clrf	main@mainState
+   292                           
+   293                           ; 2 bytes @ 0x3
+   294  0045                     	ds	2
+   295  0047                     main@argv:	
+   296                           
+   297                           ; 2 bytes @ 0x5
+   298  0047                     	ds	2
+   299  0049                     ??_main:	
+   300                           
+   301                           ; 1 bytes @ 0x7
+   302  0049                     	ds	1
+   303  004A                     main@emergencyStop:	
+   304                           
+   305                           ; 1 bytes @ 0x8
+   306  004A                     	ds	1
+   307  004B                     main@currentLevel:	
+   308                           
+   309                           ; 1 bytes @ 0x9
+   310  004B                     	ds	1
+   311  004C                     main@mainState:	
+   312                           
+   313                           ; 1 bytes @ 0xA
+   314  004C                     	ds	1
+   315  004D                     main@movingDirection:	
+   316                           
+   317                           ; 1 bytes @ 0xB
+   318  004D                     	ds	1
+   319                           
+   320                           	psect	maintext
+   321  00D3                     __pmaintext:	
+   322 ;;
+   323 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+   324 ;;
+   325 ;; *************** function _main *****************
+   326 ;; Defined at:
+   327 ;;		line 30 in file "main.c"
+   328 ;; Parameters:    Size  Location     Type
+   329 ;;  argc            2    3[BANK0 ] int 
+   330 ;;  argv            2    5[BANK0 ] PTR PTR unsigned char 
+   331 ;; Auto vars:     Size  Location     Type
+   332 ;;  movingDirect    1   11[BANK0 ] unsigned char 
+   333 ;;  mainState       1   10[BANK0 ] unsigned char 
+   334 ;;  currentLevel    1    9[BANK0 ] unsigned char 
+   335 ;;  emergencySto    1    8[BANK0 ] unsigned char 
+   336 ;; Return value:  Size  Location     Type
+   337 ;;                  2    3[BANK0 ] int 
+   338 ;; Registers used:
+   339 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   340 ;; Tracked objects:
+   341 ;;		On entry : B00/0
+   342 ;;		On exit  : 0/0
+   343 ;;		Unchanged: 0/0
+   344 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   345 ;;      Params:         0       4       0       0
+   346 ;;      Locals:         0       4       0       0
+   347 ;;      Temps:          0       1       0       0
+   348 ;;      Totals:         0       9       0       0
+   349 ;;Total ram usage:        9 bytes
+   350 ;; Hardware stack levels required when called:    5
+   351 ;; This function calls:
+   352 ;;		_InitPorts
+   353 ;;		_InitTimer
+   354 ;;		_SetLeds
+   355 ;;		_TurnOnButtons
+   356 ;;		_TurnOnLeds
+   357 ;;		_checkLevelChange
+   358 ;; This function is called by:
+   359 ;;		Startup code after reset
+   360 ;; This function uses a non-reentrant model
+   361 ;;
+   362                           
    363                           
-   364                           ;main.c: 33: unsigned char movingDirection = 0;
-   365  00D7  01CA               	clrf	main@movingDirection
+   364                           ;psect for function _main
+   365  00D3                     _main:	
    366                           
-   367                           ;main.c: 34: unsigned char emergencyStop = 0;
-   368  00D8  01C9               	clrf	main@emergencyStop
-   369                           
-   370                           ;main.c: 36: InitPorts();
-   371  00D9  21AE               	fcall	_InitPorts
-   372                           
-   373                           ;main.c: 37: InitTimer();
-   374  00DA  21DB               	fcall	_InitTimer
-   375                           
-   376                           ;main.c: 44: switch (mainState)
-   377  00DB  2940               	goto	l892
-   378  00DC                     l41:	
-   379                           ;main.c: 52: case STOP :
+   367                           ;main.c: 32: unsigned char currentLevel = 0;
+   368                           
+   369                           ;incstack = 0
+   370                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   371  00D3  1283               	bcf	3,5	;RP0=0, select bank0
+   372  00D4  1303               	bcf	3,6	;RP1=0, select bank0
+   373  00D5  01CB               	clrf	main@currentLevel
+   374                           
+   375                           ;main.c: 33: unsigned char mainState = STATE_STOP;
+   376  00D6  01CC               	clrf	main@mainState
+   377                           
+   378                           ;main.c: 34: unsigned char movingDirection = 0;
+   379  00D7  01CD               	clrf	main@movingDirection
    380                           
-   381                           ;main.c: 47: {
-   382                           ;main.c: 49: ;
-   383                           ;main.c: 50: }
-   384                           ;main.c: 51: break;
-   385                           
-   386                           ;main.c: 45: {
-   387                           ;main.c: 46: case STATE_IDLE :
-   388                           
+   381                           ;main.c: 35: unsigned char emergencyStop = 0;
+   382  00D8  01CA               	clrf	main@emergencyStop
+   383                           
+   384                           ;main.c: 37: InitPorts();
+   385  00D9  21D4               	fcall	_InitPorts
+   386                           
+   387                           ;main.c: 38: InitTimer();
+   388  00DA  2217               	fcall	_InitTimer
    389                           
-   390                           ;main.c: 53: {
-   391                           ;main.c: 55: PORTBbits.RB4 = PORTBbits.RB5 = 0;
-   392  00DC  1286               	bcf	6,5	;volatile
-   393  00DD  1206               	bcf	6,4	;volatile
-   394                           
-   395                           ;main.c: 57: if (0 != movingDirection)
-   396  00DE  084A               	movf	main@movingDirection,w
-   397  00DF  1903               	btfsc	3,2
-   398  00E0  28E5               	goto	l900
-   399                           
-   400                           ;main.c: 58: {
-   401                           ;main.c: 59: TurnOnButtons();
-   402  00E1  21EC               	fcall	_TurnOnButtons
-   403                           
-   404                           ;main.c: 60: movingDirection = 0;
-   405  00E2  1283               	bcf	3,5	;RP0=0, select bank0
-   406  00E3  1303               	bcf	3,6	;RP1=0, select bank0
-   407  00E4  01CA               	clrf	main@movingDirection
-   408  00E5                     l900:	
-   409                           
-   410                           ;main.c: 61: }
-   411                           ;main.c: 63: if (buttonPressed != currentLevel && buttonPressed != 0)
-   412  00E5  0837               	movf	_buttonPressed,w
-   413  00E6  064B               	xorwf	main@currentLevel,w
-   414  00E7  1903               	skipnz
-   415  00E8  2940               	goto	l892
-   416  00E9  0837               	movf	_buttonPressed,w
-   417  00EA  1903               	btfsc	3,2
-   418  00EB  2940               	goto	l892
-   419                           
-   420                           ;main.c: 64: {
-   421                           ;main.c: 65: TurnOnLeds();
-   422  00EC  21F6               	fcall	_TurnOnLeds
+   390                           ;main.c: 45: switch (mainState)
+   391  00DB  2966               	goto	l967
+   392  00DC                     l41:	
+   393                           ;main.c: 46: {
+   394                           ;main.c: 47: case STATE_STOP :
+   395                           
+   396                           
+   397                           ;main.c: 48: {
+   398                           ;main.c: 50: PORTBbits.RB4 = PORTBbits.RB5 = 0;
+   399  00DC  1286               	bcf	6,5	;volatile
+   400  00DD  1206               	bcf	6,4	;volatile
+   401                           
+   402                           ;main.c: 52: if ( 0 == buttonMode )
+   403  00DE  084E               	movf	_buttonMode,w
+   404  00DF  1D03               	btfss	3,2
+   405  00E0  28E2               	goto	l973
+   406                           
+   407                           ;main.c: 53: {
+   408                           ;main.c: 54: TurnOnButtons();
+   409  00E1  2235               	fcall	_TurnOnButtons
+   410  00E2                     l973:	
+   411                           
+   412                           ;main.c: 55: }
+   413                           ;main.c: 57: if (buttonPressed != currentLevel && buttonPressed != 0)
+   414  00E2  1283               	bcf	3,5	;RP0=0, select bank0
+   415  00E3  1303               	bcf	3,6	;RP1=0, select bank0
+   416  00E4  0837               	movf	_buttonPressed,w
+   417  00E5  064B               	xorwf	main@currentLevel,w
+   418  00E6  1903               	skipnz
+   419  00E7  2966               	goto	l967
+   420  00E8  0837               	movf	_buttonPressed,w
+   421  00E9  1903               	btfsc	3,2
+   422  00EA  2966               	goto	l967
    423                           
-   424                           ;main.c: 66: SetLeds(buttonPressed);
-   425  00ED  1283               	bcf	3,5	;RP0=0, select bank0
-   426  00EE  1303               	bcf	3,6	;RP1=0, select bank0
-   427  00EF  0837               	movf	_buttonPressed,w
-   428  00F0  2152               	fcall	_SetLeds
-   429                           
-   430                           ;main.c: 68: if (buttonPressed > currentLevel)
-   431  00F1  1283               	bcf	3,5	;RP0=0, select bank0
-   432  00F2  1303               	bcf	3,6	;RP1=0, select bank0
-   433  00F3  0837               	movf	_buttonPressed,w
-   434  00F4  024B               	subwf	main@currentLevel,w
-   435  00F5  1803               	skipnc
-   436  00F6  28FA               	goto	l910
-   437                           
-   438                           ;main.c: 69: {
-   439                           ;main.c: 70: movingDirection = 1;
-   440  00F7  01CA               	clrf	main@movingDirection
-   441  00F8  0ACA               	incf	main@movingDirection,f
-   442                           
-   443                           ;main.c: 71: }
-   444  00F9  2927               	goto	l938
-   445  00FA                     l910:	
-   446                           
-   447                           ;main.c: 72: else
-   448                           ;main.c: 73: {
-   449                           ;main.c: 74: movingDirection = 2;
-   450  00FA  3002               	movlw	2
-   451  00FB  00C8               	movwf	??_main
-   452  00FC  0848               	movf	??_main,w
-   453  00FD  00CA               	movwf	main@movingDirection
-   454  00FE  2927               	goto	l938
-   455  00FF                     l912:	
-   456                           ;main.c: 81: case CHECK :
-   457                           
-   458                           ;main.c: 78: }
-   459                           ;main.c: 79: }
-   460                           ;main.c: 80: break;
-   461                           
-   462                           ;main.c: 75: }
-   463                           ;main.c: 77: mainState = CHECK;
-   464                           
+   424                           ;main.c: 58: {
+   425                           ;main.c: 59: TurnOnLeds();
+   426  00EB  2228               	fcall	_TurnOnLeds
+   427                           
+   428                           ;main.c: 61: if (buttonPressed > currentLevel)
+   429  00EC  1283               	bcf	3,5	;RP0=0, select bank0
+   430  00ED  1303               	bcf	3,6	;RP1=0, select bank0
+   431  00EE  0837               	movf	_buttonPressed,w
+   432  00EF  024B               	subwf	main@currentLevel,w
+   433  00F0  1803               	skipnc
+   434  00F1  28F5               	goto	l983
+   435                           
+   436                           ;main.c: 62: {
+   437                           ;main.c: 63: movingDirection = 1;
+   438  00F2  01CD               	clrf	main@movingDirection
+   439  00F3  0ACD               	incf	main@movingDirection,f
+   440                           
+   441                           ;main.c: 64: }
+   442  00F4  28F9               	goto	l985
+   443  00F5                     l983:	
+   444                           
+   445                           ;main.c: 65: else
+   446                           ;main.c: 66: {
+   447                           ;main.c: 67: movingDirection = 2;
+   448  00F5  3002               	movlw	2
+   449  00F6  00C9               	movwf	??_main
+   450  00F7  0849               	movf	??_main,w
+   451  00F8  00CD               	movwf	main@movingDirection
+   452  00F9                     l985:	
+   453                           
+   454                           ;main.c: 68: }
+   455                           ;main.c: 70: mainState = STATE_CHECK;
+   456  00F9  01CC               	clrf	main@mainState
+   457  00FA  0ACC               	incf	main@mainState,f
+   458                           
+   459                           ;main.c: 71: }
+   460                           ;main.c: 72: }
+   461                           ;main.c: 73: break;
+   462  00FB  2966               	goto	l967
+   463  00FC                     l987:	
+   464                           ;main.c: 74: case STATE_CHECK :
    465                           
-   466                           ;main.c: 82: {
-   467                           ;main.c: 84: if ( ( 1 == inputs[SAFETY_1_POS] ) &&
-   468                           ;main.c: 85: ( 1 == inputs[SAFETY_1_POS] ) &&
-   469                           ;main.c: 86: ( 1 == inputs[SAFETY_1_POS] ) )
-   470  00FF  032A               	decf	_inputs,w
-   471  0100  1D03               	btfss	3,2
-   472  0101  2911               	goto	l922
-   473  0102  032A               	decf	_inputs,w
-   474  0103  1D03               	btfss	3,2
-   475  0104  2911               	goto	l922
-   476  0105  032A               	decf	_inputs,w
-   477  0106  1D03               	btfss	3,2
-   478  0107  2911               	goto	l922
-   479                           
-   480                           ;main.c: 87: {
-   481                           ;main.c: 88: mainState = STOP;
-   482  0108  01CC               	clrf	main@mainState
-   483  0109  0ACC               	incf	main@mainState,f
+   466                           
+   467                           ;main.c: 75: {
+   468                           ;main.c: 77: if ( ( 1 == inputs[SAFETY_1_POS] ) &&
+   469                           ;main.c: 78: ( 1 == inputs[SAFETY_1_POS] ) &&
+   470                           ;main.c: 79: ( 1 == inputs[SAFETY_1_POS] ) )
+   471  00FC  032A               	decf	_inputs,w
+   472  00FD  1D03               	btfss	3,2
+   473  00FE  290B               	goto	l999
+   474  00FF  032A               	decf	_inputs,w
+   475  0100  1D03               	btfss	3,2
+   476  0101  290B               	goto	l999
+   477  0102  032A               	decf	_inputs,w
+   478  0103  1D03               	btfss	3,2
+   479  0104  290B               	goto	l999
+   480                           
+   481                           ;main.c: 80: {
+   482                           ;main.c: 81: mainState = STATE_STOP;
+   483  0105  01CC               	clrf	main@mainState
    484                           
-   485                           ;main.c: 89: emergencyStop = 1;
-   486  010A  01C9               	clrf	main@emergencyStop
-   487  010B  0AC9               	incf	main@emergencyStop,f
+   485                           ;main.c: 82: PORTBbits.RB4 = PORTBbits.RB5 = 0;
+   486  0106  1286               	bcf	6,5	;volatile
+   487  0107  1206               	bcf	6,4	;volatile
    488                           
-   489                           ;main.c: 90: PORTBbits.RB4 = PORTBbits.RB5 = 0;
-   490  010C  1286               	bcf	6,5	;volatile
-   491  010D  1206               	bcf	6,4	;volatile
+   489                           ;main.c: 83: SetLeds(0);
+   490  0108  3000               	movlw	0
+   491  0109  2178               	fcall	_SetLeds
    492                           
-   493                           ;main.c: 91: SetLeds(0);
-   494  010E  3000               	movlw	0
-   495  010F  2152               	fcall	_SetLeds
+   493                           ;main.c: 84: }
+   494  010A  2966               	goto	l967
+   495  010B                     l999:	
    496                           
-   497                           ;main.c: 92: }
-   498  0110  2940               	goto	l892
-   499  0111                     l922:	
-   500                           
-   501                           ;main.c: 93: else if ( currentLevel == buttonPressed )
-   502  0111  1283               	bcf	3,5	;RP0=0, select bank0
-   503  0112  1303               	bcf	3,6	;RP1=0, select bank0
-   504  0113  084B               	movf	main@currentLevel,w
-   505  0114  0637               	xorwf	_buttonPressed,w
-   506  0115  1D03               	skipz
-   507  0116  291C               	goto	l930
-   508                           
-   509                           ;main.c: 94: {
-   510                           ;main.c: 95: waiting = 0;
-   511  0117  01B5               	clrf	_waiting
-   512  0118  01B6               	clrf	_waiting+1
-   513                           
-   514                           ;main.c: 96: PORTBbits.RB4 = PORTBbits.RB5 = 0;
-   515  0119  1286               	bcf	6,5	;volatile
-   516  011A  1206               	bcf	6,4	;volatile
-   517  011B  293A               	goto	l948
-   518  011C                     l930:	
-   519                           ;main.c: 98: }
-   520                           
-   521                           ;main.c: 97: mainState = REACHED;
-   522                           
-   523                           
-   524                           ;main.c: 99: else
-   525                           ;main.c: 100: {
-   526                           ;main.c: 101: mainState = GO;
-   527  011C  3003               	movlw	3
-   528  011D  293B               	goto	L4
-   529  011E                     l932:	
-   530                           ;main.c: 105: case GO :
-   531                           
-   532                           ;main.c: 102: }
-   533                           ;main.c: 103: }
-   534                           ;main.c: 104: break;
-   535                           
-   536                           
-   537                           ;main.c: 106: {
-   538                           ;main.c: 107: emergencyStop = 0;
-   539  011E  01C9               	clrf	main@emergencyStop
-   540                           
-   541                           ;main.c: 108: if ( 1 == movingDirection )
-   542  011F  034A               	decf	main@movingDirection,w
-   543  0120  1D03               	btfss	3,2
-   544  0121  2925               	goto	l52
-   545                           
-   546                           ;main.c: 109: {
-   547                           ;main.c: 110: PORTBbits.RB5 = 0;
-   548  0122  1286               	bcf	6,5	;volatile
-   549                           
-   550                           ;main.c: 111: PORTBbits.RB4 = 1;
-   551  0123  1606               	bsf	6,4	;volatile
-   552                           
-   553                           ;main.c: 112: }
-   554  0124  2927               	goto	l938
-   555  0125                     l52:	
-   556                           
-   557                           ;main.c: 113: else
-   558                           ;main.c: 114: {
-   559                           ;main.c: 115: PORTBbits.RB5 = 1;
-   560  0125  1686               	bsf	6,5	;volatile
-   561                           
-   562                           ;main.c: 116: PORTBbits.RB4 = 0;
-   563  0126  1206               	bcf	6,4	;volatile
-   564  0127                     l938:	
+   497                           ;main.c: 85: else if ( currentLevel == buttonPressed )
+   498  010B  1283               	bcf	3,5	;RP0=0, select bank0
+   499  010C  1303               	bcf	3,6	;RP1=0, select bank0
+   500  010D  084B               	movf	main@currentLevel,w
+   501  010E  0637               	xorwf	_buttonPressed,w
+   502  010F  1D03               	skipz
+   503  0110  2914               	goto	l1005
+   504                           
+   505                           ;main.c: 86: {
+   506                           ;main.c: 87: waiting = 0;
+   507  0111  01B5               	clrf	_waiting
+   508  0112  01B6               	clrf	_waiting+1
+   509  0113  2960               	goto	l1041
+   510  0114                     l1005:	
+   511                           ;main.c: 89: }
+   512                           
+   513                           ;main.c: 88: mainState = STATE_REACHED;
+   514                           
+   515                           
+   516                           ;main.c: 90: else if ( 2 == movingDirection && 0 != inputs[PORTAbits.RA7] )
+   517  0114  3002               	movlw	2
+   518  0115  064D               	xorwf	main@movingDirection,w
+   519  0116  1D03               	btfss	3,2
+   520  0117  2925               	goto	l1013
+   521  0118  0D05               	rlf	5,w	;volatile
+   522  0119  0D05               	rlf	5,w	;volatile
+   523  011A  3901               	andlw	1
+   524  011B  3E2A               	addlw	(low (_inputs| 0))& (0+255)
+   525  011C  0084               	movwf	4
+   526  011D  1383               	bcf	3,7	;select IRP bank0
+   527  011E  0800               	movf	0,w
+   528  011F  1903               	btfsc	3,2
+   529  0120  2925               	goto	l1013
+   530                           
+   531                           ;main.c: 91: {
+   532                           ;main.c: 92: mainState = STATE_STOP;
+   533  0121  01CC               	clrf	main@mainState
+   534                           
+   535                           ;main.c: 93: currentLevel = 1;
+   536  0122  01CB               	clrf	main@currentLevel
+   537  0123  0ACB               	incf	main@currentLevel,f
+   538                           
+   539                           ;main.c: 94: }
+   540  0124  2966               	goto	l967
+   541  0125                     l1013:	
+   542                           
+   543                           ;main.c: 95: else if ( 1 == movingDirection && 0 != inputs[PORTAbits.RA0] )
+   544  0125  034D               	decf	main@movingDirection,w
+   545  0126  1D03               	btfss	3,2
+   546  0127  2936               	goto	l1021
+   547  0128  0805               	movf	5,w	;volatile
+   548  0129  3901               	andlw	1
+   549  012A  3E2A               	addlw	(low (_inputs| 0))& (0+255)
+   550  012B  0084               	movwf	4
+   551  012C  1383               	bcf	3,7	;select IRP bank0
+   552  012D  0800               	movf	0,w
+   553  012E  1903               	btfsc	3,2
+   554  012F  2936               	goto	l1021
+   555                           
+   556                           ;main.c: 96: {
+   557                           ;main.c: 97: mainState = STATE_STOP;
+   558  0130  01CC               	clrf	main@mainState
+   559                           
+   560                           ;main.c: 98: currentLevel = 3;
+   561  0131  3003               	movlw	3
+   562  0132  00C9               	movwf	??_main
+   563  0133  0849               	movf	??_main,w
+   564  0134  00CB               	movwf	main@currentLevel
    565                           
-   566                           ;main.c: 117: }
-   567                           ;main.c: 120: mainState = CHECK;
-   568  0127  3002               	movlw	2
-   569  0128  293B               	goto	L4
-   570  0129                     l54:	
-   571                           ;main.c: 126: case REACHED :
-   572                           
-   573                           ;main.c: 123: ;
-   574                           ;main.c: 124: }
-   575                           ;main.c: 125: break;
-   576                           
+   566                           ;main.c: 99: }
+   567  0135  2966               	goto	l967
+   568  0136                     l1021:	
+   569                           
+   570                           ;main.c: 100: else
+   571                           ;main.c: 101: {
+   572                           ;main.c: 102: mainState = STATE_RUN;
+   573  0136  3002               	movlw	2
+   574  0137  2961               	goto	L2
+   575  0138                     l1023:	
+   576                           ;main.c: 106: case STATE_RUN :
    577                           
-   578                           ;main.c: 127: {
-   579                           ;main.c: 128: PORTBbits.RB4 = PORTBbits.RB5 = 0;
-   580  0129  1286               	bcf	6,5	;volatile
-   581  012A  1206               	bcf	6,4	;volatile
+   578                           ;main.c: 103: }
+   579                           ;main.c: 104: }
+   580                           ;main.c: 105: break;
+   581                           
    582                           
-   583                           ;main.c: 130: if ( 5000 < waiting )
-   584  012B  3013               	movlw	19
-   585  012C  0236               	subwf	_waiting+1,w
-   586  012D  3089               	movlw	137
-   587  012E  1903               	skipnz
-   588  012F  0235               	subwf	_waiting,w
-   589  0130  1C03               	skipc
-   590  0131  293A               	goto	l948
-   591                           
-   592                           ;main.c: 131: {
-   593                           ;main.c: 132: SetLeds(0);
-   594  0132  3000               	movlw	0
-   595  0133  2152               	fcall	_SetLeds
-   596                           
-   597                           ;main.c: 133: TurnOnButtons();
-   598  0134  21EC               	fcall	_TurnOnButtons
+   583                           ;main.c: 107: {
+   584                           ;main.c: 108: if ( 1 == movingDirection )
+   585  0138  034D               	decf	main@movingDirection,w
+   586  0139  1D03               	btfss	3,2
+   587  013A  293E               	goto	l57
+   588                           
+   589                           ;main.c: 109: {
+   590                           ;main.c: 110: PORTBbits.RB5 = 0;
+   591  013B  1286               	bcf	6,5	;volatile
+   592                           
+   593                           ;main.c: 111: PORTBbits.RB4 = 1;
+   594  013C  1606               	bsf	6,4	;volatile
+   595                           
+   596                           ;main.c: 112: }
+   597  013D  2940               	goto	l1027
+   598  013E                     l57:	
    599                           
-   600                           ;main.c: 134: mainState = STOP;
-   601  0135  1283               	bcf	3,5	;RP0=0, select bank0
-   602  0136  1303               	bcf	3,6	;RP1=0, select bank0
-   603  0137  01CC               	clrf	main@mainState
-   604  0138  0ACC               	incf	main@mainState,f
-   605                           
-   606                           ;main.c: 135: }
-   607  0139  2940               	goto	l892
-   608  013A                     l948:	
-   609                           
-   610                           ;main.c: 136: else
-   611                           ;main.c: 137: {
-   612                           ;main.c: 138: mainState = REACHED;
-   613  013A  3005               	movlw	5
-   614  013B                     L4:	
-   615  013B  00C8               	movwf	??_main
-   616  013C  0848               	movf	??_main,w
-   617  013D  00CC               	movwf	main@mainState
-   618                           
-   619                           ;main.c: 139: }
-   620                           ;main.c: 141: }
-   621                           ;main.c: 142: break;
-   622  013E  2940               	goto	l892
-   623  013F                     l950:	
-   624                           ;main.c: 143: default:
-   625                           
-   626                           
-   627                           ;main.c: 144: {
-   628                           ;main.c: 145: mainState = STATE_IDLE;
-   629  013F  01CC               	clrf	main@mainState
-   630  0140                     l892:	
-   631                           ;main.c: 40: while (1)
-   632                           
-   633                           ;main.c: 146: }
-   634                           ;main.c: 147: }
-   635                           
-   636                           
-   637                           ;main.c: 41: {
-   638                           ;main.c: 42: readCurrentState = mainState;
-   639  0140  1283               	bcf	3,5	;RP0=0, select bank0
-   640  0141  1303               	bcf	3,6	;RP1=0, select bank0
-   641  0142  084C               	movf	main@mainState,w
-   642  0143  00C8               	movwf	??_main
-   643  0144  0848               	movf	??_main,w
-   644  0145  00CE               	movwf	_readCurrentState
-   645  0146  084C               	movf	main@mainState,w
-   646                           
-   647                           ; Switch size 1, requested type "space"
-   648                           ; Number of cases is 5, Range of values is 0 to 5
-   649                           ; switch strategies available:
-   650                           ; Name         Instructions Cycles
-   651                           ; direct_byte           12     6 (fixed)
-   652                           ; simple_byte           16     9 (average)
-   653                           ; jumptable            260     6 (fixed)
-   654                           ;	Chosen strategy is direct_byte
-   655  0147  0084               	movwf	4
-   656  0148  3006               	movlw	6
-   657  0149  0204               	subwf	4,w
-   658  014A  1803               	skipnc
-   659  014B  293F               	goto	l950
-   660  014C  3002               	movlw	high S1004
-   661  014D  008A               	movwf	10
-   662  014E  3007               	movlw	low S1004
-   663  014F  0704               	addwf	4,w
-   664  0150  0082               	movwf	2
-   665  0151  2940               	goto	l892
-   666  0152                     __end_of_main:	
-   667                           ;main.c: 148: }
-   668                           ;main.c: 150: return (0);
-   669                           ;	Return value of _main is never used
-   670                           
-   671                           
-   672                           	psect	swtext1
-   673  0207                     __pswtext1:	
-   674  0207                     S1004:	
-   675  0207  2940               	ljmp	l892
-   676  0208  28DC               	ljmp	l41
-   677  0209  28FF               	ljmp	l912
-   678  020A  291E               	ljmp	l932
-   679  020B  293F               	ljmp	l950
-   680  020C  2929               	ljmp	l54
-   681                           
-   682                           	psect	text1
-   683  01F6                     __ptext1:	
-   684 ;; *************** function _TurnOnLeds *****************
-   685 ;; Defined at:
-   686 ;;		line 47 in file "ports.c"
-   687 ;; Parameters:    Size  Location     Type
-   688 ;;		None
-   689 ;; Auto vars:     Size  Location     Type
-   690 ;;		None
-   691 ;; Return value:  Size  Location     Type
-   692 ;;                  1    wreg      void 
-   693 ;; Registers used:
-   694 ;;		status,2
-   695 ;; Tracked objects:
-   696 ;;		On entry : 0/0
-   697 ;;		On exit  : 0/0
-   698 ;;		Unchanged: 0/0
-   699 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
-   700 ;;      Params:         0       0       0       0
-   701 ;;      Locals:         0       0       0       0
-   702 ;;      Temps:          0       0       0       0
-   703 ;;      Totals:         0       0       0       0
-   704 ;;Total ram usage:        0 bytes
-   705 ;; Hardware stack levels used:    1
-   706 ;; Hardware stack levels required when called:    3
-   707 ;; This function calls:
-   708 ;;		Nothing
-   709 ;; This function is called by:
-   710 ;;		_main
-   711 ;; This function uses a non-reentrant model
-   712 ;;
-   713                           
-   714                           
-   715                           ;psect for function _TurnOnLeds
-   716  01F6                     _TurnOnLeds:	
-   717                           
-   718                           ;ports.c: 49: buttonMode = 0;
-   719                           
-   720                           ;incstack = 0
-   721                           ; Regs used in _TurnOnLeds: [status,2]
-   722  01F6  1283               	bcf	3,5	;RP0=0, select bank0
-   723  01F7  1303               	bcf	3,6	;RP1=0, select bank0
-   724  01F8  01CD               	clrf	_buttonMode
-   725                           
-   726                           ;ports.c: 51: TRISAbits.TRISA5 = 0;
-   727  01F9  1683               	bsf	3,5	;RP0=1, select bank1
-   728  01FA  1303               	bcf	3,6	;RP1=0, select bank1
-   729  01FB  1285               	bcf	5,5	;volatile
-   730                           
-   731                           ;ports.c: 52: TRISBbits.TRISB0 = 0;
-   732  01FC  1006               	bcf	6,0	;volatile
-   733                           
-   734                           ;ports.c: 53: TRISBbits.TRISB3 = 0;
-   735  01FD  1186               	bcf	6,3	;volatile
-   736  01FE  0008               	return
-   737  01FF                     __end_of_TurnOnLeds:	
-   738                           
-   739                           	psect	text2
-   740  0152                     __ptext2:	
-   741 ;; *************** function _SetLeds *****************
-   742 ;; Defined at:
-   743 ;;		line 56 in file "ports.c"
-   744 ;; Parameters:    Size  Location     Type
-   745 ;;  leds            1    wreg     unsigned char 
-   746 ;; Auto vars:     Size  Location     Type
-   747 ;;  leds            1    2[BANK0 ] unsigned char 
-   748 ;; Return value:  Size  Location     Type
-   749 ;;                  1    wreg      void 
-   750 ;; Registers used:
-   751 ;;		wreg, status,2, status,0
-   752 ;; Tracked objects:
-   753 ;;		On entry : 0/0
-   754 ;;		On exit  : 0/0
-   755 ;;		Unchanged: 0/0
-   756 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
-   757 ;;      Params:         0       0       0       0
-   758 ;;      Locals:         0       1       0       0
-   759 ;;      Temps:          0       2       0       0
-   760 ;;      Totals:         0       3       0       0
-   761 ;;Total ram usage:        3 bytes
-   762 ;; Hardware stack levels used:    1
-   763 ;; Hardware stack levels required when called:    3
-   764 ;; This function calls:
-   765 ;;		Nothing
-   766 ;; This function is called by:
-   767 ;;		_main
-   768 ;; This function uses a non-reentrant model
-   769 ;;
-   770                           
-   771                           
-   772                           ;psect for function _SetLeds
-   773  0152                     _SetLeds:	
-   774                           
-   775                           ;incstack = 0
-   776                           ; Regs used in _SetLeds: [wreg+status,2+status,0]
-   777                           ;SetLeds@leds stored from wreg
-   778  0152  1283               	bcf	3,5	;RP0=0, select bank0
-   779  0153  1303               	bcf	3,6	;RP1=0, select bank0
-   780  0154  00C3               	movwf	SetLeds@leds
+   600                           ;main.c: 113: else
+   601                           ;main.c: 114: {
+   602                           ;main.c: 115: PORTBbits.RB5 = 1;
+   603  013E  1686               	bsf	6,5	;volatile
+   604                           
+   605                           ;main.c: 116: PORTBbits.RB4 = 0;
+   606  013F  1206               	bcf	6,4	;volatile
+   607  0140                     l1027:	
+   608                           
+   609                           ;main.c: 117: }
+   610                           ;main.c: 118: if ( 1 == movingDirection)
+   611  0140  034D               	decf	main@movingDirection,w
+   612  0141  1D03               	btfss	3,2
+   613  0142  294A               	goto	l1031
+   614                           
+   615                           ;main.c: 119: {
+   616                           ;main.c: 120: currentLevel += checkLevelChange();
+   617  0143  21ED               	fcall	_checkLevelChange
+   618  0144  1283               	bcf	3,5	;RP0=0, select bank0
+   619  0145  1303               	bcf	3,6	;RP1=0, select bank0
+   620  0146  00C9               	movwf	??_main
+   621  0147  0849               	movf	??_main,w
+   622  0148  07CB               	addwf	main@currentLevel,f
+   623                           
+   624                           ;main.c: 121: }
+   625  0149  2966               	goto	l967
+   626  014A                     l1031:	
+   627                           
+   628                           ;main.c: 122: else
+   629                           ;main.c: 123: {
+   630                           ;main.c: 124: currentLevel -= checkLevelChange();
+   631  014A  21ED               	fcall	_checkLevelChange
+   632  014B  1283               	bcf	3,5	;RP0=0, select bank0
+   633  014C  1303               	bcf	3,6	;RP1=0, select bank0
+   634  014D  00C9               	movwf	??_main
+   635  014E  0849               	movf	??_main,w
+   636  014F  02CB               	subwf	main@currentLevel,f
+   637                           
+   638                           ;main.c: 125: }
+   639                           ;main.c: 127: }
+   640                           ;main.c: 128: break;
+   641  0150  2966               	goto	l967
+   642  0151                     l61:	
+   643                           ;main.c: 129: case STATE_REACHED :
+   644                           
+   645                           
+   646                           ;main.c: 130: {
+   647                           ;main.c: 131: PORTBbits.RB4 = PORTBbits.RB5 = 0;
+   648  0151  1286               	bcf	6,5	;volatile
+   649  0152  1206               	bcf	6,4	;volatile
+   650                           
+   651                           ;main.c: 133: if ( 5000 < waiting )
+   652  0153  3013               	movlw	19
+   653  0154  0236               	subwf	_waiting+1,w
+   654  0155  3089               	movlw	137
+   655  0156  1903               	skipnz
+   656  0157  0235               	subwf	_waiting,w
+   657  0158  1C03               	skipc
+   658  0159  2960               	goto	l1041
+   659                           
+   660                           ;main.c: 134: {
+   661                           ;main.c: 135: SetLeds(0);
+   662  015A  3000               	movlw	0
+   663  015B  2178               	fcall	_SetLeds
+   664                           
+   665                           ;main.c: 136: TurnOnButtons();
+   666  015C  2235               	fcall	_TurnOnButtons
+   667                           
+   668                           ;main.c: 137: mainState = STATE_STOP;
+   669  015D  1283               	bcf	3,5	;RP0=0, select bank0
+   670  015E  1303               	bcf	3,6	;RP1=0, select bank0
+   671  015F  2965               	goto	l1043
+   672  0160                     l1041:	
+   673                           ;main.c: 138: }
+   674                           
+   675                           
+   676                           ;main.c: 139: else
+   677                           ;main.c: 140: {
+   678                           ;main.c: 141: mainState = STATE_REACHED;
+   679  0160  3003               	movlw	3
+   680  0161                     L2:	
+   681  0161  00C9               	movwf	??_main
+   682  0162  0849               	movf	??_main,w
+   683  0163  00CC               	movwf	main@mainState
+   684                           
+   685                           ;main.c: 142: }
+   686                           ;main.c: 144: }
+   687                           ;main.c: 145: break;
+   688  0164  2966               	goto	l967
+   689  0165                     l1043:	
+   690                           ;main.c: 146: default:
+   691                           
+   692                           
+   693                           ;main.c: 147: {
+   694                           ;main.c: 148: mainState = STATE_STOP;
+   695  0165  01CC               	clrf	main@mainState
+   696  0166                     l967:	
+   697                           ;main.c: 41: while (1)
+   698                           
+   699                           ;main.c: 149: }
+   700                           ;main.c: 150: }
+   701                           
+   702                           
+   703                           ;main.c: 42: {
+   704                           ;main.c: 43: readCurrentState = mainState;
+   705  0166  1283               	bcf	3,5	;RP0=0, select bank0
+   706  0167  1303               	bcf	3,6	;RP1=0, select bank0
+   707  0168  084C               	movf	main@mainState,w
+   708  0169  00C9               	movwf	??_main
+   709  016A  0849               	movf	??_main,w
+   710  016B  00CF               	movwf	_readCurrentState
+   711  016C  084C               	movf	main@mainState,w
+   712                           
+   713                           ; Switch size 1, requested type "space"
+   714                           ; Number of cases is 4, Range of values is 0 to 3
+   715                           ; switch strategies available:
+   716                           ; Name         Instructions Cycles
+   717                           ; direct_byte           10     6 (fixed)
+   718                           ; simple_byte           13     7 (average)
+   719                           ; jumptable            260     6 (fixed)
+   720                           ;	Chosen strategy is direct_byte
+   721  016D  0084               	movwf	4
+   722  016E  3004               	movlw	4
+   723  016F  0204               	subwf	4,w
+   724  0170  1803               	skipnc
+   725  0171  2965               	goto	l1043
+   726  0172  3002               	movlw	high S1097
+   727  0173  008A               	movwf	10
+   728  0174  3047               	movlw	low S1097
+   729  0175  0704               	addwf	4,w
+   730  0176  0082               	movwf	2
+   731  0177  2966               	goto	l967
+   732  0178                     __end_of_main:	
+   733                           ;main.c: 151: }
+   734                           ;main.c: 153: return (0);
+   735                           ;	Return value of _main is never used
+   736                           
+   737                           
+   738                           	psect	swtext1
+   739  0247                     __pswtext1:	
+   740  0247                     S1097:	
+   741  0247  28DC               	ljmp	l41
+   742  0248  28FC               	ljmp	l987
+   743  0249  2938               	ljmp	l1023
+   744  024A  2951               	ljmp	l61
+   745                           
+   746                           	psect	text1
+   747  01ED                     __ptext1:	
+   748 ;; *************** function _checkLevelChange *****************
+   749 ;; Defined at:
+   750 ;;		line 178 in file "main.c"
+   751 ;; Parameters:    Size  Location     Type
+   752 ;;		None
+   753 ;; Auto vars:     Size  Location     Type
+   754 ;;  returnValue     1    1[BANK0 ] unsigned char 
+   755 ;; Return value:  Size  Location     Type
+   756 ;;                  1    wreg      unsigned char 
+   757 ;; Registers used:
+   758 ;;		wreg, status,2, status,0
+   759 ;; Tracked objects:
+   760 ;;		On entry : 0/0
+   761 ;;		On exit  : 0/0
+   762 ;;		Unchanged: 0/0
+   763 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   764 ;;      Params:         0       0       0       0
+   765 ;;      Locals:         0       1       0       0
+   766 ;;      Temps:          0       1       0       0
+   767 ;;      Totals:         0       2       0       0
+   768 ;;Total ram usage:        2 bytes
+   769 ;; Hardware stack levels used:    1
+   770 ;; Hardware stack levels required when called:    3
+   771 ;; This function calls:
+   772 ;;		Nothing
+   773 ;; This function is called by:
+   774 ;;		_main
+   775 ;; This function uses a non-reentrant model
+   776 ;;
+   777                           
+   778                           
+   779                           ;psect for function _checkLevelChange
+   780  01ED                     _checkLevelChange:	
    781                           
-   782                           ;ports.c: 58: PORTAbits.RA5 = leds & 0x01;
-   783  0155  0843               	movf	SetLeds@leds,w
-   784  0156  3901               	andlw	1
-   785  0157  00C1               	movwf	??_SetLeds
-   786  0158  0EC1               	swapf	??_SetLeds,f
-   787  0159  0DC1               	rlf	??_SetLeds,f
-   788  015A  0805               	movf	5,w	;volatile
-   789  015B  0641               	xorwf	??_SetLeds,w
-   790  015C  39DF               	andlw	-33
-   791  015D  0641               	xorwf	??_SetLeds,w
-   792  015E  0085               	movwf	5	;volatile
-   793                           
-   794                           ;ports.c: 59: PORTBbits.RB0 = (leds >> 1) & 0x01;
-   795  015F  0843               	movf	SetLeds@leds,w
-   796  0160  00C1               	movwf	??_SetLeds
-   797  0161  3001               	movlw	1
-   798  0162                     u205:	
-   799  0162  1003               	clrc
-   800  0163  0CC1               	rrf	??_SetLeds,f
-   801  0164  3EFF               	addlw	-1
-   802  0165  1D03               	skipz
-   803  0166  2962               	goto	u205
-   804  0167  3001               	movlw	1
-   805  0168  0541               	andwf	??_SetLeds,w
-   806  0169  00C2               	movwf	??_SetLeds+1
-   807  016A  0806               	movf	6,w	;volatile
-   808  016B  0642               	xorwf	??_SetLeds+1,w
-   809  016C  39FE               	andlw	-2
-   810  016D  0642               	xorwf	??_SetLeds+1,w
-   811  016E  0086               	movwf	6	;volatile
-   812                           
-   813                           ;ports.c: 60: PORTBbits.RB3 = (leds >> 2) & 0x01;
-   814  016F  0843               	movf	SetLeds@leds,w
-   815  0170  00C1               	movwf	??_SetLeds
-   816  0171  3002               	movlw	2
-   817  0172                     u215:	
-   818  0172  1003               	clrc
-   819  0173  0CC1               	rrf	??_SetLeds,f
-   820  0174  3EFF               	addlw	-1
-   821  0175  1D03               	skipz
-   822  0176  2972               	goto	u215
-   823  0177  0841               	movf	??_SetLeds,w
-   824  0178  3901               	andlw	1
-   825  0179  00C2               	movwf	??_SetLeds+1
-   826  017A  0DC2               	rlf	??_SetLeds+1,f
-   827  017B  0DC2               	rlf	??_SetLeds+1,f
-   828  017C  0DC2               	rlf	??_SetLeds+1,f
-   829  017D  0806               	movf	6,w	;volatile
-   830  017E  0642               	xorwf	??_SetLeds+1,w
-   831  017F  39F7               	andlw	-9
-   832  0180  0642               	xorwf	??_SetLeds+1,w
-   833  0181  0086               	movwf	6	;volatile
-   834  0182  0008               	return
-   835  0183                     __end_of_SetLeds:	
-   836                           
-   837                           	psect	text3
-   838  01DB                     __ptext3:	
-   839 ;; *************** function _InitTimer *****************
-   840 ;; Defined at:
-   841 ;;		line 8 in file "timer.c"
-   842 ;; Parameters:    Size  Location     Type
-   843 ;;		None
-   844 ;; Auto vars:     Size  Location     Type
-   845 ;;		None
-   846 ;; Return value:  Size  Location     Type
-   847 ;;                  1    wreg      void 
-   848 ;; Registers used:
-   849 ;;		wreg, status,2, status,0
-   850 ;; Tracked objects:
-   851 ;;		On entry : 0/0
-   852 ;;		On exit  : 0/0
-   853 ;;		Unchanged: 0/0
-   854 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
-   855 ;;      Params:         0       0       0       0
-   856 ;;      Locals:         0       0       0       0
-   857 ;;      Temps:          0       0       0       0
-   858 ;;      Totals:         0       0       0       0
-   859 ;;Total ram usage:        0 bytes
-   860 ;; Hardware stack levels used:    1
-   861 ;; Hardware stack levels required when called:    3
-   862 ;; This function calls:
-   863 ;;		Nothing
-   864 ;; This function is called by:
-   865 ;;		_main
-   866 ;; This function uses a non-reentrant model
-   867 ;;
-   868                           
-   869                           
-   870                           ;psect for function _InitTimer
-   871  01DB                     _InitTimer:	
-   872                           
-   873                           ;timer.c: 10: msPassed = 0;
-   874                           
-   875                           ;incstack = 0
-   876                           ; Regs used in _InitTimer: [wreg+status,2+status,0]
-   877  01DB  1283               	bcf	3,5	;RP0=0, select bank0
-   878  01DC  1303               	bcf	3,6	;RP1=0, select bank0
-   879  01DD  01B3               	clrf	_msPassed
-   880  01DE  01B4               	clrf	_msPassed+1
+   782                           ;main.c: 180: static unsigned char pastCounter;
+   783                           ;main.c: 181: unsigned char returnValue = 0;
+   784                           
+   785                           ;incstack = 0
+   786                           ; Regs used in _checkLevelChange: [wreg+status,2+status,0]
+   787  01ED  1283               	bcf	3,5	;RP0=0, select bank0
+   788  01EE  1303               	bcf	3,6	;RP1=0, select bank0
+   789  01EF  01C3               	clrf	checkLevelChange@returnValue
+   790                           
+   791                           ;main.c: 183: if ( 1 == pastCounter && 0 == inputs[COUNTER_POS])
+   792  01F0  0338               	decf	checkLevelChange@pastCounter,w
+   793  01F1  1903               	btfsc	3,2
+   794  01F2  082F               	movf	_inputs+5,w
+   795  01F3  1903               	btfsc	3,2
+   796  01F4  29FD               	goto	l939
+   797                           
+   798                           ;main.c: 187: else if ( 0 == pastCounter && 1 == inputs[COUNTER_POS])
+   799                           
+   800                           ;main.c: 184: {
+   801                           ;main.c: 186: }
+   802  01F5  0838               	movf	checkLevelChange@pastCounter,w
+   803  01F6  1D03               	btfss	3,2
+   804  01F7  29FD               	goto	l939
+   805  01F8  032F               	decf	_inputs+5,w
+   806  01F9  1D03               	btfss	3,2
+   807  01FA  29FD               	goto	l939
+   808                           
+   809                           ;main.c: 188: {
+   810                           ;main.c: 190: returnValue = 1;
+   811  01FB  01C3               	clrf	checkLevelChange@returnValue
+   812  01FC  0AC3               	incf	checkLevelChange@returnValue,f
+   813  01FD                     l939:	
+   814                           
+   815                           ;main.c: 191: }
+   816                           ;main.c: 193: pastCounter = inputs[COUNTER_POS];
+   817  01FD  082F               	movf	_inputs+5,w
+   818  01FE  00C2               	movwf	??_checkLevelChange
+   819  01FF  0842               	movf	??_checkLevelChange,w
+   820  0200  00B8               	movwf	checkLevelChange@pastCounter
+   821                           
+   822                           ;main.c: 195: return returnValue;
+   823  0201  0843               	movf	checkLevelChange@returnValue,w
+   824  0202  0008               	return
+   825  0203                     __end_of_checkLevelChange:	
+   826                           
+   827                           	psect	text2
+   828  0228                     __ptext2:	
+   829 ;; *************** function _TurnOnLeds *****************
+   830 ;; Defined at:
+   831 ;;		line 47 in file "ports.c"
+   832 ;; Parameters:    Size  Location     Type
+   833 ;;		None
+   834 ;; Auto vars:     Size  Location     Type
+   835 ;;		None
+   836 ;; Return value:  Size  Location     Type
+   837 ;;                  1    wreg      void 
+   838 ;; Registers used:
+   839 ;;		wreg, status,2, status,0, pclath, cstack
+   840 ;; Tracked objects:
+   841 ;;		On entry : 0/0
+   842 ;;		On exit  : 0/0
+   843 ;;		Unchanged: 0/0
+   844 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   845 ;;      Params:         0       0       0       0
+   846 ;;      Locals:         0       0       0       0
+   847 ;;      Temps:          0       0       0       0
+   848 ;;      Totals:         0       0       0       0
+   849 ;;Total ram usage:        0 bytes
+   850 ;; Hardware stack levels used:    1
+   851 ;; Hardware stack levels required when called:    4
+   852 ;; This function calls:
+   853 ;;		_SetLeds
+   854 ;; This function is called by:
+   855 ;;		_main
+   856 ;; This function uses a non-reentrant model
+   857 ;;
+   858                           
+   859                           
+   860                           ;psect for function _TurnOnLeds
+   861  0228                     _TurnOnLeds:	
+   862                           
+   863                           ;ports.c: 49: buttonMode = 0;
+   864                           
+   865                           ;incstack = 0
+   866                           ; Regs used in _TurnOnLeds: [wreg+status,2+status,0+pclath+cstack]
+   867  0228  1283               	bcf	3,5	;RP0=0, select bank0
+   868  0229  1303               	bcf	3,6	;RP1=0, select bank0
+   869  022A  01CE               	clrf	_buttonMode
+   870                           
+   871                           ;ports.c: 51: TRISAbits.TRISA5 = 0;
+   872  022B  1683               	bsf	3,5	;RP0=1, select bank1
+   873  022C  1303               	bcf	3,6	;RP1=0, select bank1
+   874  022D  1285               	bcf	5,5	;volatile
+   875                           
+   876                           ;ports.c: 52: TRISBbits.TRISB0 = 0;
+   877  022E  1006               	bcf	6,0	;volatile
+   878                           
+   879                           ;ports.c: 53: TRISBbits.TRISB3 = 0;
+   880  022F  1186               	bcf	6,3	;volatile
    881                           
-   882                           ;timer.c: 13: T1CON = 0;
-   883  01DF  0190               	clrf	16	;volatile
-   884                           
-   885                           ;timer.c: 16: T1CONbits.T1CKPS = 0b11;
-   886  01E0  3030               	movlw	48
-   887  01E1  0490               	iorwf	16,f	;volatile
-   888                           
-   889                           ;timer.c: 17: TMR1 = 0xFFFF - 625;
-   890  01E2  30FD               	movlw	253
-   891  01E3  008F               	movwf	15	;volatile
-   892  01E4  308E               	movlw	142
-   893  01E5  008E               	movwf	14	;volatile
-   894                           
-   895                           ;timer.c: 20: PIR1bits.TMR1IF = 0;
-   896  01E6  100C               	bcf	12,0	;volatile
-   897                           
-   898                           ;timer.c: 23: T1CONbits.TMR1ON = 1;
-   899  01E7  1410               	bsf	16,0	;volatile
-   900                           
-   901                           ;timer.c: 26: PIE1bits.TMR1IE = 1;
-   902  01E8  1683               	bsf	3,5	;RP0=1, select bank1
-   903  01E9  1303               	bcf	3,6	;RP1=0, select bank1
-   904  01EA  140C               	bsf	12,0	;volatile
-   905  01EB  0008               	return
-   906  01EC                     __end_of_InitTimer:	
-   907                           
-   908                           	psect	text4
-   909  01AE                     __ptext4:	
-   910 ;; *************** function _InitPorts *****************
-   911 ;; Defined at:
-   912 ;;		line 13 in file "ports.c"
-   913 ;; Parameters:    Size  Location     Type
-   914 ;;		None
-   915 ;; Auto vars:     Size  Location     Type
-   916 ;;		None
-   917 ;; Return value:  Size  Location     Type
-   918 ;;                  1    wreg      void 
-   919 ;; Registers used:
-   920 ;;		wreg, status,2, status,0, pclath, cstack
-   921 ;; Tracked objects:
-   922 ;;		On entry : 0/0
-   923 ;;		On exit  : 0/0
-   924 ;;		Unchanged: 0/0
-   925 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
-   926 ;;      Params:         0       0       0       0
-   927 ;;      Locals:         0       0       0       0
-   928 ;;      Temps:          0       0       0       0
-   929 ;;      Totals:         0       0       0       0
-   930 ;;Total ram usage:        0 bytes
-   931 ;; Hardware stack levels used:    1
-   932 ;; Hardware stack levels required when called:    4
-   933 ;; This function calls:
-   934 ;;		_TurnOnButtons
-   935 ;; This function is called by:
-   936 ;;		_main
-   937 ;; This function uses a non-reentrant model
-   938 ;;
-   939                           
-   940                           
-   941                           ;psect for function _InitPorts
-   942  01AE                     _InitPorts:	
-   943                           
-   944                           ;ports.c: 16: TRISA = 0xFF;
+   882                           ;ports.c: 55: SetLeds(buttonPressed);
+   883  0230  1283               	bcf	3,5	;RP0=0, select bank0
+   884  0231  1303               	bcf	3,6	;RP1=0, select bank0
+   885  0232  0837               	movf	_buttonPressed,w
+   886  0233  2178               	fcall	_SetLeds
+   887  0234  0008               	return
+   888  0235                     __end_of_TurnOnLeds:	
+   889                           
+   890                           	psect	text3
+   891  0178                     __ptext3:	
+   892 ;; *************** function _SetLeds *****************
+   893 ;; Defined at:
+   894 ;;		line 58 in file "ports.c"
+   895 ;; Parameters:    Size  Location     Type
+   896 ;;  leds            1    wreg     unsigned char 
+   897 ;; Auto vars:     Size  Location     Type
+   898 ;;  leds            1    2[BANK0 ] unsigned char 
+   899 ;; Return value:  Size  Location     Type
+   900 ;;                  1    wreg      void 
+   901 ;; Registers used:
+   902 ;;		wreg, status,2, status,0
+   903 ;; Tracked objects:
+   904 ;;		On entry : 0/0
+   905 ;;		On exit  : 0/0
+   906 ;;		Unchanged: 0/0
+   907 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   908 ;;      Params:         0       0       0       0
+   909 ;;      Locals:         0       1       0       0
+   910 ;;      Temps:          0       2       0       0
+   911 ;;      Totals:         0       3       0       0
+   912 ;;Total ram usage:        3 bytes
+   913 ;; Hardware stack levels used:    1
+   914 ;; Hardware stack levels required when called:    3
+   915 ;; This function calls:
+   916 ;;		Nothing
+   917 ;; This function is called by:
+   918 ;;		_main
+   919 ;;		_TurnOnLeds
+   920 ;; This function uses a non-reentrant model
+   921 ;;
+   922                           
+   923                           
+   924                           ;psect for function _SetLeds
+   925  0178                     _SetLeds:	
+   926                           
+   927                           ;incstack = 0
+   928                           ; Regs used in _SetLeds: [wreg+status,2+status,0]
+   929                           ;SetLeds@leds stored from wreg
+   930  0178  1283               	bcf	3,5	;RP0=0, select bank0
+   931  0179  1303               	bcf	3,6	;RP1=0, select bank0
+   932  017A  00C4               	movwf	SetLeds@leds
+   933                           
+   934                           ;ports.c: 60: PORTAbits.RA5 = leds & 0x01;
+   935  017B  0844               	movf	SetLeds@leds,w
+   936  017C  3901               	andlw	1
+   937  017D  00C2               	movwf	??_SetLeds
+   938  017E  0EC2               	swapf	??_SetLeds,f
+   939  017F  0DC2               	rlf	??_SetLeds,f
+   940  0180  0805               	movf	5,w	;volatile
+   941  0181  0642               	xorwf	??_SetLeds,w
+   942  0182  39DF               	andlw	-33
+   943  0183  0642               	xorwf	??_SetLeds,w
+   944  0184  0085               	movwf	5	;volatile
    945                           
-   946                           ;incstack = 0
-   947                           ; Regs used in _InitPorts: [wreg+status,2+status,0+pclath+cstack]
-   948  01AE  30FF               	movlw	255
-   949  01AF  1683               	bsf	3,5	;RP0=1, select bank1
-   950  01B0  1303               	bcf	3,6	;RP1=0, select bank1
-   951  01B1  0085               	movwf	5	;volatile
-   952                           
-   953                           ;ports.c: 17: TRISB = 0xFF;
-   954  01B2  30FF               	movlw	255
-   955  01B3  0086               	movwf	6	;volatile
-   956                           
-   957                           ;ports.c: 19: TRISAbits.TRISA2 = 0;
-   958  01B4  1105               	bcf	5,2	;volatile
-   959                           
-   960                           ;ports.c: 20: TRISAbits.TRISA3 = 0;
-   961  01B5  1185               	bcf	5,3	;volatile
-   962                           
-   963                           ;ports.c: 21: TRISAbits.TRISA4 = 0;
-   964  01B6  1205               	bcf	5,4	;volatile
-   965                           
-   966                           ;ports.c: 23: TurnOnButtons();
-   967  01B7  21EC               	fcall	_TurnOnButtons
-   968                           
-   969                           ;ports.c: 25: TRISBbits.TRISB6 = 1;
-   970  01B8  1683               	bsf	3,5	;RP0=1, select bank1
-   971  01B9  1303               	bcf	3,6	;RP1=0, select bank1
-   972  01BA  1706               	bsf	6,6	;volatile
-   973                           
-   974                           ;ports.c: 26: TRISBbits.TRISB7 = 1;
-   975  01BB  1786               	bsf	6,7	;volatile
-   976                           
-   977                           ;ports.c: 27: TRISAbits.TRISA6 = 1;
-   978  01BC  1705               	bsf	5,6	;volatile
-   979                           
-   980                           ;ports.c: 29: PORTBbits.RB4 = 0;
-   981  01BD  1283               	bcf	3,5	;RP0=0, select bank0
-   982  01BE  1303               	bcf	3,6	;RP1=0, select bank0
-   983  01BF  1206               	bcf	6,4	;volatile
-   984                           
-   985                           ;ports.c: 30: PORTBbits.RB5 = 0;
-   986  01C0  1286               	bcf	6,5	;volatile
-   987                           
-   988                           ;ports.c: 32: TRISAbits.TRISA7 = 1;
-   989  01C1  1683               	bsf	3,5	;RP0=1, select bank1
-   990  01C2  1303               	bcf	3,6	;RP1=0, select bank1
-   991  01C3  1785               	bsf	5,7	;volatile
-   992                           
-   993                           ;ports.c: 33: TRISAbits.TRISA0 = 1;
-   994  01C4  1405               	bsf	5,0	;volatile
-   995                           
-   996                           ;ports.c: 35: TRISAbits.TRISA1 = 1;
-   997  01C5  1485               	bsf	5,1	;volatile
-   998  01C6  0008               	return
-   999  01C7                     __end_of_InitPorts:	
-  1000                           
-  1001                           	psect	text5
-  1002  01EC                     __ptext5:	
-  1003 ;; *************** function _TurnOnButtons *****************
-  1004 ;; Defined at:
-  1005 ;;		line 38 in file "ports.c"
-  1006 ;; Parameters:    Size  Location     Type
-  1007 ;;		None
-  1008 ;; Auto vars:     Size  Location     Type
-  1009 ;;		None
-  1010 ;; Return value:  Size  Location     Type
-  1011 ;;                  1    wreg      void 
-  1012 ;; Registers used:
-  1013 ;;		None
-  1014 ;; Tracked objects:
-  1015 ;;		On entry : 0/0
-  1016 ;;		On exit  : 0/0
-  1017 ;;		Unchanged: 0/0
-  1018 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
-  1019 ;;      Params:         0       0       0       0
-  1020 ;;      Locals:         0       0       0       0
-  1021 ;;      Temps:          0       0       0       0
-  1022 ;;      Totals:         0       0       0       0
-  1023 ;;Total ram usage:        0 bytes
-  1024 ;; Hardware stack levels used:    1
-  1025 ;; Hardware stack levels required when called:    3
-  1026 ;; This function calls:
-  1027 ;;		Nothing
-  1028 ;; This function is called by:
-  1029 ;;		_main
-  1030 ;;		_InitPorts
-  1031 ;; This function uses a non-reentrant model
-  1032 ;;
+   946                           ;ports.c: 61: PORTBbits.RB0 = (leds >> 1) & 0x01;
+   947  0185  0844               	movf	SetLeds@leds,w
+   948  0186  00C2               	movwf	??_SetLeds
+   949  0187  3001               	movlw	1
+   950  0188                     u285:	
+   951  0188  1003               	clrc
+   952  0189  0CC2               	rrf	??_SetLeds,f
+   953  018A  3EFF               	addlw	-1
+   954  018B  1D03               	skipz
+   955  018C  2988               	goto	u285
+   956  018D  3001               	movlw	1
+   957  018E  0542               	andwf	??_SetLeds,w
+   958  018F  00C3               	movwf	??_SetLeds+1
+   959  0190  0806               	movf	6,w	;volatile
+   960  0191  0643               	xorwf	??_SetLeds+1,w
+   961  0192  39FE               	andlw	-2
+   962  0193  0643               	xorwf	??_SetLeds+1,w
+   963  0194  0086               	movwf	6	;volatile
+   964                           
+   965                           ;ports.c: 62: PORTBbits.RB3 = (leds >> 2) & 0x01;
+   966  0195  0844               	movf	SetLeds@leds,w
+   967  0196  00C2               	movwf	??_SetLeds
+   968  0197  3002               	movlw	2
+   969  0198                     u295:	
+   970  0198  1003               	clrc
+   971  0199  0CC2               	rrf	??_SetLeds,f
+   972  019A  3EFF               	addlw	-1
+   973  019B  1D03               	skipz
+   974  019C  2998               	goto	u295
+   975  019D  0842               	movf	??_SetLeds,w
+   976  019E  3901               	andlw	1
+   977  019F  00C3               	movwf	??_SetLeds+1
+   978  01A0  0DC3               	rlf	??_SetLeds+1,f
+   979  01A1  0DC3               	rlf	??_SetLeds+1,f
+   980  01A2  0DC3               	rlf	??_SetLeds+1,f
+   981  01A3  0806               	movf	6,w	;volatile
+   982  01A4  0643               	xorwf	??_SetLeds+1,w
+   983  01A5  39F7               	andlw	-9
+   984  01A6  0643               	xorwf	??_SetLeds+1,w
+   985  01A7  0086               	movwf	6	;volatile
+   986  01A8  0008               	return
+   987  01A9                     __end_of_SetLeds:	
+   988                           
+   989                           	psect	text4
+   990  0217                     __ptext4:	
+   991 ;; *************** function _InitTimer *****************
+   992 ;; Defined at:
+   993 ;;		line 8 in file "timer.c"
+   994 ;; Parameters:    Size  Location     Type
+   995 ;;		None
+   996 ;; Auto vars:     Size  Location     Type
+   997 ;;		None
+   998 ;; Return value:  Size  Location     Type
+   999 ;;                  1    wreg      void 
+  1000 ;; Registers used:
+  1001 ;;		wreg, status,2, status,0
+  1002 ;; Tracked objects:
+  1003 ;;		On entry : 0/0
+  1004 ;;		On exit  : 0/0
+  1005 ;;		Unchanged: 0/0
+  1006 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1007 ;;      Params:         0       0       0       0
+  1008 ;;      Locals:         0       0       0       0
+  1009 ;;      Temps:          0       0       0       0
+  1010 ;;      Totals:         0       0       0       0
+  1011 ;;Total ram usage:        0 bytes
+  1012 ;; Hardware stack levels used:    1
+  1013 ;; Hardware stack levels required when called:    3
+  1014 ;; This function calls:
+  1015 ;;		Nothing
+  1016 ;; This function is called by:
+  1017 ;;		_main
+  1018 ;; This function uses a non-reentrant model
+  1019 ;;
+  1020                           
+  1021                           
+  1022                           ;psect for function _InitTimer
+  1023  0217                     _InitTimer:	
+  1024                           
+  1025                           ;timer.c: 10: msPassed = 0;
+  1026                           
+  1027                           ;incstack = 0
+  1028                           ; Regs used in _InitTimer: [wreg+status,2+status,0]
+  1029  0217  1283               	bcf	3,5	;RP0=0, select bank0
+  1030  0218  1303               	bcf	3,6	;RP1=0, select bank0
+  1031  0219  01B3               	clrf	_msPassed
+  1032  021A  01B4               	clrf	_msPassed+1
   1033                           
-  1034                           
-  1035                           ;psect for function _TurnOnButtons
-  1036  01EC                     _TurnOnButtons:	
-  1037                           
-  1038                           ;ports.c: 40: buttonMode = 1;
-  1039                           
-  1040                           ;incstack = 0
-  1041                           ; Regs used in _TurnOnButtons: []
-  1042  01EC  1283               	bcf	3,5	;RP0=0, select bank0
-  1043  01ED  1303               	bcf	3,6	;RP1=0, select bank0
-  1044  01EE  01CD               	clrf	_buttonMode
-  1045  01EF  0ACD               	incf	_buttonMode,f
+  1034                           ;timer.c: 13: T1CON = 0;
+  1035  021B  0190               	clrf	16	;volatile
+  1036                           
+  1037                           ;timer.c: 16: T1CONbits.T1CKPS = 0b11;
+  1038  021C  3030               	movlw	48
+  1039  021D  0490               	iorwf	16,f	;volatile
+  1040                           
+  1041                           ;timer.c: 17: TMR1 = 0xFFFF - 625;
+  1042  021E  30FD               	movlw	253
+  1043  021F  008F               	movwf	15	;volatile
+  1044  0220  308E               	movlw	142
+  1045  0221  008E               	movwf	14	;volatile
   1046                           
-  1047                           ;ports.c: 42: TRISAbits.TRISA5 = 1;
-  1048  01F0  1683               	bsf	3,5	;RP0=1, select bank1
-  1049  01F1  1303               	bcf	3,6	;RP1=0, select bank1
-  1050  01F2  1685               	bsf	5,5	;volatile
-  1051                           
-  1052                           ;ports.c: 43: TRISBbits.TRISB0 = 1;
-  1053  01F3  1406               	bsf	6,0	;volatile
-  1054                           
-  1055                           ;ports.c: 44: TRISBbits.TRISB3 = 1;
-  1056  01F4  1586               	bsf	6,3	;volatile
-  1057  01F5  0008               	return
-  1058  01F6                     __end_of_TurnOnButtons:	
+  1047                           ;timer.c: 20: PIR1bits.TMR1IF = 0;
+  1048  0222  100C               	bcf	12,0	;volatile
+  1049                           
+  1050                           ;timer.c: 23: T1CONbits.TMR1ON = 1;
+  1051  0223  1410               	bsf	16,0	;volatile
+  1052                           
+  1053                           ;timer.c: 26: PIE1bits.TMR1IE = 1;
+  1054  0224  1683               	bsf	3,5	;RP0=1, select bank1
+  1055  0225  1303               	bcf	3,6	;RP1=0, select bank1
+  1056  0226  140C               	bsf	12,0	;volatile
+  1057  0227  0008               	return
+  1058  0228                     __end_of_InitTimer:	
   1059                           
-  1060                           	psect	text6
-  1061  0183                     __ptext6:	
-  1062 ;; *************** function _MainInterrupt *****************
+  1060                           	psect	text5
+  1061  01D4                     __ptext5:	
+  1062 ;; *************** function _InitPorts *****************
   1063 ;; Defined at:
-  1064 ;;		line 175 in file "main.c"
+  1064 ;;		line 13 in file "ports.c"
   1065 ;; Parameters:    Size  Location     Type
   1066 ;;		None
   1067 ;; Auto vars:     Size  Location     Type
@@ -1075,7 +1075,7 @@ Microchip Technology Omniscient Code Generator v1.37 (Free mode) build 201603110
   1069 ;; Return value:  Size  Location     Type
   1070 ;;                  1    wreg      void 
   1071 ;; Registers used:
-  1072 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1072 ;;		wreg, status,2, status,0, pclath, cstack
   1073 ;; Tracked objects:
   1074 ;;		On entry : 0/0
   1075 ;;		On exit  : 0/0
@@ -1083,491 +1083,643 @@ Microchip Technology Omniscient Code Generator v1.37 (Free mode) build 201603110
   1077 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
   1078 ;;      Params:         0       0       0       0
   1079 ;;      Locals:         0       0       0       0
-  1080 ;;      Temps:          6       0       0       0
-  1081 ;;      Totals:         6       0       0       0
-  1082 ;;Total ram usage:        6 bytes
+  1080 ;;      Temps:          0       0       0       0
+  1081 ;;      Totals:         0       0       0       0
+  1082 ;;Total ram usage:        0 bytes
   1083 ;; Hardware stack levels used:    1
-  1084 ;; Hardware stack levels required when called:    2
+  1084 ;; Hardware stack levels required when called:    4
   1085 ;; This function calls:
-  1086 ;;		_Debounce
+  1086 ;;		_TurnOnButtons
   1087 ;; This function is called by:
-  1088 ;;		Interrupt level 1
+  1088 ;;		_main
   1089 ;; This function uses a non-reentrant model
   1090 ;;
   1091                           
   1092                           
-  1093                           ;psect for function _MainInterrupt
-  1094  0183                     _MainInterrupt:	
+  1093                           ;psect for function _InitPorts
+  1094  01D4                     _InitPorts:	
   1095                           
-  1096                           ;main.c: 178: if ( 1 == PIR1bits.TMR1IF )
-  1097  0183  1C0C               	btfss	12,0	;volatile
-  1098  0184  29A0               	goto	i1l972
-  1099                           
-  1100                           ;main.c: 179: {
-  1101                           ;main.c: 180: msPassed++;
-  1102  0185  3001               	movlw	1
-  1103  0186  07B3               	addwf	_msPassed,f
-  1104  0187  1803               	skipnc
-  1105  0188  0AB4               	incf	_msPassed+1,f
-  1106  0189  3000               	movlw	0
-  1107  018A  07B4               	addwf	_msPassed+1,f
+  1096                           ;ports.c: 16: TRISA = 0xFF;
+  1097                           
+  1098                           ;incstack = 0
+  1099                           ; Regs used in _InitPorts: [wreg+status,2+status,0+pclath+cstack]
+  1100  01D4  30FF               	movlw	255
+  1101  01D5  1683               	bsf	3,5	;RP0=1, select bank1
+  1102  01D6  1303               	bcf	3,6	;RP1=0, select bank1
+  1103  01D7  0085               	movwf	5	;volatile
+  1104                           
+  1105                           ;ports.c: 17: TRISB = 0xFF;
+  1106  01D8  30FF               	movlw	255
+  1107  01D9  0086               	movwf	6	;volatile
   1108                           
-  1109                           ;main.c: 182: if ( REACHED == readCurrentState )
-  1110  018B  3005               	movlw	5
-  1111  018C  064E               	xorwf	_readCurrentState,w
-  1112  018D  1D03               	btfss	3,2
-  1113  018E  2995               	goto	i1l968
+  1109                           ;ports.c: 19: TRISAbits.TRISA2 = 0;
+  1110  01DA  1105               	bcf	5,2	;volatile
+  1111                           
+  1112                           ;ports.c: 20: TRISAbits.TRISA3 = 0;
+  1113  01DB  1185               	bcf	5,3	;volatile
   1114                           
-  1115                           ;main.c: 183: {
-  1116                           ;main.c: 184: waiting++;
-  1117  018F  3001               	movlw	1
-  1118  0190  07B5               	addwf	_waiting,f
-  1119  0191  1803               	skipnc
-  1120  0192  0AB6               	incf	_waiting+1,f
-  1121  0193  3000               	movlw	0
-  1122  0194  07B6               	addwf	_waiting+1,f
-  1123  0195                     i1l968:	
-  1124                           
-  1125                           ;main.c: 185: }
-  1126                           ;main.c: 187: if (msPassed % 4 == 0)
-  1127  0195  3003               	movlw	3
-  1128  0196  0533               	andwf	_msPassed,w
-  1129  0197  00F8               	movwf	??_MainInterrupt
-  1130  0198  3000               	movlw	0
-  1131  0199  0534               	andwf	_msPassed+1,w
-  1132  019A  00F9               	movwf	??_MainInterrupt+1
-  1133  019B  0878               	movf	??_MainInterrupt,w
-  1134  019C  0479               	iorwf	??_MainInterrupt+1,w
-  1135  019D  1D03               	btfss	3,2
-  1136  019E  29A0               	goto	i1l972
-  1137                           
-  1138                           ;main.c: 188: {
-  1139                           ;main.c: 189: Debounce();
-  1140  019F  2018               	fcall	_Debounce
-  1141  01A0                     i1l972:	
-  1142                           
-  1143                           ;main.c: 190: }
-  1144                           ;main.c: 191: }
-  1145                           ;main.c: 194: PIR1 = 0;
-  1146  01A0  1283               	bcf	3,5	;RP0=0, select bank0
-  1147  01A1  1303               	bcf	3,6	;RP1=0, select bank0
-  1148  01A2  018C               	clrf	12	;volatile
-  1149  01A3  087D               	movf	??_MainInterrupt+5,w
-  1150  01A4  00FF               	movwf	127
-  1151  01A5  087C               	movf	??_MainInterrupt+4,w
-  1152  01A6  008A               	movwf	10
-  1153  01A7  087B               	movf	??_MainInterrupt+3,w
-  1154  01A8  0084               	movwf	4
-  1155  01A9  0E7A               	swapf	(??_MainInterrupt+2)^(0+-128),w
-  1156  01AA  0083               	movwf	3
-  1157  01AB  0EFE               	swapf	126,f
-  1158  01AC  0E7E               	swapf	126,w
-  1159  01AD  0009               	retfie
-  1160  01AE                     __end_of_MainInterrupt:	
-  1161                           
-  1162                           	psect	intentry
-  1163  0004                     __pintentry:	
-  1164                           ;incstack = 0
-  1165                           ; Regs used in _MainInterrupt: [wreg-fsr0h+status,2+status,0+pclath+cstack]
-  1166                           
-  1167  0004                     interrupt_function:	
-  1168  007E                     saved_w	set	btemp
-  1169  0004  00FE               	movwf	btemp
-  1170  0005  0E03               	swapf	3,w
-  1171  0006  00FA               	movwf	??_MainInterrupt+2
-  1172  0007  0804               	movf	4,w
-  1173  0008  00FB               	movwf	??_MainInterrupt+3
-  1174  0009  080A               	movf	10,w
-  1175  000A  00FC               	movwf	??_MainInterrupt+4
-  1176  000B  1283               	bcf	3,5	;RP0=0, select bank0
-  1177  000C  1303               	bcf	3,6	;RP1=0, select bank0
-  1178  000D  087F               	movf	btemp+1,w
-  1179  000E  00FD               	movwf	??_MainInterrupt+5
-  1180  000F  2983               	ljmp	_MainInterrupt
-  1181                           
-  1182                           	psect	text7
-  1183  0018                     __ptext7:	
-  1184 ;; *************** function _Debounce *****************
-  1185 ;; Defined at:
-  1186 ;;		line 153 in file "main.c"
-  1187 ;; Parameters:    Size  Location     Type
-  1188 ;;		None
-  1189 ;; Auto vars:     Size  Location     Type
-  1190 ;;		None
-  1191 ;; Return value:  Size  Location     Type
-  1192 ;;                  1    wreg      void 
-  1193 ;; Registers used:
-  1194 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
-  1195 ;; Tracked objects:
-  1196 ;;		On entry : 0/0
-  1197 ;;		On exit  : 0/0
-  1198 ;;		Unchanged: 0/0
-  1199 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
-  1200 ;;      Params:         0       0       0       0
-  1201 ;;      Locals:         0       0       0       0
-  1202 ;;      Temps:          4       0       0       0
-  1203 ;;      Totals:         4       0       0       0
-  1204 ;;Total ram usage:        4 bytes
-  1205 ;; Hardware stack levels used:    1
-  1206 ;; Hardware stack levels required when called:    1
-  1207 ;; This function calls:
-  1208 ;;		_DebounceInput
-  1209 ;; This function is called by:
-  1210 ;;		_MainInterrupt
-  1211 ;; This function uses a non-reentrant model
-  1212 ;;
-  1213                           
-  1214                           
-  1215                           ;psect for function _Debounce
-  1216  0018                     _Debounce:	
-  1217                           
-  1218                           ;main.c: 155: inputs[SAFETY_1_POS] = DebounceInput(PORTBbits.RB6,tempInput + SAFETY_1_PO
-      +                          S, inputs[SAFETY_1_POS]);
-  1219                           
-  1220                           ;incstack = 0
-  1221                           ; Regs used in _Debounce: [wreg-fsr0h+status,2+status,0+pclath+cstack]
-  1222  0018  3038               	movlw	(low (_tempInput| 0))& (0+255)
-  1223  0019  00F4               	movwf	??_Debounce
-  1224  001A  0874               	movf	??_Debounce,w
-  1225  001B  00F0               	movwf	DebounceInput@tempState
-  1226  001C  1283               	bcf	3,5	;RP0=0, select bank0
-  1227  001D  1303               	bcf	3,6	;RP1=0, select bank0
-  1228  001E  082A               	movf	_inputs,w
-  1229  001F  00F5               	movwf	??_Debounce+1
-  1230  0020  0875               	movf	??_Debounce+1,w
-  1231  0021  00F1               	movwf	DebounceInput@currentState
-  1232  0022  0E06               	swapf	6,w	;volatile
-  1233  0023  00F6               	movwf	??_Debounce+2
-  1234  0024  0CF6               	rrf	??_Debounce+2,f
-  1235  0025  0C76               	rrf	??_Debounce+2,w
-  1236  0026  3901               	andlw	1
-  1237  0027  21C7               	fcall	_DebounceInput
-  1238  0028  00F7               	movwf	??_Debounce+3
-  1239  0029  0877               	movf	??_Debounce+3,w
-  1240  002A  1283               	bcf	3,5	;RP0=0, select bank0
-  1241  002B  1303               	bcf	3,6	;RP1=0, select bank0
-  1242  002C  00AA               	movwf	_inputs
+  1115                           ;ports.c: 21: TRISAbits.TRISA4 = 0;
+  1116  01DC  1205               	bcf	5,4	;volatile
+  1117                           
+  1118                           ;ports.c: 23: TurnOnButtons();
+  1119  01DD  2235               	fcall	_TurnOnButtons
+  1120                           
+  1121                           ;ports.c: 25: TRISBbits.TRISB6 = 1;
+  1122  01DE  1683               	bsf	3,5	;RP0=1, select bank1
+  1123  01DF  1303               	bcf	3,6	;RP1=0, select bank1
+  1124  01E0  1706               	bsf	6,6	;volatile
+  1125                           
+  1126                           ;ports.c: 26: TRISBbits.TRISB7 = 1;
+  1127  01E1  1786               	bsf	6,7	;volatile
+  1128                           
+  1129                           ;ports.c: 27: TRISAbits.TRISA6 = 1;
+  1130  01E2  1705               	bsf	5,6	;volatile
+  1131                           
+  1132                           ;ports.c: 29: PORTBbits.RB4 = 0;
+  1133  01E3  1283               	bcf	3,5	;RP0=0, select bank0
+  1134  01E4  1303               	bcf	3,6	;RP1=0, select bank0
+  1135  01E5  1206               	bcf	6,4	;volatile
+  1136                           
+  1137                           ;ports.c: 30: PORTBbits.RB5 = 0;
+  1138  01E6  1286               	bcf	6,5	;volatile
+  1139                           
+  1140                           ;ports.c: 32: TRISAbits.TRISA7 = 1;
+  1141  01E7  1683               	bsf	3,5	;RP0=1, select bank1
+  1142  01E8  1303               	bcf	3,6	;RP1=0, select bank1
+  1143  01E9  1785               	bsf	5,7	;volatile
+  1144                           
+  1145                           ;ports.c: 33: TRISAbits.TRISA0 = 1;
+  1146  01EA  1405               	bsf	5,0	;volatile
+  1147                           
+  1148                           ;ports.c: 35: TRISAbits.TRISA1 = 1;
+  1149  01EB  1485               	bsf	5,1	;volatile
+  1150  01EC  0008               	return
+  1151  01ED                     __end_of_InitPorts:	
+  1152                           
+  1153                           	psect	text6
+  1154  0235                     __ptext6:	
+  1155 ;; *************** function _TurnOnButtons *****************
+  1156 ;; Defined at:
+  1157 ;;		line 38 in file "ports.c"
+  1158 ;; Parameters:    Size  Location     Type
+  1159 ;;		None
+  1160 ;; Auto vars:     Size  Location     Type
+  1161 ;;		None
+  1162 ;; Return value:  Size  Location     Type
+  1163 ;;                  1    wreg      void 
+  1164 ;; Registers used:
+  1165 ;;		None
+  1166 ;; Tracked objects:
+  1167 ;;		On entry : 0/0
+  1168 ;;		On exit  : 0/0
+  1169 ;;		Unchanged: 0/0
+  1170 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1171 ;;      Params:         0       0       0       0
+  1172 ;;      Locals:         0       0       0       0
+  1173 ;;      Temps:          0       0       0       0
+  1174 ;;      Totals:         0       0       0       0
+  1175 ;;Total ram usage:        0 bytes
+  1176 ;; Hardware stack levels used:    1
+  1177 ;; Hardware stack levels required when called:    3
+  1178 ;; This function calls:
+  1179 ;;		Nothing
+  1180 ;; This function is called by:
+  1181 ;;		_main
+  1182 ;;		_InitPorts
+  1183 ;; This function uses a non-reentrant model
+  1184 ;;
+  1185                           
+  1186                           
+  1187                           ;psect for function _TurnOnButtons
+  1188  0235                     _TurnOnButtons:	
+  1189                           
+  1190                           ;ports.c: 40: buttonMode = 1;
+  1191                           
+  1192                           ;incstack = 0
+  1193                           ; Regs used in _TurnOnButtons: []
+  1194  0235  1283               	bcf	3,5	;RP0=0, select bank0
+  1195  0236  1303               	bcf	3,6	;RP1=0, select bank0
+  1196  0237  01CE               	clrf	_buttonMode
+  1197  0238  0ACE               	incf	_buttonMode,f
+  1198                           
+  1199                           ;ports.c: 42: TRISAbits.TRISA5 = 1;
+  1200  0239  1683               	bsf	3,5	;RP0=1, select bank1
+  1201  023A  1303               	bcf	3,6	;RP1=0, select bank1
+  1202  023B  1685               	bsf	5,5	;volatile
+  1203                           
+  1204                           ;ports.c: 43: TRISBbits.TRISB0 = 1;
+  1205  023C  1406               	bsf	6,0	;volatile
+  1206                           
+  1207                           ;ports.c: 44: TRISBbits.TRISB3 = 1;
+  1208  023D  1586               	bsf	6,3	;volatile
+  1209  023E  0008               	return
+  1210  023F                     __end_of_TurnOnButtons:	
+  1211                           
+  1212                           	psect	text7
+  1213  01A9                     __ptext7:	
+  1214 ;; *************** function _MainInterrupt *****************
+  1215 ;; Defined at:
+  1216 ;;		line 198 in file "main.c"
+  1217 ;; Parameters:    Size  Location     Type
+  1218 ;;		None
+  1219 ;; Auto vars:     Size  Location     Type
+  1220 ;;		None
+  1221 ;; Return value:  Size  Location     Type
+  1222 ;;                  1    wreg      void 
+  1223 ;; Registers used:
+  1224 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1225 ;; Tracked objects:
+  1226 ;;		On entry : 0/0
+  1227 ;;		On exit  : 0/0
+  1228 ;;		Unchanged: 0/0
+  1229 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1230 ;;      Params:         0       0       0       0
+  1231 ;;      Locals:         0       0       0       0
+  1232 ;;      Temps:          6       0       0       0
+  1233 ;;      Totals:         6       0       0       0
+  1234 ;;Total ram usage:        6 bytes
+  1235 ;; Hardware stack levels used:    1
+  1236 ;; Hardware stack levels required when called:    2
+  1237 ;; This function calls:
+  1238 ;;		_Debounce
+  1239 ;; This function is called by:
+  1240 ;;		Interrupt level 1
+  1241 ;; This function uses a non-reentrant model
+  1242 ;;
   1243                           
-  1244                           ;main.c: 156: inputs[SAFETY_2_POS] = DebounceInput(PORTBbits.RB7,tempInput + SAFETY_2_PO
+  1244                           
+  1245                           ;psect for function _MainInterrupt
+  1246  01A9                     _MainInterrupt:	
+  1247                           
+  1248                           ;main.c: 201: if ( 1 == PIR1bits.TMR1IF )
+  1249  01A9  1C0C               	btfss	12,0	;volatile
+  1250  01AA  29C6               	goto	i1l1065
+  1251                           
+  1252                           ;main.c: 202: {
+  1253                           ;main.c: 203: msPassed++;
+  1254  01AB  3001               	movlw	1
+  1255  01AC  07B3               	addwf	_msPassed,f
+  1256  01AD  1803               	skipnc
+  1257  01AE  0AB4               	incf	_msPassed+1,f
+  1258  01AF  3000               	movlw	0
+  1259  01B0  07B4               	addwf	_msPassed+1,f
+  1260                           
+  1261                           ;main.c: 205: if ( STATE_REACHED == readCurrentState )
+  1262  01B1  3003               	movlw	3
+  1263  01B2  064F               	xorwf	_readCurrentState,w
+  1264  01B3  1D03               	btfss	3,2
+  1265  01B4  29BB               	goto	i1l1061
+  1266                           
+  1267                           ;main.c: 206: {
+  1268                           ;main.c: 207: waiting++;
+  1269  01B5  3001               	movlw	1
+  1270  01B6  07B5               	addwf	_waiting,f
+  1271  01B7  1803               	skipnc
+  1272  01B8  0AB6               	incf	_waiting+1,f
+  1273  01B9  3000               	movlw	0
+  1274  01BA  07B6               	addwf	_waiting+1,f
+  1275  01BB                     i1l1061:	
+  1276                           
+  1277                           ;main.c: 208: }
+  1278                           ;main.c: 210: if (msPassed % 4 == 0)
+  1279  01BB  3003               	movlw	3
+  1280  01BC  0533               	andwf	_msPassed,w
+  1281  01BD  00F8               	movwf	??_MainInterrupt
+  1282  01BE  3000               	movlw	0
+  1283  01BF  0534               	andwf	_msPassed+1,w
+  1284  01C0  00F9               	movwf	??_MainInterrupt+1
+  1285  01C1  0878               	movf	??_MainInterrupt,w
+  1286  01C2  0479               	iorwf	??_MainInterrupt+1,w
+  1287  01C3  1D03               	btfss	3,2
+  1288  01C4  29C6               	goto	i1l1065
+  1289                           
+  1290                           ;main.c: 211: {
+  1291                           ;main.c: 212: Debounce();
+  1292  01C5  2018               	fcall	_Debounce
+  1293  01C6                     i1l1065:	
+  1294                           
+  1295                           ;main.c: 213: }
+  1296                           ;main.c: 214: }
+  1297                           ;main.c: 217: PIR1 = 0;
+  1298  01C6  1283               	bcf	3,5	;RP0=0, select bank0
+  1299  01C7  1303               	bcf	3,6	;RP1=0, select bank0
+  1300  01C8  018C               	clrf	12	;volatile
+  1301  01C9  087D               	movf	??_MainInterrupt+5,w
+  1302  01CA  00FF               	movwf	127
+  1303  01CB  087C               	movf	??_MainInterrupt+4,w
+  1304  01CC  008A               	movwf	10
+  1305  01CD  087B               	movf	??_MainInterrupt+3,w
+  1306  01CE  0084               	movwf	4
+  1307  01CF  0E7A               	swapf	(??_MainInterrupt+2)^(0+-128),w
+  1308  01D0  0083               	movwf	3
+  1309  01D1  0EFE               	swapf	126,f
+  1310  01D2  0E7E               	swapf	126,w
+  1311  01D3  0009               	retfie
+  1312  01D4                     __end_of_MainInterrupt:	
+  1313                           
+  1314                           	psect	intentry
+  1315  0004                     __pintentry:	
+  1316                           ;incstack = 0
+  1317                           ; Regs used in _MainInterrupt: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1318                           
+  1319  0004                     interrupt_function:	
+  1320  007E                     saved_w	set	btemp
+  1321  0004  00FE               	movwf	btemp
+  1322  0005  0E03               	swapf	3,w
+  1323  0006  00FA               	movwf	??_MainInterrupt+2
+  1324  0007  0804               	movf	4,w
+  1325  0008  00FB               	movwf	??_MainInterrupt+3
+  1326  0009  080A               	movf	10,w
+  1327  000A  00FC               	movwf	??_MainInterrupt+4
+  1328  000B  1283               	bcf	3,5	;RP0=0, select bank0
+  1329  000C  1303               	bcf	3,6	;RP1=0, select bank0
+  1330  000D  087F               	movf	btemp+1,w
+  1331  000E  00FD               	movwf	??_MainInterrupt+5
+  1332  000F  29A9               	ljmp	_MainInterrupt
+  1333                           
+  1334                           	psect	text8
+  1335  0018                     __ptext8:	
+  1336 ;; *************** function _Debounce *****************
+  1337 ;; Defined at:
+  1338 ;;		line 156 in file "main.c"
+  1339 ;; Parameters:    Size  Location     Type
+  1340 ;;		None
+  1341 ;; Auto vars:     Size  Location     Type
+  1342 ;;		None
+  1343 ;; Return value:  Size  Location     Type
+  1344 ;;                  1    wreg      void 
+  1345 ;; Registers used:
+  1346 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1347 ;; Tracked objects:
+  1348 ;;		On entry : 0/0
+  1349 ;;		On exit  : 0/0
+  1350 ;;		Unchanged: 0/0
+  1351 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1352 ;;      Params:         0       0       0       0
+  1353 ;;      Locals:         0       0       0       0
+  1354 ;;      Temps:          4       0       0       0
+  1355 ;;      Totals:         4       0       0       0
+  1356 ;;Total ram usage:        4 bytes
+  1357 ;; Hardware stack levels used:    1
+  1358 ;; Hardware stack levels required when called:    1
+  1359 ;; This function calls:
+  1360 ;;		_DebounceInput
+  1361 ;; This function is called by:
+  1362 ;;		_MainInterrupt
+  1363 ;; This function uses a non-reentrant model
+  1364 ;;
+  1365                           
+  1366                           
+  1367                           ;psect for function _Debounce
+  1368  0018                     _Debounce:	
+  1369                           
+  1370                           ;main.c: 158: inputs[SAFETY_1_POS] = DebounceInput(PORTBbits.RB6,tempInput + SAFETY_1_PO
+      +                          S, inputs[SAFETY_1_POS]);
+  1371                           
+  1372                           ;incstack = 0
+  1373                           ; Regs used in _Debounce: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1374  0018  3039               	movlw	(low (_tempInput| 0))& (0+255)
+  1375  0019  00F4               	movwf	??_Debounce
+  1376  001A  0874               	movf	??_Debounce,w
+  1377  001B  00F0               	movwf	DebounceInput@tempState
+  1378  001C  1283               	bcf	3,5	;RP0=0, select bank0
+  1379  001D  1303               	bcf	3,6	;RP1=0, select bank0
+  1380  001E  082A               	movf	_inputs,w
+  1381  001F  00F5               	movwf	??_Debounce+1
+  1382  0020  0875               	movf	??_Debounce+1,w
+  1383  0021  00F1               	movwf	DebounceInput@currentState
+  1384  0022  0E06               	swapf	6,w	;volatile
+  1385  0023  00F6               	movwf	??_Debounce+2
+  1386  0024  0CF6               	rrf	??_Debounce+2,f
+  1387  0025  0C76               	rrf	??_Debounce+2,w
+  1388  0026  3901               	andlw	1
+  1389  0027  2203               	fcall	_DebounceInput
+  1390  0028  00F7               	movwf	??_Debounce+3
+  1391  0029  0877               	movf	??_Debounce+3,w
+  1392  002A  1283               	bcf	3,5	;RP0=0, select bank0
+  1393  002B  1303               	bcf	3,6	;RP1=0, select bank0
+  1394  002C  00AA               	movwf	_inputs
+  1395                           
+  1396                           ;main.c: 159: inputs[SAFETY_2_POS] = DebounceInput(PORTBbits.RB7,tempInput + SAFETY_2_PO
       +                          S, inputs[SAFETY_2_POS]);
-  1245  002D  3039               	movlw	(low ((_tempInput| 0+1)))& (0+255)
-  1246  002E  00F4               	movwf	??_Debounce
-  1247  002F  0874               	movf	??_Debounce,w
-  1248  0030  00F0               	movwf	DebounceInput@tempState
-  1249  0031  082B               	movf	_inputs+1,w
-  1250  0032  00F5               	movwf	??_Debounce+1
-  1251  0033  0875               	movf	??_Debounce+1,w
-  1252  0034  00F1               	movwf	DebounceInput@currentState
-  1253  0035  0D06               	rlf	6,w	;volatile
-  1254  0036  0D06               	rlf	6,w	;volatile
-  1255  0037  3901               	andlw	1
-  1256  0038  21C7               	fcall	_DebounceInput
-  1257  0039  00F6               	movwf	??_Debounce+2
-  1258  003A  0876               	movf	??_Debounce+2,w
-  1259  003B  1283               	bcf	3,5	;RP0=0, select bank0
-  1260  003C  1303               	bcf	3,6	;RP1=0, select bank0
-  1261  003D  00AB               	movwf	_inputs+1
-  1262                           
-  1263                           ;main.c: 157: inputs[SAFETY_3_POS] = DebounceInput(PORTAbits.RA6,tempInput + SAFETY_3_PO
+  1397  002D  303A               	movlw	(low ((_tempInput| 0+1)))& (0+255)
+  1398  002E  00F4               	movwf	??_Debounce
+  1399  002F  0874               	movf	??_Debounce,w
+  1400  0030  00F0               	movwf	DebounceInput@tempState
+  1401  0031  082B               	movf	_inputs+1,w
+  1402  0032  00F5               	movwf	??_Debounce+1
+  1403  0033  0875               	movf	??_Debounce+1,w
+  1404  0034  00F1               	movwf	DebounceInput@currentState
+  1405  0035  0D06               	rlf	6,w	;volatile
+  1406  0036  0D06               	rlf	6,w	;volatile
+  1407  0037  3901               	andlw	1
+  1408  0038  2203               	fcall	_DebounceInput
+  1409  0039  00F6               	movwf	??_Debounce+2
+  1410  003A  0876               	movf	??_Debounce+2,w
+  1411  003B  1283               	bcf	3,5	;RP0=0, select bank0
+  1412  003C  1303               	bcf	3,6	;RP1=0, select bank0
+  1413  003D  00AB               	movwf	_inputs+1
+  1414                           
+  1415                           ;main.c: 160: inputs[SAFETY_3_POS] = DebounceInput(PORTAbits.RA6,tempInput + SAFETY_3_PO
       +                          S, inputs[SAFETY_3_POS]);
-  1264  003E  303A               	movlw	(low ((_tempInput| 0+2)))& (0+255)
-  1265  003F  00F4               	movwf	??_Debounce
-  1266  0040  0874               	movf	??_Debounce,w
-  1267  0041  00F0               	movwf	DebounceInput@tempState
-  1268  0042  082C               	movf	_inputs+2,w
-  1269  0043  00F5               	movwf	??_Debounce+1
-  1270  0044  0875               	movf	??_Debounce+1,w
-  1271  0045  00F1               	movwf	DebounceInput@currentState
-  1272  0046  0E05               	swapf	5,w	;volatile
-  1273  0047  00F6               	movwf	??_Debounce+2
-  1274  0048  0CF6               	rrf	??_Debounce+2,f
-  1275  0049  0C76               	rrf	??_Debounce+2,w
-  1276  004A  3901               	andlw	1
-  1277  004B  21C7               	fcall	_DebounceInput
-  1278  004C  00F7               	movwf	??_Debounce+3
-  1279  004D  0877               	movf	??_Debounce+3,w
-  1280  004E  1283               	bcf	3,5	;RP0=0, select bank0
-  1281  004F  1303               	bcf	3,6	;RP1=0, select bank0
-  1282  0050  00AC               	movwf	_inputs+2
-  1283                           
-  1284                           ;main.c: 158: inputs[DELIMITER_DOWN_POS] = DebounceInput(PORTAbits.RA7,tempInput + DELIM
+  1416  003E  303B               	movlw	(low ((_tempInput| 0+2)))& (0+255)
+  1417  003F  00F4               	movwf	??_Debounce
+  1418  0040  0874               	movf	??_Debounce,w
+  1419  0041  00F0               	movwf	DebounceInput@tempState
+  1420  0042  082C               	movf	_inputs+2,w
+  1421  0043  00F5               	movwf	??_Debounce+1
+  1422  0044  0875               	movf	??_Debounce+1,w
+  1423  0045  00F1               	movwf	DebounceInput@currentState
+  1424  0046  0E05               	swapf	5,w	;volatile
+  1425  0047  00F6               	movwf	??_Debounce+2
+  1426  0048  0CF6               	rrf	??_Debounce+2,f
+  1427  0049  0C76               	rrf	??_Debounce+2,w
+  1428  004A  3901               	andlw	1
+  1429  004B  2203               	fcall	_DebounceInput
+  1430  004C  00F7               	movwf	??_Debounce+3
+  1431  004D  0877               	movf	??_Debounce+3,w
+  1432  004E  1283               	bcf	3,5	;RP0=0, select bank0
+  1433  004F  1303               	bcf	3,6	;RP1=0, select bank0
+  1434  0050  00AC               	movwf	_inputs+2
+  1435                           
+  1436                           ;main.c: 161: inputs[DELIMITER_DOWN_POS] = DebounceInput(PORTAbits.RA7,tempInput + DELIM
       +                          ITER_DOWN_POS, inputs[DELIMITER_DOWN_POS]);
-  1285  0051  303B               	movlw	(low ((_tempInput| 0+3)))& (0+255)
-  1286  0052  00F4               	movwf	??_Debounce
-  1287  0053  0874               	movf	??_Debounce,w
-  1288  0054  00F0               	movwf	DebounceInput@tempState
-  1289  0055  082D               	movf	_inputs+3,w
-  1290  0056  00F5               	movwf	??_Debounce+1
-  1291  0057  0875               	movf	??_Debounce+1,w
-  1292  0058  00F1               	movwf	DebounceInput@currentState
-  1293  0059  0D05               	rlf	5,w	;volatile
-  1294  005A  0D05               	rlf	5,w	;volatile
-  1295  005B  3901               	andlw	1
-  1296  005C  21C7               	fcall	_DebounceInput
-  1297  005D  00F6               	movwf	??_Debounce+2
-  1298  005E  0876               	movf	??_Debounce+2,w
-  1299  005F  1283               	bcf	3,5	;RP0=0, select bank0
-  1300  0060  1303               	bcf	3,6	;RP1=0, select bank0
-  1301  0061  00AD               	movwf	_inputs+3
-  1302                           
-  1303                           ;main.c: 159: inputs[DELIMITER_UP_POS] = DebounceInput(PORTAbits.RA0,tempInput + DELIMIT
+  1437  0051  303C               	movlw	(low ((_tempInput| 0+3)))& (0+255)
+  1438  0052  00F4               	movwf	??_Debounce
+  1439  0053  0874               	movf	??_Debounce,w
+  1440  0054  00F0               	movwf	DebounceInput@tempState
+  1441  0055  082D               	movf	_inputs+3,w
+  1442  0056  00F5               	movwf	??_Debounce+1
+  1443  0057  0875               	movf	??_Debounce+1,w
+  1444  0058  00F1               	movwf	DebounceInput@currentState
+  1445  0059  0D05               	rlf	5,w	;volatile
+  1446  005A  0D05               	rlf	5,w	;volatile
+  1447  005B  3901               	andlw	1
+  1448  005C  2203               	fcall	_DebounceInput
+  1449  005D  00F6               	movwf	??_Debounce+2
+  1450  005E  0876               	movf	??_Debounce+2,w
+  1451  005F  1283               	bcf	3,5	;RP0=0, select bank0
+  1452  0060  1303               	bcf	3,6	;RP1=0, select bank0
+  1453  0061  00AD               	movwf	_inputs+3
+  1454                           
+  1455                           ;main.c: 162: inputs[DELIMITER_UP_POS] = DebounceInput(PORTAbits.RA0,tempInput + DELIMIT
       +                          ER_UP_POS, inputs[DELIMITER_UP_POS]);
-  1304  0062  303C               	movlw	(low ((_tempInput| 0+4)))& (0+255)
-  1305  0063  00F4               	movwf	??_Debounce
-  1306  0064  0874               	movf	??_Debounce,w
-  1307  0065  00F0               	movwf	DebounceInput@tempState
-  1308  0066  082E               	movf	_inputs+4,w
-  1309  0067  00F5               	movwf	??_Debounce+1
-  1310  0068  0875               	movf	??_Debounce+1,w
-  1311  0069  00F1               	movwf	DebounceInput@currentState
-  1312  006A  0805               	movf	5,w	;volatile
-  1313  006B  3901               	andlw	1
-  1314  006C  21C7               	fcall	_DebounceInput
-  1315  006D  00F6               	movwf	??_Debounce+2
-  1316  006E  0876               	movf	??_Debounce+2,w
-  1317  006F  1283               	bcf	3,5	;RP0=0, select bank0
-  1318  0070  1303               	bcf	3,6	;RP1=0, select bank0
-  1319  0071  00AE               	movwf	_inputs+4
-  1320                           
-  1321                           ;main.c: 160: inputs[COUNTER_POS] = DebounceInput(PORTAbits.RA1,tempInput + COUNTER_POS,
-      +                           inputs[COUNTER_POS]);
-  1322  0072  303D               	movlw	(low ((_tempInput| 0+5)))& (0+255)
-  1323  0073  00F4               	movwf	??_Debounce
-  1324  0074  0874               	movf	??_Debounce,w
-  1325  0075  00F0               	movwf	DebounceInput@tempState
-  1326  0076  082F               	movf	_inputs+5,w
-  1327  0077  00F5               	movwf	??_Debounce+1
-  1328  0078  0875               	movf	??_Debounce+1,w
-  1329  0079  00F1               	movwf	DebounceInput@currentState
-  1330  007A  0C05               	rrf	5,w	;volatile
-  1331  007B  3901               	andlw	1
-  1332  007C  21C7               	fcall	_DebounceInput
-  1333  007D  00F6               	movwf	??_Debounce+2
-  1334  007E  0876               	movf	??_Debounce+2,w
-  1335  007F  1283               	bcf	3,5	;RP0=0, select bank0
-  1336  0080  1303               	bcf	3,6	;RP1=0, select bank0
-  1337  0081  00AF               	movwf	_inputs+5
-  1338                           
-  1339                           ;main.c: 162: if (1 == buttonMode)
-  1340  0082  034D               	decf	_buttonMode,w
-  1341  0083  1D03               	btfss	3,2
-  1342  0084  0008               	return
-  1343                           
-  1344                           ;main.c: 163: {
-  1345                           ;main.c: 164: buttonPressed = 0;
-  1346  0085  01B7               	clrf	_buttonPressed
-  1347                           
-  1348                           ;main.c: 165: inputs[BUTTON_0_POS] = DebounceInput(PORTAbits.RA5,tempInput + BUTTON_0_PO
-      +                          S, inputs[BUTTON_0_POS]);
-  1349  0086  303E               	movlw	(low ((_tempInput| 0+6)))& (0+255)
-  1350  0087  00F4               	movwf	??_Debounce
-  1351  0088  0874               	movf	??_Debounce,w
-  1352  0089  00F0               	movwf	DebounceInput@tempState
-  1353  008A  0830               	movf	_inputs+6,w
-  1354  008B  00F5               	movwf	??_Debounce+1
-  1355  008C  0875               	movf	??_Debounce+1,w
-  1356  008D  00F1               	movwf	DebounceInput@currentState
-  1357  008E  0E05               	swapf	5,w	;volatile
-  1358  008F  00F6               	movwf	??_Debounce+2
-  1359  0090  0C76               	rrf	??_Debounce+2,w
-  1360  0091  3901               	andlw	1
-  1361  0092  21C7               	fcall	_DebounceInput
-  1362  0093  00F7               	movwf	??_Debounce+3
-  1363  0094  0877               	movf	??_Debounce+3,w
-  1364  0095  1283               	bcf	3,5	;RP0=0, select bank0
-  1365  0096  1303               	bcf	3,6	;RP1=0, select bank0
-  1366  0097  00B0               	movwf	_inputs+6
-  1367                           
-  1368                           ;main.c: 166: buttonPressed = inputs[BUTTON_0_POS];
-  1369  0098  0830               	movf	_inputs+6,w
-  1370  0099  00F4               	movwf	??_Debounce
-  1371  009A  0874               	movf	??_Debounce,w
-  1372  009B  00B7               	movwf	_buttonPressed
-  1373                           
-  1374                           ;main.c: 167: inputs[BUTTON_1_POS] = DebounceInput(PORTBbits.RB0,tempInput + BUTTON_1_PO
-      +                          S, inputs[BUTTON_1_POS]);
-  1375  009C  303F               	movlw	(low ((_tempInput| 0+7)))& (0+255)
-  1376  009D  00F4               	movwf	??_Debounce
-  1377  009E  0874               	movf	??_Debounce,w
-  1378  009F  00F0               	movwf	DebounceInput@tempState
-  1379  00A0  0831               	movf	_inputs+7,w
-  1380  00A1  00F5               	movwf	??_Debounce+1
-  1381  00A2  0875               	movf	??_Debounce+1,w
-  1382  00A3  00F1               	movwf	DebounceInput@currentState
-  1383  00A4  0806               	movf	6,w	;volatile
-  1384  00A5  3901               	andlw	1
-  1385  00A6  21C7               	fcall	_DebounceInput
-  1386  00A7  00F6               	movwf	??_Debounce+2
-  1387  00A8  0876               	movf	??_Debounce+2,w
-  1388  00A9  1283               	bcf	3,5	;RP0=0, select bank0
-  1389  00AA  1303               	bcf	3,6	;RP1=0, select bank0
-  1390  00AB  00B1               	movwf	_inputs+7
-  1391                           
-  1392                           ;main.c: 168: buttonPressed |= (inputs[BUTTON_1_POS] << 1);
-  1393  00AC  0831               	movf	_inputs+7,w
-  1394  00AD  00F4               	movwf	??_Debounce
-  1395  00AE  0774               	addwf	??_Debounce,w
-  1396  00AF  00F5               	movwf	??_Debounce+1
-  1397  00B0  0875               	movf	??_Debounce+1,w
-  1398  00B1  04B7               	iorwf	_buttonPressed,f
-  1399                           
-  1400                           ;main.c: 169: inputs[BUTTON_2_POS] = DebounceInput(PORTBbits.RB3,tempInput + BUTTON_2_PO
-      +                          S, inputs[BUTTON_2_POS]);
-  1401  00B2  3040               	movlw	(low ((_tempInput| 0+8)))& (0+255)
-  1402  00B3  00F4               	movwf	??_Debounce
-  1403  00B4  0874               	movf	??_Debounce,w
-  1404  00B5  00F0               	movwf	DebounceInput@tempState
-  1405  00B6  0832               	movf	_inputs+8,w
-  1406  00B7  00F5               	movwf	??_Debounce+1
-  1407  00B8  0875               	movf	??_Debounce+1,w
-  1408  00B9  00F1               	movwf	DebounceInput@currentState
-  1409  00BA  0C06               	rrf	6,w	;volatile
-  1410  00BB  00F6               	movwf	??_Debounce+2
-  1411  00BC  0CF6               	rrf	??_Debounce+2,f
-  1412  00BD  0C76               	rrf	??_Debounce+2,w
-  1413  00BE  3901               	andlw	1
-  1414  00BF  21C7               	fcall	_DebounceInput
-  1415  00C0  00F7               	movwf	??_Debounce+3
-  1416  00C1  0877               	movf	??_Debounce+3,w
-  1417  00C2  1283               	bcf	3,5	;RP0=0, select bank0
-  1418  00C3  1303               	bcf	3,6	;RP1=0, select bank0
-  1419  00C4  00B2               	movwf	_inputs+8
-  1420                           
-  1421                           ;main.c: 170: buttonPressed |= (inputs[BUTTON_2_POS] << 2);
-  1422  00C5  0832               	movf	_inputs+8,w
-  1423  00C6  00F4               	movwf	??_Debounce
-  1424  00C7  3001               	movlw	1
-  1425  00C8                     u23_25:	
-  1426  00C8  1003               	clrc
-  1427  00C9  0DF4               	rlf	??_Debounce,f
-  1428  00CA  3EFF               	addlw	-1
-  1429  00CB  1D03               	skipz
-  1430  00CC  28C8               	goto	u23_25
-  1431  00CD  1003               	clrc
-  1432  00CE  0D74               	rlf	??_Debounce,w
-  1433  00CF  00F5               	movwf	??_Debounce+1
-  1434  00D0  0875               	movf	??_Debounce+1,w
-  1435  00D1  04B7               	iorwf	_buttonPressed,f
-  1436  00D2  0008               	return
-  1437  00D3                     __end_of_Debounce:	
-  1438                           
-  1439                           	psect	text8
-  1440  01C7                     __ptext8:	
-  1441 ;; *************** function _DebounceInput *****************
-  1442 ;; Defined at:
-  1443 ;;		line 63 in file "ports.c"
-  1444 ;; Parameters:    Size  Location     Type
-  1445 ;;  input           1    wreg     unsigned char 
-  1446 ;;  tempState       1    0[COMMON] PTR unsigned char 
-  1447 ;;		 -> tempInput(9), 
-  1448 ;;  currentState    1    1[COMMON] unsigned char 
-  1449 ;; Auto vars:     Size  Location     Type
-  1450 ;;  input           1    3[COMMON] unsigned char 
-  1451 ;; Return value:  Size  Location     Type
-  1452 ;;                  1    wreg      unsigned char 
-  1453 ;; Registers used:
-  1454 ;;		wreg, fsr0l, fsr0h, status,2, status,0
-  1455 ;; Tracked objects:
-  1456 ;;		On entry : 0/0
-  1457 ;;		On exit  : 0/0
-  1458 ;;		Unchanged: 0/0
-  1459 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
-  1460 ;;      Params:         2       0       0       0
-  1461 ;;      Locals:         1       0       0       0
-  1462 ;;      Temps:          1       0       0       0
-  1463 ;;      Totals:         4       0       0       0
-  1464 ;;Total ram usage:        4 bytes
-  1465 ;; Hardware stack levels used:    1
-  1466 ;; This function calls:
-  1467 ;;		Nothing
-  1468 ;; This function is called by:
-  1469 ;;		_Debounce
-  1470 ;; This function uses a non-reentrant model
-  1471 ;;
+  1456  0062  303D               	movlw	(low ((_tempInput| 0+4)))& (0+255)
+  1457  0063  00F4               	movwf	??_Debounce
+  1458  0064  0874               	movf	??_Debounce,w
+  1459  0065  00F0               	movwf	DebounceInput@tempState
+  1460  0066  082E               	movf	_inputs+4,w
+  1461  0067  00F5               	movwf	??_Debounce+1
+  1462  0068  0875               	movf	??_Debounce+1,w
+  1463  0069  00F1               	movwf	DebounceInput@currentState
+  1464  006A  0805               	movf	5,w	;volatile
+  1465  006B  3901               	andlw	1
+  1466  006C  2203               	fcall	_DebounceInput
+  1467  006D  00F6               	movwf	??_Debounce+2
+  1468  006E  0876               	movf	??_Debounce+2,w
+  1469  006F  1283               	bcf	3,5	;RP0=0, select bank0
+  1470  0070  1303               	bcf	3,6	;RP1=0, select bank0
+  1471  0071  00AE               	movwf	_inputs+4
   1472                           
-  1473                           
-  1474                           ;psect for function _DebounceInput
-  1475  01C7                     _DebounceInput:	
-  1476                           
-  1477                           ;incstack = 0
-  1478                           ; Regs used in _DebounceInput: [wreg-fsr0h+status,2+status,0]
-  1479                           ;DebounceInput@input stored from wreg
-  1480  01C7  00F3               	movwf	DebounceInput@input
-  1481                           
-  1482                           ;ports.c: 65: *tempState <<= 1;
-  1483  01C8  0870               	movf	DebounceInput@tempState,w
-  1484  01C9  0084               	movwf	4
-  1485  01CA  1003               	clrc
-  1486  01CB  1383               	bcf	3,7	;select IRP bank0
-  1487  01CC  0D80               	rlf	0,f
-  1488                           
-  1489                           ;ports.c: 66: *tempState |= input;
-  1490  01CD  0873               	movf	DebounceInput@input,w
-  1491  01CE  00F2               	movwf	??_DebounceInput
-  1492  01CF  0870               	movf	DebounceInput@tempState,w
-  1493  01D0  0084               	movwf	4
-  1494  01D1  0872               	movf	??_DebounceInput,w
-  1495  01D2  0480               	iorwf	0,f
-  1496                           
-  1497                           ;ports.c: 72: else if ( 0xFF == 0xFF & *tempState)
-  1498                           
-  1499                           ;ports.c: 71: }
-  1500                           
-  1501                           ;ports.c: 69: {
-  1502                           ;ports.c: 70: return 0;
-  1503                           
-  1504                           ;ports.c: 68: if ( 0 == 0xFF & *tempState)
-  1505  01D3  0870               	movf	DebounceInput@tempState,w
-  1506  01D4  0084               	movwf	4
-  1507  01D5  1C00               	btfss	0,0
-  1508  01D6  29D9               	goto	i1l816
-  1509                           
-  1510                           ;ports.c: 73: {
-  1511                           ;ports.c: 74: return 1;
-  1512  01D7  3001               	movlw	1
-  1513                           
-  1514                           ;ports.c: 75: }
-  1515  01D8  0008               	return
-  1516  01D9                     i1l816:	
-  1517                           
-  1518                           ;ports.c: 76: else return currentState;
-  1519  01D9  0871               	movf	DebounceInput@currentState,w
-  1520  01DA  0008               	return
-  1521  01DB                     __end_of_DebounceInput:	
-  1522  007E                     btemp	set	126	;btemp
-  1523  007E                     wtemp	set	126
-  1524  007E                     wtemp0	set	126
-  1525  0080                     wtemp1	set	128
-  1526  0082                     wtemp2	set	130
-  1527  0084                     wtemp3	set	132
-  1528  0086                     wtemp4	set	134
-  1529  0088                     wtemp5	set	136
-  1530  007F                     wtemp6	set	127
-  1531  007E                     ttemp	set	126
-  1532  007E                     ttemp0	set	126
-  1533  0081                     ttemp1	set	129
-  1534  0084                     ttemp2	set	132
-  1535  0087                     ttemp3	set	135
-  1536  007F                     ttemp4	set	127
-  1537  007E                     ltemp	set	126
-  1538  007E                     ltemp0	set	126
-  1539  0082                     ltemp1	set	130
-  1540  0086                     ltemp2	set	134
-  1541  0080                     ltemp3	set	128
+  1473                           ;main.c: 163: inputs[COUNTER_POS] = DebounceInput(PORTAbits.RA1,tempInput + COUNTER_POS,
+      +                           inputs[COUNTER_POS]);
+  1474  0072  303E               	movlw	(low ((_tempInput| 0+5)))& (0+255)
+  1475  0073  00F4               	movwf	??_Debounce
+  1476  0074  0874               	movf	??_Debounce,w
+  1477  0075  00F0               	movwf	DebounceInput@tempState
+  1478  0076  082F               	movf	_inputs+5,w
+  1479  0077  00F5               	movwf	??_Debounce+1
+  1480  0078  0875               	movf	??_Debounce+1,w
+  1481  0079  00F1               	movwf	DebounceInput@currentState
+  1482  007A  0C05               	rrf	5,w	;volatile
+  1483  007B  3901               	andlw	1
+  1484  007C  2203               	fcall	_DebounceInput
+  1485  007D  00F6               	movwf	??_Debounce+2
+  1486  007E  0876               	movf	??_Debounce+2,w
+  1487  007F  1283               	bcf	3,5	;RP0=0, select bank0
+  1488  0080  1303               	bcf	3,6	;RP1=0, select bank0
+  1489  0081  00AF               	movwf	_inputs+5
+  1490                           
+  1491                           ;main.c: 165: if (1 == buttonMode)
+  1492  0082  034E               	decf	_buttonMode,w
+  1493  0083  1D03               	btfss	3,2
+  1494  0084  0008               	return
+  1495                           
+  1496                           ;main.c: 166: {
+  1497                           ;main.c: 167: buttonPressed = 0;
+  1498  0085  01B7               	clrf	_buttonPressed
+  1499                           
+  1500                           ;main.c: 168: inputs[BUTTON_0_POS] = DebounceInput(PORTAbits.RA5,tempInput + BUTTON_0_PO
+      +                          S, inputs[BUTTON_0_POS]);
+  1501  0086  303F               	movlw	(low ((_tempInput| 0+6)))& (0+255)
+  1502  0087  00F4               	movwf	??_Debounce
+  1503  0088  0874               	movf	??_Debounce,w
+  1504  0089  00F0               	movwf	DebounceInput@tempState
+  1505  008A  0830               	movf	_inputs+6,w
+  1506  008B  00F5               	movwf	??_Debounce+1
+  1507  008C  0875               	movf	??_Debounce+1,w
+  1508  008D  00F1               	movwf	DebounceInput@currentState
+  1509  008E  0E05               	swapf	5,w	;volatile
+  1510  008F  00F6               	movwf	??_Debounce+2
+  1511  0090  0C76               	rrf	??_Debounce+2,w
+  1512  0091  3901               	andlw	1
+  1513  0092  2203               	fcall	_DebounceInput
+  1514  0093  00F7               	movwf	??_Debounce+3
+  1515  0094  0877               	movf	??_Debounce+3,w
+  1516  0095  1283               	bcf	3,5	;RP0=0, select bank0
+  1517  0096  1303               	bcf	3,6	;RP1=0, select bank0
+  1518  0097  00B0               	movwf	_inputs+6
+  1519                           
+  1520                           ;main.c: 169: buttonPressed = inputs[BUTTON_0_POS];
+  1521  0098  0830               	movf	_inputs+6,w
+  1522  0099  00F4               	movwf	??_Debounce
+  1523  009A  0874               	movf	??_Debounce,w
+  1524  009B  00B7               	movwf	_buttonPressed
+  1525                           
+  1526                           ;main.c: 170: inputs[BUTTON_1_POS] = DebounceInput(PORTBbits.RB0,tempInput + BUTTON_1_PO
+      +                          S, inputs[BUTTON_1_POS]);
+  1527  009C  3040               	movlw	(low ((_tempInput| 0+7)))& (0+255)
+  1528  009D  00F4               	movwf	??_Debounce
+  1529  009E  0874               	movf	??_Debounce,w
+  1530  009F  00F0               	movwf	DebounceInput@tempState
+  1531  00A0  0831               	movf	_inputs+7,w
+  1532  00A1  00F5               	movwf	??_Debounce+1
+  1533  00A2  0875               	movf	??_Debounce+1,w
+  1534  00A3  00F1               	movwf	DebounceInput@currentState
+  1535  00A4  0806               	movf	6,w	;volatile
+  1536  00A5  3901               	andlw	1
+  1537  00A6  2203               	fcall	_DebounceInput
+  1538  00A7  00F6               	movwf	??_Debounce+2
+  1539  00A8  0876               	movf	??_Debounce+2,w
+  1540  00A9  1283               	bcf	3,5	;RP0=0, select bank0
+  1541  00AA  1303               	bcf	3,6	;RP1=0, select bank0
+  1542  00AB  00B1               	movwf	_inputs+7
+  1543                           
+  1544                           ;main.c: 171: buttonPressed |= (inputs[BUTTON_1_POS] << 1);
+  1545  00AC  0831               	movf	_inputs+7,w
+  1546  00AD  00F4               	movwf	??_Debounce
+  1547  00AE  0774               	addwf	??_Debounce,w
+  1548  00AF  00F5               	movwf	??_Debounce+1
+  1549  00B0  0875               	movf	??_Debounce+1,w
+  1550  00B1  04B7               	iorwf	_buttonPressed,f
+  1551                           
+  1552                           ;main.c: 172: inputs[BUTTON_2_POS] = DebounceInput(PORTBbits.RB3,tempInput + BUTTON_2_PO
+      +                          S, inputs[BUTTON_2_POS]);
+  1553  00B2  3041               	movlw	(low ((_tempInput| 0+8)))& (0+255)
+  1554  00B3  00F4               	movwf	??_Debounce
+  1555  00B4  0874               	movf	??_Debounce,w
+  1556  00B5  00F0               	movwf	DebounceInput@tempState
+  1557  00B6  0832               	movf	_inputs+8,w
+  1558  00B7  00F5               	movwf	??_Debounce+1
+  1559  00B8  0875               	movf	??_Debounce+1,w
+  1560  00B9  00F1               	movwf	DebounceInput@currentState
+  1561  00BA  0C06               	rrf	6,w	;volatile
+  1562  00BB  00F6               	movwf	??_Debounce+2
+  1563  00BC  0CF6               	rrf	??_Debounce+2,f
+  1564  00BD  0C76               	rrf	??_Debounce+2,w
+  1565  00BE  3901               	andlw	1
+  1566  00BF  2203               	fcall	_DebounceInput
+  1567  00C0  00F7               	movwf	??_Debounce+3
+  1568  00C1  0877               	movf	??_Debounce+3,w
+  1569  00C2  1283               	bcf	3,5	;RP0=0, select bank0
+  1570  00C3  1303               	bcf	3,6	;RP1=0, select bank0
+  1571  00C4  00B2               	movwf	_inputs+8
+  1572                           
+  1573                           ;main.c: 173: buttonPressed |= (inputs[BUTTON_2_POS] << 2);
+  1574  00C5  0832               	movf	_inputs+8,w
+  1575  00C6  00F4               	movwf	??_Debounce
+  1576  00C7  3001               	movlw	1
+  1577  00C8                     u36_25:	
+  1578  00C8  1003               	clrc
+  1579  00C9  0DF4               	rlf	??_Debounce,f
+  1580  00CA  3EFF               	addlw	-1
+  1581  00CB  1D03               	skipz
+  1582  00CC  28C8               	goto	u36_25
+  1583  00CD  1003               	clrc
+  1584  00CE  0D74               	rlf	??_Debounce,w
+  1585  00CF  00F5               	movwf	??_Debounce+1
+  1586  00D0  0875               	movf	??_Debounce+1,w
+  1587  00D1  04B7               	iorwf	_buttonPressed,f
+  1588  00D2  0008               	return
+  1589  00D3                     __end_of_Debounce:	
+  1590                           
+  1591                           	psect	text9
+  1592  0203                     __ptext9:	
+  1593 ;; *************** function _DebounceInput *****************
+  1594 ;; Defined at:
+  1595 ;;		line 65 in file "ports.c"
+  1596 ;; Parameters:    Size  Location     Type
+  1597 ;;  input           1    wreg     unsigned char 
+  1598 ;;  tempState       1    0[COMMON] PTR unsigned char 
+  1599 ;;		 -> tempInput(9), 
+  1600 ;;  currentState    1    1[COMMON] unsigned char 
+  1601 ;; Auto vars:     Size  Location     Type
+  1602 ;;  input           1    3[COMMON] unsigned char 
+  1603 ;; Return value:  Size  Location     Type
+  1604 ;;                  1    wreg      unsigned char 
+  1605 ;; Registers used:
+  1606 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+  1607 ;; Tracked objects:
+  1608 ;;		On entry : 0/0
+  1609 ;;		On exit  : 0/0
+  1610 ;;		Unchanged: 0/0
+  1611 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1612 ;;      Params:         2       0       0       0
+  1613 ;;      Locals:         1       0       0       0
+  1614 ;;      Temps:          1       0       0       0
+  1615 ;;      Totals:         4       0       0       0
+  1616 ;;Total ram usage:        4 bytes
+  1617 ;; Hardware stack levels used:    1
+  1618 ;; This function calls:
+  1619 ;;		Nothing
+  1620 ;; This function is called by:
+  1621 ;;		_Debounce
+  1622 ;; This function uses a non-reentrant model
+  1623 ;;
+  1624                           
+  1625                           
+  1626                           ;psect for function _DebounceInput
+  1627  0203                     _DebounceInput:	
+  1628                           
+  1629                           ;incstack = 0
+  1630                           ; Regs used in _DebounceInput: [wreg-fsr0h+status,2+status,0]
+  1631                           ;DebounceInput@input stored from wreg
+  1632  0203  00F3               	movwf	DebounceInput@input
+  1633                           
+  1634                           ;ports.c: 67: *tempState <<= 1;
+  1635  0204  0870               	movf	DebounceInput@tempState,w
+  1636  0205  0084               	movwf	4
+  1637  0206  1003               	clrc
+  1638  0207  1383               	bcf	3,7	;select IRP bank0
+  1639  0208  0D80               	rlf	0,f
+  1640                           
+  1641                           ;ports.c: 68: *tempState |= input;
+  1642  0209  0873               	movf	DebounceInput@input,w
+  1643  020A  00F2               	movwf	??_DebounceInput
+  1644  020B  0870               	movf	DebounceInput@tempState,w
+  1645  020C  0084               	movwf	4
+  1646  020D  0872               	movf	??_DebounceInput,w
+  1647  020E  0480               	iorwf	0,f
+  1648                           
+  1649                           ;ports.c: 74: else if ( 0xFF == 0xFF & *tempState)
+  1650                           
+  1651                           ;ports.c: 73: }
+  1652                           
+  1653                           ;ports.c: 71: {
+  1654                           ;ports.c: 72: return 0;
+  1655                           
+  1656                           ;ports.c: 70: if ( 0 == 0xFF & *tempState)
+  1657  020F  0870               	movf	DebounceInput@tempState,w
+  1658  0210  0084               	movwf	4
+  1659  0211  1C00               	btfss	0,0
+  1660  0212  2A15               	goto	i1l873
+  1661                           
+  1662                           ;ports.c: 75: {
+  1663                           ;ports.c: 76: return 1;
+  1664  0213  3001               	movlw	1
+  1665                           
+  1666                           ;ports.c: 77: }
+  1667  0214  0008               	return
+  1668  0215                     i1l873:	
+  1669                           
+  1670                           ;ports.c: 78: else return currentState;
+  1671  0215  0871               	movf	DebounceInput@currentState,w
+  1672  0216  0008               	return
+  1673  0217                     __end_of_DebounceInput:	
+  1674  007E                     btemp	set	126	;btemp
+  1675  007E                     wtemp	set	126
+  1676  007E                     wtemp0	set	126
+  1677  0080                     wtemp1	set	128
+  1678  0082                     wtemp2	set	130
+  1679  0084                     wtemp3	set	132
+  1680  0086                     wtemp4	set	134
+  1681  0088                     wtemp5	set	136
+  1682  007F                     wtemp6	set	127
+  1683  007E                     ttemp	set	126
+  1684  007E                     ttemp0	set	126
+  1685  0081                     ttemp1	set	129
+  1686  0084                     ttemp2	set	132
+  1687  0087                     ttemp3	set	135
+  1688  007F                     ttemp4	set	127
+  1689  007E                     ltemp	set	126
+  1690  007E                     ltemp0	set	126
+  1691  0082                     ltemp1	set	130
+  1692  0086                     ltemp2	set	134
+  1693  0080                     ltemp3	set	128
 
 
 Data Sizes:
     Strings     0
     Constant    0
     Data        0
-    BSS         33
+    BSS         34
     Persistent  2
     Stack       0
 
 Auto Spaces:
     Space          Size  Autos    Used
     COMMON           14     14      14
-    BANK0            80     12      47
+    BANK0            80     12      48
     BANK1            80      0       0
     BANK2            48      0       0
 
@@ -1589,6 +1741,7 @@ Critical Paths under _MainInterrupt in COMMON
 Critical Paths under _main in BANK0
 
     _main->_SetLeds
+    _TurnOnLeds->_SetLeds
 
 Critical Paths under _MainInterrupt in BANK0
 
@@ -1615,17 +1768,22 @@ Call Graph Tables:
  ---------------------------------------------------------------------------------
  (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
  ---------------------------------------------------------------------------------
- (0) _main                                                 9     5      4     237
+ (0) _main                                                 9     5      4     373
                                               3 BANK0      9     5      4
                           _InitPorts
                           _InitTimer
                             _SetLeds
                       _TurnOnButtons
                          _TurnOnLeds
+                   _checkLevelChange
  ---------------------------------------------------------------------------------
- (1) _TurnOnLeds                                           0     0      0       0
+ (1) _checkLevelChange                                     2     2      0      24
+                                              0 BANK0      2     2      0
  ---------------------------------------------------------------------------------
- (1) _SetLeds                                              3     3      0      66
+ (1) _TurnOnLeds                                           0     0      0      66
+                            _SetLeds
+ ---------------------------------------------------------------------------------
+ (2) _SetLeds                                              3     3      0      66
                                               0 BANK0      3     3      0
  ---------------------------------------------------------------------------------
  (1) _InitTimer                                            0     0      0       0
@@ -1635,7 +1793,7 @@ Call Graph Tables:
  ---------------------------------------------------------------------------------
  (1) _TurnOnButtons                                        0     0      0       0
  ---------------------------------------------------------------------------------
- Estimated maximum stack depth 1
+ Estimated maximum stack depth 2
  ---------------------------------------------------------------------------------
  (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
  ---------------------------------------------------------------------------------
@@ -1662,6 +1820,8 @@ Call Graph Tables:
    _SetLeds
    _TurnOnButtons
    _TurnOnLeds
+     _SetLeds
+   _checkLevelChange
 
  _MainInterrupt (ROOT)
    _Debounce
@@ -1679,10 +1839,10 @@ SFR0                 0      0       0       1        0.0%
 BITSFR1              0      0       0       2        0.0%
 SFR1                 0      0       0       2        0.0%
 STACK                0      0       0       2        0.0%
-BANK0               50      C      2F       3       58.8%
+BANK0               50      C      30       3       60.0%
 BITSFR3              0      0       0       4        0.0%
 SFR3                 0      0       0       4        0.0%
-ABS                  0      0      3D       4        0.0%
+ABS                  0      0      3E       4        0.0%
 BITBANK0            50      0       0       5        0.0%
 BITSFR2              0      0       0       5        0.0%
 SFR2                 0      0       0       5        0.0%
@@ -1690,58 +1850,63 @@ BITBANK1            50      0       0       6        0.0%
 BANK1               50      0       0       7        0.0%
 BITBANK2            30      0       0       8        0.0%
 BANK2               30      0       0       9        0.0%
-DATA                 0      0      3D      10        0.0%
+DATA                 0      0      3E      10        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.37 build -260352376 
-Symbol Table                                                                                   Sat Apr 09 15:58:51 2016
+Symbol Table                                                                                   Tue Apr 12 11:42:16 2016
 
-                        pc 0002                         l41 00DC                         l52 0125  
-                       l54 0129                         fsr 0004                        l900 00E5  
-                      l910 00FA                        l912 00FF                        l930 011C  
-                      l922 0111                        l932 011E                        l950 013F  
-                      l938 0127                        l948 013A                        l892 0140  
-                      u205 0162                        u215 0172                        fsr0 0004  
-                      indf 0000     __size_of_TurnOnButtons 000A                       S1004 0207  
-          ??_MainInterrupt 0078                       _PIR1 000C                       _TMR1 000E  
-                     _main 00D3                       btemp 007E                       ltemp 007E  
-                     start 0010                       ttemp 007E                       wtemp 007E  
-         _readCurrentState 004E            __end_of_SetLeds 0183                      ?_main 0044  
-                    _T1CON 0010                      i1l816 01D9                      i1l972 01A0  
-                    i1l968 0195                      u23_25 00C8                      _TRISA 0085  
-                    _TRISB 0086                      pclath 000A                      ltemp0 007E  
-                    ltemp1 0082                      ltemp2 0086                      ltemp3 0080  
-                    ttemp0 007E                      ttemp1 0081                      ttemp2 0084  
-                    ttemp3 0087                      ttemp4 007F                      status 0003  
-                    wtemp0 007E                      wtemp1 0080                      wtemp2 0082  
-                    wtemp3 0084                      wtemp4 0086                      wtemp5 0088  
-                    wtemp6 007F           __end_of_Debounce 00D3              _TurnOnButtons 01EC  
-          __initialization 0011               __end_of_main 0152                     ??_main 0048  
-            main@mainState 004C             _debounceStates 0020         __size_of_InitTimer 0011  
-       __size_of_InitPorts 0019                  ??_SetLeds 0041             ?_TurnOnButtons 0070  
-                   _inputs 002A                     saved_w 007E                SetLeds@leds 0043  
-  __end_of__initialization 0016                 _TurnOnLeds 01F6             __pcstackCOMMON 0070  
-        __end_of_InitTimer 01EC          __end_of_InitPorts 01C7                  ?_Debounce 0070  
-            _buttonPressed 0037                 __pbssBANK0 0020            ??_TurnOnButtons 0041  
-   __size_of_DebounceInput 0014                 __pmaintext 00D3                 __pintentry 0004  
-               ??_Debounce 0074      __end_of_MainInterrupt 01AE                    _SetLeds 0152  
-              ?_TurnOnLeds 0070                 _buttonMode 004D                    __ptext1 01F6  
-                  __ptext2 0152                    __ptext3 01DB                    __ptext4 01AE  
-                  __ptext5 01EC                    __ptext6 0183                    __ptext7 0018  
-                  __ptext8 01C7              _DebounceInput 01C7                  _T1CONbits 0010  
-                  _waiting 0035                    clrloop0 0200       end_of_initialization 0016  
-           ?_DebounceInput 0070                  _PORTAbits 0005                  _PORTBbits 0006  
-                _TRISAbits 0085                  _TRISBbits 0086        __size_of_TurnOnLeds 0009  
-         main@currentLevel 004B        start_initialization 0011                  _InitTimer 01DB  
-                _InitPorts 01AE          __size_of_Debounce 00BB            ??_DebounceInput 0072  
-       DebounceInput@input 0073                  ___latbits 0000              __pcstackBANK0 0041  
-               ?_InitTimer 0070                 ?_InitPorts 0070                  __pnvBANK0 004D  
-    __end_of_TurnOnButtons 01F6                   ?_SetLeds 0070               ??_TurnOnLeds 0041  
-        main@emergencyStop 0049                  __pswtext1 0207         __end_of_TurnOnLeds 01FF  
-        interrupt_function 0004                  clear_ram0 01FF                   _PIE1bits 008C  
-                _tempInput 0038                   _PIR1bits 000C     __size_of_MainInterrupt 002B  
-                 _Debounce 0018                ??_InitTimer 0041                ??_InitPorts 0041  
-         __size_of_SetLeds 0031              _MainInterrupt 0183                   _msPassed 0033  
-            __size_of_main 007F                   main@argc 0044                   main@argv 0046  
-                 intlevel1 0000             ?_MainInterrupt 0070     DebounceInput@tempState 0070  
-    __end_of_DebounceInput 01DB        main@movingDirection 004A  DebounceInput@currentState 0071  
+checkLevelChange@pastCounter 0038                            pc 0002     __end_of_checkLevelChange 0203  
+                         l41 00DC                           l61 0151                           l57 013E  
+                         fsr 0004                          l939 01FD                          l973 00E2  
+                        l983 00F5                          l967 0166                          l985 00F9  
+                        l987 00FC                          l999 010B                          u285 0188  
+                        u295 0198                          fsr0 0004                          indf 0000  
+     __size_of_TurnOnButtons 000A                         S1097 0247              ??_MainInterrupt 0078  
+                       l1021 0136                         l1013 0125                         l1005 0114  
+                       l1031 014A                         l1023 0138                         l1041 0160  
+                       l1043 0165                         l1027 0140                         _PIR1 000C  
+                       _TMR1 000E                         _main 00D3                         btemp 007E  
+                       ltemp 007E                         start 0010                         ttemp 007E  
+                       wtemp 007E             _readCurrentState 004F              __end_of_SetLeds 01A9  
+                      ?_main 0045                        _T1CON 0010                        i1l873 0215  
+                      u36_25 00C8                        _TRISA 0085                        _TRISB 0086  
+                      pclath 000A                        ltemp0 007E                        ltemp1 0082  
+                      ltemp2 0086                        ltemp3 0080                        ttemp0 007E  
+                      ttemp1 0081                        ttemp2 0084                        ttemp3 0087  
+                      ttemp4 007F  checkLevelChange@returnValue 0043                        status 0003  
+                      wtemp0 007E                        wtemp1 0080                        wtemp2 0082  
+                      wtemp3 0084                        wtemp4 0086                        wtemp5 0088  
+                      wtemp6 007F             __end_of_Debounce 00D3                _TurnOnButtons 0235  
+            __initialization 0011                 __end_of_main 0178                       ??_main 0049  
+              main@mainState 004C                       i1l1061 01BB                       i1l1065 01C6  
+             _debounceStates 0020           __size_of_InitTimer 0011           __size_of_InitPorts 0019  
+                  ??_SetLeds 0042               ?_TurnOnButtons 0070                       _inputs 002A  
+                     saved_w 007E                  SetLeds@leds 0044      __end_of__initialization 0016  
+                 _TurnOnLeds 0228               __pcstackCOMMON 0070            ?_checkLevelChange 0070  
+         ??_checkLevelChange 0042            __end_of_InitTimer 0228            __end_of_InitPorts 01ED  
+                  ?_Debounce 0070                _buttonPressed 0037                   __pbssBANK0 0020  
+            ??_TurnOnButtons 0042       __size_of_DebounceInput 0014                   __pmaintext 00D3  
+                 __pintentry 0004                   ??_Debounce 0074        __end_of_MainInterrupt 01D4  
+                    _SetLeds 0178                  ?_TurnOnLeds 0070                   _buttonMode 004E  
+                    __ptext1 01ED                      __ptext2 0228                      __ptext3 0178  
+                    __ptext4 0217                      __ptext5 01D4                      __ptext6 0235  
+                    __ptext7 01A9                      __ptext8 0018                      __ptext9 0203  
+              _DebounceInput 0203                    _T1CONbits 0010                      _waiting 0035  
+                    clrloop0 0240         end_of_initialization 0016               ?_DebounceInput 0070  
+                  _PORTAbits 0005                    _PORTBbits 0006                    _TRISAbits 0085  
+                  _TRISBbits 0086          __size_of_TurnOnLeds 000D             main@currentLevel 004B  
+        start_initialization 0011                    _InitTimer 0217                    _InitPorts 01D4  
+          __size_of_Debounce 00BB    __size_of_checkLevelChange 0016              ??_DebounceInput 0072  
+         DebounceInput@input 0073                    ___latbits 0000                __pcstackBANK0 0042  
+                 ?_InitTimer 0070                   ?_InitPorts 0070                    __pnvBANK0 004E  
+      __end_of_TurnOnButtons 023F                     ?_SetLeds 0070                 ??_TurnOnLeds 0045  
+          main@emergencyStop 004A                    __pswtext1 0247           __end_of_TurnOnLeds 0235  
+          interrupt_function 0004                    clear_ram0 023F                     _PIE1bits 008C  
+                  _tempInput 0039                     _PIR1bits 000C       __size_of_MainInterrupt 002B  
+                   _Debounce 0018                  ??_InitTimer 0042                  ??_InitPorts 0042  
+           _checkLevelChange 01ED             __size_of_SetLeds 0031                _MainInterrupt 01A9  
+                   _msPassed 0033                __size_of_main 00A5                     main@argc 0045  
+                   main@argv 0047                     intlevel1 0000               ?_MainInterrupt 0070  
+     DebounceInput@tempState 0070        __end_of_DebounceInput 0217          main@movingDirection 004D  
+  DebounceInput@currentState 0071  

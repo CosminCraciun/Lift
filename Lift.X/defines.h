@@ -14,18 +14,18 @@
 
 #define WAIT_FOR_MS         5000
 
+#define LAST_LEVEL          3           // last level with ground level
+
 #define NOT_MOVING      0
 #define GOING_UP        1
 #define GOING_DOWN      2
 
 // main states
 enum{
-    STATE_IDLE,
-    STOP,
-    CHECK,
-    GO,
-    WAIT,
-    REACHED
+    STATE_STOP,
+    STATE_CHECK,
+    STATE_RUN,
+    STATE_REACHED
 };
 //#define START_MOVING        
 

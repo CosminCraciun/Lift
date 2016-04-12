@@ -11,47 +11,48 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\cosmi\AppData\Local\Temp\s4gs.obj
-reset_vec CODE 0 0 0 1 2
-end_init CODE 0 10 10 1 2
 $dist/default/production\Lift.X.production.obj
 cinit CODE 0 11 11 7 2
-text1 CODE 0 1F6 1F6 9 2
-text2 CODE 0 152 152 31 2
-text3 CODE 0 1DB 1DB 11 2
-text4 CODE 0 1AE 1AE 19 2
-text5 CODE 0 1EC 1EC A 2
-text6 CODE 0 183 183 2B 2
-text7 CODE 0 18 18 BB 2
-text8 CODE 0 1C7 1C7 14 2
-nvBANK0 BANK0 1 4D 4D 2 1
-maintext CODE 0 D3 D3 7F 2
+text1 CODE 0 1ED 1ED 16 2
+text2 CODE 0 228 228 D 2
+text3 CODE 0 178 178 31 2
+text4 CODE 0 217 217 11 2
+text5 CODE 0 1D4 1D4 19 2
+text6 CODE 0 235 235 A 2
+text7 CODE 0 1A9 1A9 2B 2
+text8 CODE 0 18 18 BB 2
+text9 CODE 0 203 203 14 2
+nvBANK0 BANK0 1 4E 4E 2 1
+maintext CODE 0 D3 D3 A5 2
 cstackCOMMON COMMON 1 70 70 E 1
-cstackBANK0 BANK0 1 41 41 C 1
+cstackBANK0 BANK0 1 42 42 C 1
 intentry CODE 0 4 4 C 2
-bssBANK0 BANK0 1 20 20 21 1
-swtext1 CONST 0 207 207 6 2
-clrtext CODE 0 1FF 1FF 8 2
+bssBANK0 BANK0 1 20 20 22 1
+swtext1 CONST 0 247 247 4 2
+clrtext CODE 0 23F 23F 8 2
+$C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.obj
+reset_vec CODE 0 0 0 1 2
+end_init CODE 0 10 10 1 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 4F-6F 1
+RAM 50-6F 1
 RAM A0-EF 1
 RAM 120-14F 1
-BANK0 4F-6F 1
+BANK0 50-6F 1
 BANK1 A0-EF 1
 BANK2 120-14F 1
 CONST 1-3 2
-CONST 20D-7FF 2
+CONST 24B-7FF 2
 ENTRY 1-3 2
-ENTRY 20D-7FF 2
+ENTRY 24B-7FF 2
 IDLOC 2000-2003 2
 STACK A0-EF 1
 CODE 1-3 2
-CODE 20D-7FF 2
+CODE 24B-7FF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-11F 1
@@ -59,9 +60,9 @@ SFR3 180-1EF 1
 CONFIG 2007-2007 2
 EEDATA 2100-217F 2
 STRCODE 1-3 2
-STRCODE 20D-7FF 2
+STRCODE 24B-7FF 2
 STRING 1-3 2
-STRING 20D-7FF 2
+STRING 24B-7FF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -76,154 +77,169 @@ STRING 20D-7FF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Lift.X.production.obj
-11 cinit CODE >321:C:\Users\cosmi\AppData\Local\Temp\s4gs.
-11 cinit CODE >324:C:\Users\cosmi\AppData\Local\Temp\s4gs.
-11 cinit CODE >365:C:\Users\cosmi\AppData\Local\Temp\s4gs.
-12 cinit CODE >366:C:\Users\cosmi\AppData\Local\Temp\s4gs.
-13 cinit CODE >367:C:\Users\cosmi\AppData\Local\Temp\s4gs.
-14 cinit CODE >368:C:\Users\cosmi\AppData\Local\Temp\s4gs.
-15 cinit CODE >369:C:\Users\cosmi\AppData\Local\Temp\s4gs.
-16 cinit CODE >375:C:\Users\cosmi\AppData\Local\Temp\s4gs.
-16 cinit CODE >377:C:\Users\cosmi\AppData\Local\Temp\s4gs.
-17 cinit CODE >378:C:\Users\cosmi\AppData\Local\Temp\s4gs.
-4 intentry CODE >175:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-1C7 text8 CODE >63:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1C8 text8 CODE >65:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1CD text8 CODE >66:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1D3 text8 CODE >72:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1D7 text8 CODE >74:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1D8 text8 CODE >75:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1D9 text8 CODE >76:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-18 text7 CODE >153:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-18 text7 CODE >155:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-2D text7 CODE >156:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-3E text7 CODE >157:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-51 text7 CODE >158:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-62 text7 CODE >159:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-72 text7 CODE >160:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-82 text7 CODE >162:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-85 text7 CODE >164:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-86 text7 CODE >165:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-98 text7 CODE >166:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-9C text7 CODE >167:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-AC text7 CODE >168:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-B2 text7 CODE >169:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-C5 text7 CODE >170:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-183 text6 CODE >175:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-183 text6 CODE >178:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-185 text6 CODE >180:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-18B text6 CODE >182:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-18F text6 CODE >184:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-195 text6 CODE >187:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-19F text6 CODE >189:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-1A0 text6 CODE >194:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-1A3 text6 CODE >195:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-1EC text5 CODE >38:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1EC text5 CODE >40:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1F0 text5 CODE >42:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1F3 text5 CODE >43:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1F4 text5 CODE >44:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1F5 text5 CODE >45:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1AE text4 CODE >13:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1AE text4 CODE >16:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1B2 text4 CODE >17:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1B4 text4 CODE >19:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1B5 text4 CODE >20:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1B6 text4 CODE >21:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1B7 text4 CODE >23:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1B8 text4 CODE >25:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1BB text4 CODE >26:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1BC text4 CODE >27:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1BD text4 CODE >29:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1C0 text4 CODE >30:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1C1 text4 CODE >32:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1C4 text4 CODE >33:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1C5 text4 CODE >35:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1C6 text4 CODE >36:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1DB text3 CODE >8:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\timer.c
-1DB text3 CODE >10:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\timer.c
-1DF text3 CODE >13:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\timer.c
-1E0 text3 CODE >16:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\timer.c
-1E2 text3 CODE >17:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\timer.c
-1E6 text3 CODE >20:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\timer.c
-1E7 text3 CODE >23:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\timer.c
-1E8 text3 CODE >26:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\timer.c
-1EB text3 CODE >27:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\timer.c
-152 text2 CODE >56:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-155 text2 CODE >58:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-15F text2 CODE >59:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-16F text2 CODE >60:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-182 text2 CODE >61:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1F6 text1 CODE >47:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1F6 text1 CODE >49:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1F9 text1 CODE >51:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1FC text1 CODE >52:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1FD text1 CODE >53:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-1FE text1 CODE >54:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
-207 swtext1 CONST >44:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-D3 maintext CODE >29:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-D3 maintext CODE >31:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-D6 maintext CODE >32:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-D7 maintext CODE >33:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-D8 maintext CODE >34:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-D9 maintext CODE >36:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-DA maintext CODE >37:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-DB maintext CODE >44:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-DC maintext CODE >52:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-DC maintext CODE >55:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-DE maintext CODE >57:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-E1 maintext CODE >59:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-E2 maintext CODE >60:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-E5 maintext CODE >63:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-EC maintext CODE >65:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-ED maintext CODE >66:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-F1 maintext CODE >68:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-F7 maintext CODE >70:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-F9 maintext CODE >71:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-FA maintext CODE >74:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-FE maintext CODE >75:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-FF maintext CODE >86:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-108 maintext CODE >88:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-10A maintext CODE >89:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-10C maintext CODE >90:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-10E maintext CODE >91:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-110 maintext CODE >92:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-111 maintext CODE >93:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-117 maintext CODE >95:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-119 maintext CODE >96:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-11C maintext CODE >101:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-11E maintext CODE >107:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-11F maintext CODE >108:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-122 maintext CODE >110:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-123 maintext CODE >111:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-124 maintext CODE >112:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-125 maintext CODE >113:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-125 maintext CODE >115:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-126 maintext CODE >116:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-127 maintext CODE >120:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-129 maintext CODE >126:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-129 maintext CODE >128:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-12B maintext CODE >130:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-132 maintext CODE >132:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-134 maintext CODE >133:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-135 maintext CODE >134:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-139 maintext CODE >135:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-13A maintext CODE >138:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-13E maintext CODE >142:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-13F maintext CODE >145:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-140 maintext CODE >42:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-146 maintext CODE >44:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-151 maintext CODE >40:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-1FF clrtext CODE >352:C:\Users\cosmi\AppData\Local\Temp\s4gs.
-1FF clrtext CODE >353:C:\Users\cosmi\AppData\Local\Temp\s4gs.
-200 clrtext CODE >354:C:\Users\cosmi\AppData\Local\Temp\s4gs.
-200 clrtext CODE >355:C:\Users\cosmi\AppData\Local\Temp\s4gs.
-201 clrtext CODE >356:C:\Users\cosmi\AppData\Local\Temp\s4gs.
-202 clrtext CODE >357:C:\Users\cosmi\AppData\Local\Temp\s4gs.
-203 clrtext CODE >358:C:\Users\cosmi\AppData\Local\Temp\s4gs.
-204 clrtext CODE >359:C:\Users\cosmi\AppData\Local\Temp\s4gs.
-205 clrtext CODE >360:C:\Users\cosmi\AppData\Local\Temp\s4gs.
-206 clrtext CODE >361:C:\Users\cosmi\AppData\Local\Temp\s4gs.
+11 cinit CODE >324:C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.
+11 cinit CODE >327:C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.
+11 cinit CODE >371:C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.
+12 cinit CODE >372:C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.
+13 cinit CODE >373:C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.
+14 cinit CODE >374:C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.
+15 cinit CODE >375:C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.
+16 cinit CODE >381:C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.
+16 cinit CODE >383:C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.
+17 cinit CODE >384:C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.
+4 intentry CODE >198:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+203 text9 CODE >65:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+204 text9 CODE >67:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+209 text9 CODE >68:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+20F text9 CODE >74:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+213 text9 CODE >76:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+214 text9 CODE >77:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+215 text9 CODE >78:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+18 text8 CODE >156:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+18 text8 CODE >158:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+2D text8 CODE >159:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+3E text8 CODE >160:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+51 text8 CODE >161:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+62 text8 CODE >162:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+72 text8 CODE >163:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+82 text8 CODE >165:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+85 text8 CODE >167:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+86 text8 CODE >168:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+98 text8 CODE >169:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+9C text8 CODE >170:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+AC text8 CODE >171:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+B2 text8 CODE >172:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+C5 text8 CODE >173:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+1A9 text7 CODE >198:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+1A9 text7 CODE >201:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+1AB text7 CODE >203:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+1B1 text7 CODE >205:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+1B5 text7 CODE >207:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+1BB text7 CODE >210:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+1C5 text7 CODE >212:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+1C6 text7 CODE >217:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+1C9 text7 CODE >218:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+235 text6 CODE >38:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+235 text6 CODE >40:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+239 text6 CODE >42:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+23C text6 CODE >43:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+23D text6 CODE >44:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+23E text6 CODE >45:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+1D4 text5 CODE >13:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+1D4 text5 CODE >16:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+1D8 text5 CODE >17:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+1DA text5 CODE >19:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+1DB text5 CODE >20:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+1DC text5 CODE >21:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+1DD text5 CODE >23:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+1DE text5 CODE >25:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+1E1 text5 CODE >26:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+1E2 text5 CODE >27:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+1E3 text5 CODE >29:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+1E6 text5 CODE >30:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+1E7 text5 CODE >32:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+1EA text5 CODE >33:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+1EB text5 CODE >35:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+1EC text5 CODE >36:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+217 text4 CODE >8:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\timer.c
+217 text4 CODE >10:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\timer.c
+21B text4 CODE >13:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\timer.c
+21C text4 CODE >16:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\timer.c
+21E text4 CODE >17:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\timer.c
+222 text4 CODE >20:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\timer.c
+223 text4 CODE >23:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\timer.c
+224 text4 CODE >26:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\timer.c
+227 text4 CODE >27:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\timer.c
+178 text3 CODE >58:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+17B text3 CODE >60:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+185 text3 CODE >61:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+195 text3 CODE >62:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+1A8 text3 CODE >63:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+228 text2 CODE >47:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+228 text2 CODE >49:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+22B text2 CODE >51:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+22E text2 CODE >52:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+22F text2 CODE >53:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+230 text2 CODE >55:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+234 text2 CODE >56:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
+1ED text1 CODE >178:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+1ED text1 CODE >181:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+1F0 text1 CODE >183:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+1F5 text1 CODE >187:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+1FB text1 CODE >190:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+1FD text1 CODE >193:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+201 text1 CODE >195:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+247 swtext1 CONST >45:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+D3 maintext CODE >30:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+D3 maintext CODE >32:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+D6 maintext CODE >33:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+D7 maintext CODE >34:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+D8 maintext CODE >35:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+D9 maintext CODE >37:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+DA maintext CODE >38:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+DB maintext CODE >45:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+DC maintext CODE >47:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+DC maintext CODE >50:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+DE maintext CODE >52:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+E1 maintext CODE >54:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+E2 maintext CODE >57:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+EB maintext CODE >59:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+EC maintext CODE >61:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+F2 maintext CODE >63:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+F4 maintext CODE >64:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+F5 maintext CODE >67:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+F9 maintext CODE >70:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+FB maintext CODE >73:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+FC maintext CODE >79:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+105 maintext CODE >81:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+106 maintext CODE >82:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+108 maintext CODE >83:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+10A maintext CODE >84:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+10B maintext CODE >85:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+111 maintext CODE >87:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+114 maintext CODE >90:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+121 maintext CODE >92:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+122 maintext CODE >93:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+124 maintext CODE >94:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+125 maintext CODE >95:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+130 maintext CODE >97:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+131 maintext CODE >98:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+135 maintext CODE >99:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+136 maintext CODE >102:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+138 maintext CODE >108:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+13B maintext CODE >110:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+13C maintext CODE >111:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+13D maintext CODE >112:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+13E maintext CODE >113:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+13E maintext CODE >115:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+13F maintext CODE >116:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+140 maintext CODE >118:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+143 maintext CODE >120:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+149 maintext CODE >121:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+14A maintext CODE >124:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+150 maintext CODE >128:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+151 maintext CODE >129:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+151 maintext CODE >131:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+153 maintext CODE >133:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+15A maintext CODE >135:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+15C maintext CODE >136:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+15D maintext CODE >137:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+160 maintext CODE >141:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+164 maintext CODE >145:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+165 maintext CODE >148:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+166 maintext CODE >43:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+16C maintext CODE >45:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+177 maintext CODE >41:C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+23F clrtext CODE >358:C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.
+23F clrtext CODE >359:C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.
+240 clrtext CODE >360:C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.
+240 clrtext CODE >361:C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.
+241 clrtext CODE >362:C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.
+242 clrtext CODE >363:C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.
+243 clrtext CODE >364:C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.
+244 clrtext CODE >365:C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.
+245 clrtext CODE >366:C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.
+246 clrtext CODE >367:C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -237,15 +253,15 @@ FF maintext CODE >86:C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 0 0 ABS 0 - dist/default/production\Lift.X.production.obj
-_TurnOnLeds 3EC 0 CODE 0 text1 dist/default/production\Lift.X.production.obj
-__Hspace_0 20D 0 ABS 0 - -
+_TurnOnLeds 450 0 CODE 0 text2 dist/default/production\Lift.X.production.obj
+__Hspace_0 24B 0 ABS 0 - -
 __Hspace_1 7E 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
-main@emergencyStop 49 0 BANK0 1 cstackBANK0 dist/default/production\Lift.X.production.obj
+main@emergencyStop 4A 0 BANK0 1 cstackBANK0 dist/default/production\Lift.X.production.obj
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
-__end_of_InitPorts 38E 0 CODE 0 text4 dist/default/production\Lift.X.production.obj
-__end_of_InitTimer 3D8 0 CODE 0 text3 dist/default/production\Lift.X.production.obj
+__end_of_InitPorts 3DA 0 CODE 0 text5 dist/default/production\Lift.X.production.obj
+__end_of_InitTimer 450 0 CODE 0 text4 dist/default/production\Lift.X.production.obj
 _T1CONbits 10 0 ABS 0 - dist/default/production\Lift.X.production.obj
 ltemp0 7E 0 ABS 0 - dist/default/production\Lift.X.production.obj
 ltemp1 82 0 ABS 0 - dist/default/production\Lift.X.production.obj
@@ -256,18 +272,18 @@ __size_of_InitTimer 0 0 ABS 0 - dist/default/production\Lift.X.production.obj
 __Hstrings 0 0 ABS 0 strings -
 _PIR1 C 0 ABS 0 - dist/default/production\Lift.X.production.obj
 _TMR1 E 0 ABS 0 - dist/default/production\Lift.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\cosmi\AppData\Local\Temp\s4gs.obj
+___sp 0 0 STACK 2 stack C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.obj
 _main 1A6 0 CODE 0 maintext dist/default/production\Lift.X.production.obj
 btemp 7E 0 ABS 0 - dist/default/production\Lift.X.production.obj
 ltemp 7E 0 ABS 0 - dist/default/production\Lift.X.production.obj
-start 20 0 CODE 0 init C:\Users\cosmi\AppData\Local\Temp\s4gs.obj
+start 20 0 CODE 0 init C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.obj
 ttemp 7E 0 ABS 0 - dist/default/production\Lift.X.production.obj
 wtemp 7E 0 ABS 0 - dist/default/production\Lift.X.production.obj
-_SetLeds 2A4 0 CODE 0 text2 dist/default/production\Lift.X.production.obj
+_SetLeds 2F0 0 CODE 0 text3 dist/default/production\Lift.X.production.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\Lift.X.production.obj
-_readCurrentState 4E 0 BANK0 1 nvBANK0 dist/default/production\Lift.X.production.obj
-_InitPorts 35C 0 CODE 0 text4 dist/default/production\Lift.X.production.obj
-_InitTimer 3B6 0 CODE 0 text3 dist/default/production\Lift.X.production.obj
+_readCurrentState 4F 0 BANK0 1 nvBANK0 dist/default/production\Lift.X.production.obj
+_InitPorts 3A8 0 CODE 0 text5 dist/default/production\Lift.X.production.obj
+_InitTimer 42E 0 CODE 0 text4 dist/default/production\Lift.X.production.obj
 __size_of_Debounce 0 0 ABS 0 - dist/default/production\Lift.X.production.obj
 _msPassed 33 0 BANK0 1 bssBANK0 dist/default/production\Lift.X.production.obj
 __Hpowerup 0 0 CODE 0 powerup -
@@ -276,13 +292,13 @@ ttemp1 81 0 ABS 0 - dist/default/production\Lift.X.production.obj
 ttemp2 84 0 ABS 0 - dist/default/production\Lift.X.production.obj
 ttemp3 87 0 ABS 0 - dist/default/production\Lift.X.production.obj
 ttemp4 7F 0 ABS 0 - dist/default/production\Lift.X.production.obj
-intlevel0 0 0 CODE 0 functab C:\Users\cosmi\AppData\Local\Temp\s4gs.obj
-intlevel1 0 0 CODE 0 functab C:\Users\cosmi\AppData\Local\Temp\s4gs.obj
-intlevel2 0 0 CODE 0 functab C:\Users\cosmi\AppData\Local\Temp\s4gs.obj
-intlevel3 0 0 CODE 0 functab C:\Users\cosmi\AppData\Local\Temp\s4gs.obj
-intlevel4 0 0 CODE 0 functab C:\Users\cosmi\AppData\Local\Temp\s4gs.obj
-intlevel5 0 0 CODE 0 functab C:\Users\cosmi\AppData\Local\Temp\s4gs.obj
-__end_of_TurnOnLeds 3FE 0 CODE 0 text1 dist/default/production\Lift.X.production.obj
+intlevel0 0 0 CODE 0 functab C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.obj
+intlevel1 0 0 CODE 0 functab C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.obj
+intlevel2 0 0 CODE 0 functab C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.obj
+intlevel3 0 0 CODE 0 functab C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.obj
+intlevel4 0 0 CODE 0 functab C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.obj
+intlevel5 0 0 CODE 0 functab C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.obj
+__end_of_TurnOnLeds 46A 0 CODE 0 text2 dist/default/production\Lift.X.production.obj
 wtemp0 7E 0 ABS 0 - dist/default/production\Lift.X.production.obj
 wtemp1 80 0 ABS 0 - dist/default/production\Lift.X.production.obj
 wtemp2 82 0 ABS 0 - dist/default/production\Lift.X.production.obj
@@ -292,23 +308,24 @@ wtemp5 88 0 ABS 0 - dist/default/production\Lift.X.production.obj
 wtemp6 7F 0 ABS 0 - dist/default/production\Lift.X.production.obj
 __Hfunctab 0 0 CODE 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
-_buttonMode 4D 0 BANK0 1 nvBANK0 dist/default/production\Lift.X.production.obj
+_buttonMode 4E 0 BANK0 1 nvBANK0 dist/default/production\Lift.X.production.obj
 __size_of_TurnOnButtons 0 0 ABS 0 - dist/default/production\Lift.X.production.obj
 _buttonPressed 37 0 BANK0 1 bssBANK0 dist/default/production\Lift.X.production.obj
-_Debounce 30 0 CODE 0 text7 dist/default/production\Lift.X.production.obj
+_Debounce 30 0 CODE 0 text8 dist/default/production\Lift.X.production.obj
 __Lmaintext 0 0 ABS 0 maintext -
 __LnvBANK0 0 0 ABS 0 nvBANK0 -
-__end_of_Debounce 1A6 0 CODE 0 text7 dist/default/production\Lift.X.production.obj
-__end_of_TurnOnButtons 3EC 0 CODE 0 text5 dist/default/production\Lift.X.production.obj
-main@movingDirection 4A 0 BANK0 1 cstackBANK0 dist/default/production\Lift.X.production.obj
+__end_of_Debounce 1A6 0 CODE 0 text8 dist/default/production\Lift.X.production.obj
+__end_of_TurnOnButtons 47E 0 CODE 0 text6 dist/default/production\Lift.X.production.obj
+main@movingDirection 4D 0 BANK0 1 cstackBANK0 dist/default/production\Lift.X.production.obj
 DebounceInput@tempState 70 0 COMMON 1 cstackCOMMON dist/default/production\Lift.X.production.obj
 DebounceInput@currentState 71 0 COMMON 1 cstackCOMMON dist/default/production\Lift.X.production.obj
+checkLevelChange@pastCounter 38 0 BANK0 1 bssBANK0 dist/default/production\Lift.X.production.obj
 start_initialization 22 0 CODE 0 cinit dist/default/production\Lift.X.production.obj
 _TRISAbits 85 0 ABS 0 - dist/default/production\Lift.X.production.obj
 _TRISBbits 86 0 ABS 0 - dist/default/production\Lift.X.production.obj
-clear_ram0 3FE 0 CODE 0 clrtext dist/default/production\Lift.X.production.obj
-__pcstackBANK0 41 0 BANK0 1 cstackBANK0 dist/default/production\Lift.X.production.obj
-___int_sp 0 0 STACK 2 stack C:\Users\cosmi\AppData\Local\Temp\s4gs.obj
+clear_ram0 47E 0 CODE 0 clrtext dist/default/production\Lift.X.production.obj
+__pcstackBANK0 42 0 BANK0 1 cstackBANK0 dist/default/production\Lift.X.production.obj
+___int_sp 0 0 STACK 2 stack C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -328,7 +345,7 @@ __Lidloc 0 0 IDLOC 0 idloc -
 __Lstack 0 0 STACK 2 stack -
 __size_of_TurnOnLeds 0 0 ABS 0 - dist/default/production\Lift.X.production.obj
 main@mainState 4C 0 BANK0 1 cstackBANK0 dist/default/production\Lift.X.production.obj
-_MainInterrupt 306 0 CODE 0 text6 dist/default/production\Lift.X.production.obj
+_MainInterrupt 352 0 CODE 0 text7 dist/default/production\Lift.X.production.obj
 _PORTAbits 5 0 ABS 0 - dist/default/production\Lift.X.production.obj
 _PORTBbits 6 0 ABS 0 - dist/default/production\Lift.X.production.obj
 __Habs1 0 0 ABS 0 abs1 -
@@ -347,53 +364,55 @@ __Lsfr1 0 0 ABS 0 sfr1 -
 __Lsfr2 0 0 ABS 0 sfr2 -
 __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
-__pnvBANK0 4D 0 BANK0 1 nvBANK0 dist/default/production\Lift.X.production.obj
+__pnvBANK0 4E 0 BANK0 1 nvBANK0 dist/default/production\Lift.X.production.obj
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-__S0 20D 0 ABS 0 - -
+__S0 24B 0 ABS 0 - -
 __S1 7E 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 saved_w 7E 0 ABS 0 - dist/default/production\Lift.X.production.obj
 __size_of_SetLeds 0 0 ABS 0 - dist/default/production\Lift.X.production.obj
-_tempInput 38 0 BANK0 1 bssBANK0 dist/default/production\Lift.X.production.obj
+_tempInput 39 0 BANK0 1 bssBANK0 dist/default/production\Lift.X.production.obj
 __HnvBANK0 0 0 ABS 0 nvBANK0 -
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\cosmi\AppData\Local\Temp\s4gs.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.obj
 _inputs 2A 0 BANK0 1 bssBANK0 dist/default/production\Lift.X.production.obj
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
-SetLeds@leds 43 0 BANK0 1 cstackBANK0 dist/default/production\Lift.X.production.obj
+SetLeds@leds 44 0 BANK0 1 cstackBANK0 dist/default/production\Lift.X.production.obj
 _PIE1bits 8C 0 ABS 0 - dist/default/production\Lift.X.production.obj
 __pmaintext 1A6 0 CODE 0 maintext dist/default/production\Lift.X.production.obj
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 0 config -
 __size_of_MainInterrupt 0 0 ABS 0 - dist/default/production\Lift.X.production.obj
-stackhi 0 0 ABS 0 - C:\Users\cosmi\AppData\Local\Temp\s4gs.obj
-stacklo 0 0 ABS 0 - C:\Users\cosmi\AppData\Local\Temp\s4gs.obj
-_DebounceInput 38E 0 CODE 0 text8 dist/default/production\Lift.X.production.obj
+stackhi 0 0 ABS 0 - C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.obj
+stacklo 0 0 ABS 0 - C:\Users\COSMIN~1.CRA\AppData\Local\Temp\s5oo.obj
+_DebounceInput 406 0 CODE 0 text9 dist/default/production\Lift.X.production.obj
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
-__end_of_SetLeds 306 0 CODE 0 text2 dist/default/production\Lift.X.production.obj
+__end_of_SetLeds 352 0 CODE 0 text3 dist/default/production\Lift.X.production.obj
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 _PIR1bits C 0 ABS 0 - dist/default/production\Lift.X.production.obj
 __Lend_init 20 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 end_of_initialization 2C 0 CODE 0 cinit dist/default/production\Lift.X.production.obj
 __Hintentry 20 0 CODE 0 intentry -
-__end_of_MainInterrupt 35C 0 CODE 0 text6 dist/default/production\Lift.X.production.obj
+__end_of_MainInterrupt 3A8 0 CODE 0 text7 dist/default/production\Lift.X.production.obj
 __Lstrings 0 0 ABS 0 strings -
+_checkLevelChange 3DA 0 CODE 0 text1 dist/default/production\Lift.X.production.obj
 __Hreset_vec 2 0 CODE 0 reset_vec -
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
-__ptext1 3EC 0 CODE 0 text1 dist/default/production\Lift.X.production.obj
-__ptext2 2A4 0 CODE 0 text2 dist/default/production\Lift.X.production.obj
-__ptext3 3B6 0 CODE 0 text3 dist/default/production\Lift.X.production.obj
-__ptext4 35C 0 CODE 0 text4 dist/default/production\Lift.X.production.obj
-__ptext5 3D8 0 CODE 0 text5 dist/default/production\Lift.X.production.obj
-__ptext6 306 0 CODE 0 text6 dist/default/production\Lift.X.production.obj
-__ptext7 30 0 CODE 0 text7 dist/default/production\Lift.X.production.obj
-__ptext8 38E 0 CODE 0 text8 dist/default/production\Lift.X.production.obj
+__ptext1 3DA 0 CODE 0 text1 dist/default/production\Lift.X.production.obj
+__ptext2 450 0 CODE 0 text2 dist/default/production\Lift.X.production.obj
+__ptext3 2F0 0 CODE 0 text3 dist/default/production\Lift.X.production.obj
+__ptext4 42E 0 CODE 0 text4 dist/default/production\Lift.X.production.obj
+__ptext5 3A8 0 CODE 0 text5 dist/default/production\Lift.X.production.obj
+__ptext6 46A 0 CODE 0 text6 dist/default/production\Lift.X.production.obj
+__ptext7 352 0 CODE 0 text7 dist/default/production\Lift.X.production.obj
+__ptext8 30 0 CODE 0 text8 dist/default/production\Lift.X.production.obj
+__ptext9 406 0 CODE 0 text9 dist/default/production\Lift.X.production.obj
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 main@currentLevel 4B 0 BANK0 1 cstackBANK0 dist/default/production\Lift.X.production.obj
@@ -405,20 +424,23 @@ __Lclrtext 0 0 ABS 0 clrtext -
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\Lift.X.production.obj
 __Hend_init 22 0 CODE 0 end_init -
 __size_of_DebounceInput 0 0 ABS 0 - dist/default/production\Lift.X.production.obj
-__end_of_main 2A4 0 CODE 0 maintext dist/default/production\Lift.X.production.obj
+__end_of_main 2F0 0 CODE 0 maintext dist/default/production\Lift.X.production.obj
 DebounceInput@input 73 0 COMMON 1 cstackCOMMON dist/default/production\Lift.X.production.obj
+checkLevelChange@returnValue 43 0 BANK0 1 cstackBANK0 dist/default/production\Lift.X.production.obj
 _T1CON 10 0 ABS 0 - dist/default/production\Lift.X.production.obj
 _TRISA 85 0 ABS 0 - dist/default/production\Lift.X.production.obj
 _TRISB 86 0 ABS 0 - dist/default/production\Lift.X.production.obj
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 interrupt_function 8 0 CODE 0 intentry dist/default/production\Lift.X.production.obj
+__end_of_checkLevelChange 406 0 CODE 0 text1 dist/default/production\Lift.X.production.obj
 __pintentry 8 0 CODE 0 intentry dist/default/production\Lift.X.production.obj
+__size_of_checkLevelChange 0 0 ABS 0 - dist/default/production\Lift.X.production.obj
 __initialization 22 0 CODE 0 cinit dist/default/production\Lift.X.production.obj
 __pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production\Lift.X.production.obj
-__end_of_DebounceInput 3B6 0 CODE 0 text8 dist/default/production\Lift.X.production.obj
-_TurnOnButtons 3D8 0 CODE 0 text5 dist/default/production\Lift.X.production.obj
-__pswtext1 40E 0 CONST 0 swtext1 dist/default/production\Lift.X.production.obj
+__end_of_DebounceInput 42E 0 CODE 0 text9 dist/default/production\Lift.X.production.obj
+_TurnOnButtons 46A 0 CODE 0 text6 dist/default/production\Lift.X.production.obj
+__pswtext1 48E 0 CONST 0 swtext1 dist/default/production\Lift.X.production.obj
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -445,7 +467,7 @@ __pswtext1 40E 0 CONST 0 swtext1 dist/default/production\Lift.X.production.obj
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cstackCOMMON 1 70 70 E 1
-intentry 0 4 8 203 2
+intentry 0 4 8 243 2
 reset_vec 0 0 0 1 2
-bssBANK0 1 20 20 2F 1
-swtext1 0 207 40E 6 2
+bssBANK0 1 20 20 30 1
+swtext1 0 247 48E 4 2

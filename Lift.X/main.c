@@ -16,6 +16,7 @@
 #include "timer.h"
 
 void  debounce();
+unsigned char checkLevelChange();
 
 /*
  * 
@@ -29,7 +30,7 @@ unsigned int waiting;
 int main(int argc, char** argv) 
 {
     unsigned char currentLevel = 0;
-    unsigned char mainState = STATE_IDLE;
+    unsigned char mainState = STATE_STOP;
     unsigned char movingDirection = NOT_MOVING;
     unsigned char emergencyStop = 0;
     
@@ -43,27 +44,19 @@ int main(int argc, char** argv)
         
         switch (mainState)
         {
-            case STATE_IDLE :
-            {
-                // do nothing
-                ;
-            }
-            break;
-            case STOP :
+            case STATE_STOP :
             {
                 // STOP everything
                 UP = DOWN = 0;
-                // check for button press
-                if (NOT_MOVING != movingDirection)
+                
+                if ( 0 == buttonMode )
                 {
                     TurnOnButtons();
-                    movingDirection = NOT_MOVING;
                 }
                 
                 if (buttonPressed != currentLevel && buttonPressed != 0)
                 {
                     TurnOnLeds();
-                    SetLeds(buttonPressed);
                     
                     if (buttonPressed > currentLevel)
                     {
@@ -74,37 +67,44 @@ int main(int argc, char** argv)
                         movingDirection = GOING_DOWN;
                     }
                     
-                    mainState = CHECK;
+                    mainState = STATE_CHECK;
                 }
             }
             break;
-            case CHECK :
+            case STATE_CHECK :
             {
                 // check for security glitches
                 if (    ( PRESSED == inputs[SAFETY_1_POS] ) &&
                         ( PRESSED == inputs[SAFETY_1_POS] ) &&
                         ( PRESSED == inputs[SAFETY_1_POS] ) )
                 {
-                    mainState = STOP;
-                    emergencyStop = 1;
+                    mainState = STATE_STOP;
                     UP = DOWN = 0;
-                    SetLeds(0);
+                    SetLeds(0); 
                 }
                 else if ( currentLevel == buttonPressed )
                 {
                     waiting = 0;
-                    UP = DOWN = 0;
-                    mainState = REACHED;
+                    mainState = STATE_REACHED;
+                }
+                else if ( GOING_DOWN == movingDirection && 0 != inputs[DELIMITER_DOWN] )
+                {
+                    mainState = STATE_STOP;
+                    currentLevel = 1;
+                }
+                else if ( GOING_UP == movingDirection && 0 != inputs[DELIMITER_UP] )
+                {
+                    mainState = STATE_STOP;
+                    currentLevel = LAST_LEVEL;
                 }
                 else
                 {
-                    mainState = GO;
+                    mainState = STATE_RUN;
                 }
             }
             break;
-            case GO :
+            case STATE_RUN :
             {
-                emergencyStop = 0;
                 if ( GOING_UP == movingDirection )
                 {
                     DOWN = 0;
@@ -115,15 +115,18 @@ int main(int argc, char** argv)
                     DOWN = 1;
                     UP = 0;
                 }
+                if ( GOING_UP == movingDirection)
+                { // going up
+                    currentLevel += checkLevelChange();
+                }
+                else
+                { // going down
+                    currentLevel -= checkLevelChange();
+                }
                 
-                // just go and check for destination
-                mainState = CHECK;
-                
-                //currentLevel = getLevel();
-                ;
-            }            
+            }
             break;
-            case REACHED :
+            case STATE_REACHED :
             {
                 UP = DOWN = 0;
                 
@@ -131,18 +134,18 @@ int main(int argc, char** argv)
                 {                 
                     SetLeds(0);   
                     TurnOnButtons();
-                    mainState = STOP;
+                    mainState = STATE_STOP;
                 }
                 else
                 {
-                    mainState = REACHED;
+                    mainState = STATE_REACHED;
                 }
                 
             }
             break;
             default:
             {
-                mainState = STATE_IDLE;
+                mainState = STATE_STOP;
             }
         }
     }
@@ -172,6 +175,26 @@ void Debounce()
     }
 }
 
+unsigned char checkLevelChange()
+{
+    static unsigned char pastCounter;
+    unsigned char returnValue = 0;
+    
+    if ( 1 == pastCounter && 0 == inputs[COUNTER_POS])
+    {
+        // just passed a counter
+    }
+    else if ( 0 == pastCounter && 1 == inputs[COUNTER_POS])
+    {
+        // just arrived at a counter        
+        returnValue = 1;
+    }
+    
+    pastCounter = inputs[COUNTER_POS];
+    
+    return returnValue;
+}
+
 void interrupt MainInterrupt()
 {
     // timer 1 interrupt
@@ -179,7 +202,7 @@ void interrupt MainInterrupt()
     {
         msPassed++;
         
-        if ( REACHED == readCurrentState )
+        if ( STATE_REACHED == readCurrentState )
         {
             waiting++;
         }

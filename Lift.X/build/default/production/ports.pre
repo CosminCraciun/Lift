@@ -817,14 +817,12 @@ extern unsigned char __resetbits;
 extern __bit __powerdown;
 extern __bit __timeout;
 
-# 22 "defines.h"
+# 24 "defines.h"
 enum{
-STATE_IDLE,
-STOP,
-CHECK,
-GO,
-WAIT,
-REACHED
+STATE_STOP,
+STATE_CHECK,
+STATE_RUN,
+STATE_REACHED
 };
 
 
@@ -900,6 +898,8 @@ buttonMode = 0;
 TRISAbits.TRISA5 = 0;
 TRISBbits.TRISB0 = 0;
 TRISBbits.TRISB3 = 0;
+
+SetLeds(buttonPressed);
 }
 
 void SetLeds(unsigned char leds)

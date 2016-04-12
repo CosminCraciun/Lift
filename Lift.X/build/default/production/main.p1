@@ -1,11 +1,11 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"24 main.c
-[c E793 0 1 2 3 4 5 6 7 8 9 .. ]
-[n E793 . SAFETY_1_POS SAFETY_2_POS SAFETY_3_POS DELIMITER_DOWN_POS DELIMITER_UP_POS COUNTER_POS BUTTON_0_POS BUTTON_1_POS BUTTON_2_POS INPUT_MAX  ]
+"25 main.c
+[c E791 0 1 2 3 4 5 6 7 8 9 .. ]
+[n E791 . SAFETY_1_POS SAFETY_2_POS SAFETY_3_POS DELIMITER_DOWN_POS DELIMITER_UP_POS COUNTER_POS BUTTON_0_POS BUTTON_1_POS BUTTON_2_POS INPUT_MAX  ]
 [p mainexit ]
-"32
-[c E786 0 1 2 3 4 5 .. ]
-[n E786 . STATE_IDLE STOP CHECK GO WAIT REACHED  ]
+"33
+[c E786 0 1 2 3 .. ]
+[n E786 . STATE_STOP STATE_CHECK STATE_RUN STATE_REACHED  ]
 "68 ports.h
 [v _InitPorts `(v ~T0 @X0 0 ef ]
 "13 timer.h
@@ -18,7 +18,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S13 . . ]
 "238
 [v _PORTBbits `VS13 ~T0 @X0 0 e@6 ]
-"69 ports.h
+"66 ports.h
+[v _buttonMode `uc ~T0 @X0 0 e ]
+"69
 [v _TurnOnButtons `(v ~T0 @X0 0 ef ]
 "65
 [v _buttonPressed `uc ~T0 @X0 0 e ]
@@ -26,8 +28,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TurnOnLeds `(v ~T0 @X0 0 ef ]
 "71
 [v _SetLeds `(v ~T0 @X0 0 ef1`uc ]
-"73
-[v _DebounceInput `(uc ~T0 @X0 0 ef3`uc`*uc`uc ]
 "166 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic16f628a.h
 [s S12 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S12 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
@@ -36,8 +36,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S11 . . ]
 "177
 [v _PORTAbits `VS11 ~T0 @X0 0 e@5 ]
-"66 ports.h
-[v _buttonMode `uc ~T0 @X0 0 e ]
+"19 main.c
+[v _checkLevelChange `(uc ~T0 @X0 0 ef ]
+"73 ports.h
+[v _DebounceInput `(uc ~T0 @X0 0 ef3`uc`*uc`uc ]
 "384 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic16f628a.h
 [s S21 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S21 . TMR1IF TMR2IF CCP1IF . TXIF RCIF CMIF EEIF ]
@@ -698,13 +700,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 186: extern unsigned char __resetbits;
 [; ;pic.h: 187: extern __bit __powerdown;
 [; ;pic.h: 188: extern __bit __timeout;
-[; ;defines.h: 22: enum{
-[; ;defines.h: 23: STATE_IDLE,
-[; ;defines.h: 24: STOP,
-[; ;defines.h: 25: CHECK,
-[; ;defines.h: 26: GO,
-[; ;defines.h: 27: WAIT,
-[; ;defines.h: 28: REACHED
+[; ;defines.h: 24: enum{
+[; ;defines.h: 25: STATE_STOP,
+[; ;defines.h: 26: STATE_CHECK,
+[; ;defines.h: 27: STATE_RUN,
+[; ;defines.h: 28: STATE_REACHED
 [; ;defines.h: 29: };
 [; ;defines.h: 33: enum{
 [; ;defines.h: 34: SAFETY_1_POS,
@@ -728,238 +728,247 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;timer.h: 11: extern unsigned int msPassed;
 [; ;timer.h: 13: void InitTimer(void);
 [; ;main.c: 18: void debounce();
-"24 main.c
-[v _inputs `uc ~T0 @X0 . `E793 9 e ]
-[; ;main.c: 24: unsigned char inputs[INPUT_MAX];
-"25
-[v _tempInput `uc ~T0 @X0 . `E793 9 e ]
-[; ;main.c: 25: unsigned char tempInput[INPUT_MAX];
+[; ;main.c: 19: unsigned char checkLevelChange();
+"25 main.c
+[v _inputs `uc ~T0 @X0 . `E791 9 e ]
+[; ;main.c: 25: unsigned char inputs[INPUT_MAX];
 "26
-[v _readCurrentState `uc ~T0 @X0 1 e ]
-[; ;main.c: 26: unsigned char readCurrentState;
+[v _tempInput `uc ~T0 @X0 . `E791 9 e ]
+[; ;main.c: 26: unsigned char tempInput[INPUT_MAX];
 "27
+[v _readCurrentState `uc ~T0 @X0 1 e ]
+[; ;main.c: 27: unsigned char readCurrentState;
+"28
 [v _waiting `ui ~T0 @X0 1 e ]
-[; ;main.c: 27: unsigned int waiting;
-"29
-[v _main `(i ~T0 @X0 1 ef2`i`**uc ]
+[; ;main.c: 28: unsigned int waiting;
 "30
+[v _main `(i ~T0 @X0 1 ef2`i`**uc ]
+"31
 {
-[; ;main.c: 29: int main(int argc, char** argv)
-[; ;main.c: 30: {
+[; ;main.c: 30: int main(int argc, char** argv)
+[; ;main.c: 31: {
 [e :U _main ]
-"29
+"30
 [v _argc `i ~T0 @X0 1 r1 ]
 [v _argv `**uc ~T0 @X0 1 r2 ]
-"30
-[f ]
 "31
-[v _currentLevel `uc ~T0 @X0 1 a ]
-[; ;main.c: 31: unsigned char currentLevel = 0;
-[e = _currentLevel -> -> 0 `i `uc ]
+[f ]
 "32
-[v _mainState `uc ~T0 @X0 1 a ]
-[; ;main.c: 32: unsigned char mainState = STATE_IDLE;
-[e = _mainState -> . `E786 0 `uc ]
+[v _currentLevel `uc ~T0 @X0 1 a ]
+[; ;main.c: 32: unsigned char currentLevel = 0;
+[e = _currentLevel -> -> 0 `i `uc ]
 "33
-[v _movingDirection `uc ~T0 @X0 1 a ]
-[; ;main.c: 33: unsigned char movingDirection = 0;
-[e = _movingDirection -> -> 0 `i `uc ]
+[v _mainState `uc ~T0 @X0 1 a ]
+[; ;main.c: 33: unsigned char mainState = STATE_STOP;
+[e = _mainState -> . `E786 0 `uc ]
 "34
+[v _movingDirection `uc ~T0 @X0 1 a ]
+[; ;main.c: 34: unsigned char movingDirection = 0;
+[e = _movingDirection -> -> 0 `i `uc ]
+"35
 [v _emergencyStop `uc ~T0 @X0 1 a ]
-[; ;main.c: 34: unsigned char emergencyStop = 0;
+[; ;main.c: 35: unsigned char emergencyStop = 0;
 [e = _emergencyStop -> -> 0 `i `uc ]
-[; ;main.c: 36: InitPorts();
-"36
-[e ( _InitPorts ..  ]
-[; ;main.c: 37: InitTimer();
+[; ;main.c: 37: InitPorts();
 "37
+[e ( _InitPorts ..  ]
+[; ;main.c: 38: InitTimer();
+"38
 [e ( _InitTimer ..  ]
-[; ;main.c: 40: while (1)
-"40
-[e :U 59 ]
-[; ;main.c: 41: {
+[; ;main.c: 41: while (1)
 "41
-{
-[; ;main.c: 42: readCurrentState = mainState;
+[e :U 59 ]
+[; ;main.c: 42: {
 "42
+{
+[; ;main.c: 43: readCurrentState = mainState;
+"43
 [e = _readCurrentState _mainState ]
-[; ;main.c: 44: switch (mainState)
-"44
-[e $U 62  ]
-[; ;main.c: 45: {
+[; ;main.c: 45: switch (mainState)
 "45
-{
-[; ;main.c: 46: case STATE_IDLE :
+[e $U 62  ]
+[; ;main.c: 46: {
 "46
-[e :U 63 ]
-[; ;main.c: 47: {
-"47
 {
-[; ;main.c: 49: ;
+[; ;main.c: 47: case STATE_STOP :
+"47
+[e :U 63 ]
+[; ;main.c: 48: {
+"48
+{
+[; ;main.c: 50: PORTBbits.RB4 = PORTBbits.RB5 = 0;
 "50
-}
-[; ;main.c: 50: }
-[; ;main.c: 51: break;
-"51
-[e $U 61  ]
-[; ;main.c: 52: case STOP :
+[e = . . _PORTBbits 0 4 = . . _PORTBbits 0 5 -> -> 0 `i `uc ]
+[; ;main.c: 52: if ( 0 == buttonMode )
 "52
-[e :U 64 ]
+[e $ ! == -> 0 `i -> _buttonMode `i 64  ]
 [; ;main.c: 53: {
 "53
 {
-[; ;main.c: 55: PORTBbits.RB4 = PORTBbits.RB5 = 0;
+[; ;main.c: 54: TurnOnButtons();
+"54
+[e ( _TurnOnButtons ..  ]
 "55
-[e = . . _PORTBbits 0 4 = . . _PORTBbits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 57: if (0 != movingDirection)
+}
+[e :U 64 ]
+[; ;main.c: 55: }
+[; ;main.c: 57: if (buttonPressed != currentLevel && buttonPressed != 0)
 "57
-[e $ ! != -> 0 `i -> _movingDirection `i 65  ]
+[e $ ! && != -> _buttonPressed `i -> _currentLevel `i != -> _buttonPressed `i -> 0 `i 65  ]
 [; ;main.c: 58: {
 "58
 {
-[; ;main.c: 59: TurnOnButtons();
+[; ;main.c: 59: TurnOnLeds();
 "59
-[e ( _TurnOnButtons ..  ]
-[; ;main.c: 60: movingDirection = 0;
-"60
-[e = _movingDirection -> -> 0 `i `uc ]
-"61
-}
-[e :U 65 ]
-[; ;main.c: 61: }
-[; ;main.c: 63: if (buttonPressed != currentLevel && buttonPressed != 0)
-"63
-[e $ ! && != -> _buttonPressed `i -> _currentLevel `i != -> _buttonPressed `i -> 0 `i 66  ]
-[; ;main.c: 64: {
-"64
-{
-[; ;main.c: 65: TurnOnLeds();
-"65
 [e ( _TurnOnLeds ..  ]
-[; ;main.c: 66: SetLeds(buttonPressed);
-"66
-[e ( _SetLeds (1 _buttonPressed ]
-[; ;main.c: 68: if (buttonPressed > currentLevel)
-"68
-[e $ ! > -> _buttonPressed `i -> _currentLevel `i 67  ]
-[; ;main.c: 69: {
-"69
+[; ;main.c: 61: if (buttonPressed > currentLevel)
+"61
+[e $ ! > -> _buttonPressed `i -> _currentLevel `i 66  ]
+[; ;main.c: 62: {
+"62
 {
-[; ;main.c: 70: movingDirection = 1;
-"70
+[; ;main.c: 63: movingDirection = 1;
+"63
 [e = _movingDirection -> -> 1 `i `uc ]
+"64
+}
+[; ;main.c: 64: }
+[e $U 67  ]
+"65
+[e :U 66 ]
+[; ;main.c: 65: else
+[; ;main.c: 66: {
+"66
+{
+[; ;main.c: 67: movingDirection = 2;
+"67
+[e = _movingDirection -> -> 2 `i `uc ]
+"68
+}
+[e :U 67 ]
+[; ;main.c: 68: }
+[; ;main.c: 70: mainState = STATE_CHECK;
+"70
+[e = _mainState -> . `E786 1 `uc ]
 "71
 }
-[; ;main.c: 71: }
-[e $U 68  ]
+[e :U 65 ]
 "72
-[e :U 67 ]
-[; ;main.c: 72: else
-[; ;main.c: 73: {
+}
+[; ;main.c: 71: }
+[; ;main.c: 72: }
+[; ;main.c: 73: break;
 "73
-{
-[; ;main.c: 74: movingDirection = 2;
-"74
-[e = _movingDirection -> -> 2 `i `uc ]
-"75
-}
-[e :U 68 ]
-[; ;main.c: 75: }
-[; ;main.c: 77: mainState = CHECK;
-"77
-[e = _mainState -> . `E786 2 `uc ]
-"78
-}
-[e :U 66 ]
-"79
-}
-[; ;main.c: 78: }
-[; ;main.c: 79: }
-[; ;main.c: 80: break;
-"80
 [e $U 61  ]
-[; ;main.c: 81: case CHECK :
+[; ;main.c: 74: case STATE_CHECK :
+"74
+[e :U 68 ]
+[; ;main.c: 75: {
+"75
+{
+[; ;main.c: 77: if ( ( 1 == inputs[SAFETY_1_POS] ) &&
+[; ;main.c: 78: ( 1 == inputs[SAFETY_1_POS] ) &&
+[; ;main.c: 79: ( 1 == inputs[SAFETY_1_POS] ) )
+"79
+[e $ ! && && == -> 1 `i -> *U + &U _inputs * -> . `E791 0 `ux -> -> # *U &U _inputs `ui `ux `i == -> 1 `i -> *U + &U _inputs * -> . `E791 0 `ux -> -> # *U &U _inputs `ui `ux `i == -> 1 `i -> *U + &U _inputs * -> . `E791 0 `ux -> -> # *U &U _inputs `ui `ux `i 69  ]
+[; ;main.c: 80: {
+"80
+{
+[; ;main.c: 81: mainState = STATE_STOP;
 "81
-[e :U 69 ]
-[; ;main.c: 82: {
+[e = _mainState -> . `E786 0 `uc ]
+[; ;main.c: 82: PORTBbits.RB4 = PORTBbits.RB5 = 0;
 "82
-{
-[; ;main.c: 84: if ( ( 1 == inputs[SAFETY_1_POS] ) &&
-[; ;main.c: 85: ( 1 == inputs[SAFETY_1_POS] ) &&
-[; ;main.c: 86: ( 1 == inputs[SAFETY_1_POS] ) )
-"86
-[e $ ! && && == -> 1 `i -> *U + &U _inputs * -> . `E793 0 `ux -> -> # *U &U _inputs `ui `ux `i == -> 1 `i -> *U + &U _inputs * -> . `E793 0 `ux -> -> # *U &U _inputs `ui `ux `i == -> 1 `i -> *U + &U _inputs * -> . `E793 0 `ux -> -> # *U &U _inputs `ui `ux `i 70  ]
-[; ;main.c: 87: {
-"87
-{
-[; ;main.c: 88: mainState = STOP;
-"88
-[e = _mainState -> . `E786 1 `uc ]
-[; ;main.c: 89: emergencyStop = 1;
-"89
-[e = _emergencyStop -> -> 1 `i `uc ]
-[; ;main.c: 90: PORTBbits.RB4 = PORTBbits.RB5 = 0;
-"90
 [e = . . _PORTBbits 0 4 = . . _PORTBbits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 91: SetLeds(0);
-"91
+[; ;main.c: 83: SetLeds(0);
+"83
 [e ( _SetLeds (1 -> -> 0 `i `uc ]
-"92
+"84
 }
-[; ;main.c: 92: }
-[e $U 71  ]
-"93
-[e :U 70 ]
-[; ;main.c: 93: else if ( currentLevel == buttonPressed )
-[e $ ! == -> _currentLevel `i -> _buttonPressed `i 72  ]
-[; ;main.c: 94: {
-"94
+[; ;main.c: 84: }
+[e $U 70  ]
+"85
+[e :U 69 ]
+[; ;main.c: 85: else if ( currentLevel == buttonPressed )
+[e $ ! == -> _currentLevel `i -> _buttonPressed `i 71  ]
+[; ;main.c: 86: {
+"86
 {
-[; ;main.c: 95: waiting = 0;
-"95
+[; ;main.c: 87: waiting = 0;
+"87
 [e = _waiting -> -> 0 `i `ui ]
-[; ;main.c: 96: PORTBbits.RB4 = PORTBbits.RB5 = 0;
-"96
-[e = . . _PORTBbits 0 4 = . . _PORTBbits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 97: mainState = REACHED;
-"97
-[e = _mainState -> . `E786 5 `uc ]
-"98
-}
-[; ;main.c: 98: }
-[e $U 73  ]
-"99
-[e :U 72 ]
-[; ;main.c: 99: else
-[; ;main.c: 100: {
-"100
-{
-[; ;main.c: 101: mainState = GO;
-"101
+[; ;main.c: 88: mainState = STATE_REACHED;
+"88
 [e = _mainState -> . `E786 3 `uc ]
-"102
+"89
 }
-[e :U 73 ]
+[; ;main.c: 89: }
+[e $U 72  ]
+"90
 [e :U 71 ]
+[; ;main.c: 90: else if ( 2 == movingDirection && 0 != inputs[PORTAbits.RA7] )
+[e $ ! && == -> 2 `i -> _movingDirection `i != -> 0 `i -> *U + &U _inputs * -> . . _PORTAbits 0 7 `ux -> -> # *U &U _inputs `ui `ux `i 73  ]
+[; ;main.c: 91: {
+"91
+{
+[; ;main.c: 92: mainState = STATE_STOP;
+"92
+[e = _mainState -> . `E786 0 `uc ]
+[; ;main.c: 93: currentLevel = 1;
+"93
+[e = _currentLevel -> -> 1 `i `uc ]
+"94
+}
+[; ;main.c: 94: }
+[e $U 74  ]
+"95
+[e :U 73 ]
+[; ;main.c: 95: else if ( 1 == movingDirection && 0 != inputs[PORTAbits.RA0] )
+[e $ ! && == -> 1 `i -> _movingDirection `i != -> 0 `i -> *U + &U _inputs * -> . . _PORTAbits 0 0 `ux -> -> # *U &U _inputs `ui `ux `i 75  ]
+[; ;main.c: 96: {
+"96
+{
+[; ;main.c: 97: mainState = STATE_STOP;
+"97
+[e = _mainState -> . `E786 0 `uc ]
+[; ;main.c: 98: currentLevel = 3;
+"98
+[e = _currentLevel -> -> 3 `i `uc ]
+"99
+}
+[; ;main.c: 99: }
+[e $U 76  ]
+"100
+[e :U 75 ]
+[; ;main.c: 100: else
+[; ;main.c: 101: {
+"101
+{
+[; ;main.c: 102: mainState = STATE_RUN;
+"102
+[e = _mainState -> . `E786 2 `uc ]
 "103
 }
-[; ;main.c: 102: }
-[; ;main.c: 103: }
-[; ;main.c: 104: break;
-"104
-[e $U 61  ]
-[; ;main.c: 105: case GO :
-"105
+[e :U 76 ]
 [e :U 74 ]
-[; ;main.c: 106: {
+[e :U 72 ]
+[e :U 70 ]
+"104
+}
+[; ;main.c: 103: }
+[; ;main.c: 104: }
+[; ;main.c: 105: break;
+"105
+[e $U 61  ]
+[; ;main.c: 106: case STATE_RUN :
 "106
-{
-[; ;main.c: 107: emergencyStop = 0;
+[e :U 77 ]
+[; ;main.c: 107: {
 "107
-[e = _emergencyStop -> -> 0 `i `uc ]
+{
 [; ;main.c: 108: if ( 1 == movingDirection )
 "108
-[e $ ! == -> 1 `i -> _movingDirection `i 75  ]
+[e $ ! == -> 1 `i -> _movingDirection `i 78  ]
 [; ;main.c: 109: {
 "109
 {
@@ -972,9 +981,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "112
 }
 [; ;main.c: 112: }
-[e $U 76  ]
+[e $U 79  ]
 "113
-[e :U 75 ]
+[e :U 78 ]
 [; ;main.c: 113: else
 [; ;main.c: 114: {
 "114
@@ -987,219 +996,291 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _PORTBbits 0 4 -> -> 0 `i `uc ]
 "117
 }
-[e :U 76 ]
-[; ;main.c: 117: }
-[; ;main.c: 120: mainState = CHECK;
-"120
-[e = _mainState -> . `E786 2 `uc ]
-[; ;main.c: 123: ;
-"124
-}
-[; ;main.c: 124: }
-[; ;main.c: 125: break;
-"125
-[e $U 61  ]
-[; ;main.c: 126: case REACHED :
-"126
-[e :U 77 ]
-[; ;main.c: 127: {
-"127
-{
-[; ;main.c: 128: PORTBbits.RB4 = PORTBbits.RB5 = 0;
-"128
-[e = . . _PORTBbits 0 4 = . . _PORTBbits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 130: if ( 5000 < waiting )
-"130
-[e $ ! < -> -> 5000 `i `ui _waiting 78  ]
-[; ;main.c: 131: {
-"131
-{
-[; ;main.c: 132: SetLeds(0);
-"132
-[e ( _SetLeds (1 -> -> 0 `i `uc ]
-[; ;main.c: 133: TurnOnButtons();
-"133
-[e ( _TurnOnButtons ..  ]
-[; ;main.c: 134: mainState = STOP;
-"134
-[e = _mainState -> . `E786 1 `uc ]
-"135
-}
-[; ;main.c: 135: }
-[e $U 79  ]
-"136
-[e :U 78 ]
-[; ;main.c: 136: else
-[; ;main.c: 137: {
-"137
-{
-[; ;main.c: 138: mainState = REACHED;
-"138
-[e = _mainState -> . `E786 5 `uc ]
-"139
-}
 [e :U 79 ]
-"141
-}
-[; ;main.c: 139: }
-[; ;main.c: 141: }
-[; ;main.c: 142: break;
-"142
-[e $U 61  ]
-[; ;main.c: 143: default:
-"143
-[e :U 80 ]
-[; ;main.c: 144: {
-"144
+[; ;main.c: 117: }
+[; ;main.c: 118: if ( 1 == movingDirection)
+"118
+[e $ ! == -> 1 `i -> _movingDirection `i 80  ]
+[; ;main.c: 119: {
+"119
 {
-[; ;main.c: 145: mainState = STATE_IDLE;
-"145
-[e = _mainState -> . `E786 0 `uc ]
-"146
+[; ;main.c: 120: currentLevel += checkLevelChange();
+"120
+[e =+ _currentLevel ( _checkLevelChange ..  ]
+"121
 }
-"147
+[; ;main.c: 121: }
+[e $U 81  ]
+"122
+[e :U 80 ]
+[; ;main.c: 122: else
+[; ;main.c: 123: {
+"123
+{
+[; ;main.c: 124: currentLevel -= checkLevelChange();
+"124
+[e =- _currentLevel ( _checkLevelChange ..  ]
+"125
 }
-[; ;main.c: 146: }
-[; ;main.c: 147: }
+[e :U 81 ]
+"127
+}
+[; ;main.c: 125: }
+[; ;main.c: 127: }
+[; ;main.c: 128: break;
+"128
 [e $U 61  ]
-"44
+[; ;main.c: 129: case STATE_REACHED :
+"129
+[e :U 82 ]
+[; ;main.c: 130: {
+"130
+{
+[; ;main.c: 131: PORTBbits.RB4 = PORTBbits.RB5 = 0;
+"131
+[e = . . _PORTBbits 0 4 = . . _PORTBbits 0 5 -> -> 0 `i `uc ]
+[; ;main.c: 133: if ( 5000 < waiting )
+"133
+[e $ ! < -> -> 5000 `i `ui _waiting 83  ]
+[; ;main.c: 134: {
+"134
+{
+[; ;main.c: 135: SetLeds(0);
+"135
+[e ( _SetLeds (1 -> -> 0 `i `uc ]
+[; ;main.c: 136: TurnOnButtons();
+"136
+[e ( _TurnOnButtons ..  ]
+[; ;main.c: 137: mainState = STATE_STOP;
+"137
+[e = _mainState -> . `E786 0 `uc ]
+"138
+}
+[; ;main.c: 138: }
+[e $U 84  ]
+"139
+[e :U 83 ]
+[; ;main.c: 139: else
+[; ;main.c: 140: {
+"140
+{
+[; ;main.c: 141: mainState = STATE_REACHED;
+"141
+[e = _mainState -> . `E786 3 `uc ]
+"142
+}
+[e :U 84 ]
+"144
+}
+[; ;main.c: 142: }
+[; ;main.c: 144: }
+[; ;main.c: 145: break;
+"145
+[e $U 61  ]
+[; ;main.c: 146: default:
+"146
+[e :U 85 ]
+[; ;main.c: 147: {
+"147
+{
+[; ;main.c: 148: mainState = STATE_STOP;
+"148
+[e = _mainState -> . `E786 0 `uc ]
+"149
+}
+"150
+}
+[; ;main.c: 149: }
+[; ;main.c: 150: }
+[e $U 61  ]
+"45
 [e :U 62 ]
 [e [\ _mainState , $ -> . `E786 0 `uc 63
- , $ -> . `E786 1 `uc 64
- , $ -> . `E786 2 `uc 69
- , $ -> . `E786 3 `uc 74
- , $ -> . `E786 5 `uc 77
- 80 ]
-"147
+ , $ -> . `E786 1 `uc 68
+ , $ -> . `E786 2 `uc 77
+ , $ -> . `E786 3 `uc 82
+ 85 ]
+"150
 [e :U 61 ]
-"148
+"151
 }
 [e :U 58 ]
-"40
+"41
 [e $U 59  ]
 [e :U 60 ]
-[; ;main.c: 148: }
-[; ;main.c: 150: return (0);
-"150
+[; ;main.c: 151: }
+[; ;main.c: 153: return (0);
+"153
 [e ) -> 0 `i ]
 [e $UE 57  ]
-[; ;main.c: 151: }
-"151
+[; ;main.c: 154: }
+"154
 [e :UE 57 ]
 }
-"153
+"156
 [v _Debounce `(v ~T0 @X0 1 ef ]
-"154
+"157
 {
-[; ;main.c: 153: void Debounce()
-[; ;main.c: 154: {
+[; ;main.c: 156: void Debounce()
+[; ;main.c: 157: {
 [e :U _Debounce ]
 [f ]
-[; ;main.c: 155: inputs[SAFETY_1_POS] = DebounceInput(PORTBbits.RB6,tempInput + SAFETY_1_POS, inputs[SAFETY_1_POS]);
-"155
-[e = *U + &U _inputs * -> . `E793 0 `ux -> -> # *U &U _inputs `ui `ux ( _DebounceInput (3 , , . . _PORTBbits 0 6 + &U _tempInput * -> . `E793 0 `x -> -> # *U &U _tempInput `i `x *U + &U _inputs * -> . `E793 0 `ux -> -> # *U &U _inputs `ui `ux ]
-[; ;main.c: 156: inputs[SAFETY_2_POS] = DebounceInput(PORTBbits.RB7,tempInput + SAFETY_2_POS, inputs[SAFETY_2_POS]);
-"156
-[e = *U + &U _inputs * -> . `E793 1 `ux -> -> # *U &U _inputs `ui `ux ( _DebounceInput (3 , , . . _PORTBbits 0 7 + &U _tempInput * -> . `E793 1 `x -> -> # *U &U _tempInput `i `x *U + &U _inputs * -> . `E793 1 `ux -> -> # *U &U _inputs `ui `ux ]
-[; ;main.c: 157: inputs[SAFETY_3_POS] = DebounceInput(PORTAbits.RA6,tempInput + SAFETY_3_POS, inputs[SAFETY_3_POS]);
-"157
-[e = *U + &U _inputs * -> . `E793 2 `ux -> -> # *U &U _inputs `ui `ux ( _DebounceInput (3 , , . . _PORTAbits 0 6 + &U _tempInput * -> . `E793 2 `x -> -> # *U &U _tempInput `i `x *U + &U _inputs * -> . `E793 2 `ux -> -> # *U &U _inputs `ui `ux ]
-[; ;main.c: 158: inputs[DELIMITER_DOWN_POS] = DebounceInput(PORTAbits.RA7,tempInput + DELIMITER_DOWN_POS, inputs[DELIMITER_DOWN_POS]);
+[; ;main.c: 158: inputs[SAFETY_1_POS] = DebounceInput(PORTBbits.RB6,tempInput + SAFETY_1_POS, inputs[SAFETY_1_POS]);
 "158
-[e = *U + &U _inputs * -> . `E793 3 `ux -> -> # *U &U _inputs `ui `ux ( _DebounceInput (3 , , . . _PORTAbits 0 7 + &U _tempInput * -> . `E793 3 `x -> -> # *U &U _tempInput `i `x *U + &U _inputs * -> . `E793 3 `ux -> -> # *U &U _inputs `ui `ux ]
-[; ;main.c: 159: inputs[DELIMITER_UP_POS] = DebounceInput(PORTAbits.RA0,tempInput + DELIMITER_UP_POS, inputs[DELIMITER_UP_POS]);
+[e = *U + &U _inputs * -> . `E791 0 `ux -> -> # *U &U _inputs `ui `ux ( _DebounceInput (3 , , . . _PORTBbits 0 6 + &U _tempInput * -> . `E791 0 `x -> -> # *U &U _tempInput `i `x *U + &U _inputs * -> . `E791 0 `ux -> -> # *U &U _inputs `ui `ux ]
+[; ;main.c: 159: inputs[SAFETY_2_POS] = DebounceInput(PORTBbits.RB7,tempInput + SAFETY_2_POS, inputs[SAFETY_2_POS]);
 "159
-[e = *U + &U _inputs * -> . `E793 4 `ux -> -> # *U &U _inputs `ui `ux ( _DebounceInput (3 , , . . _PORTAbits 0 0 + &U _tempInput * -> . `E793 4 `x -> -> # *U &U _tempInput `i `x *U + &U _inputs * -> . `E793 4 `ux -> -> # *U &U _inputs `ui `ux ]
-[; ;main.c: 160: inputs[COUNTER_POS] = DebounceInput(PORTAbits.RA1,tempInput + COUNTER_POS, inputs[COUNTER_POS]);
+[e = *U + &U _inputs * -> . `E791 1 `ux -> -> # *U &U _inputs `ui `ux ( _DebounceInput (3 , , . . _PORTBbits 0 7 + &U _tempInput * -> . `E791 1 `x -> -> # *U &U _tempInput `i `x *U + &U _inputs * -> . `E791 1 `ux -> -> # *U &U _inputs `ui `ux ]
+[; ;main.c: 160: inputs[SAFETY_3_POS] = DebounceInput(PORTAbits.RA6,tempInput + SAFETY_3_POS, inputs[SAFETY_3_POS]);
 "160
-[e = *U + &U _inputs * -> . `E793 5 `ux -> -> # *U &U _inputs `ui `ux ( _DebounceInput (3 , , . . _PORTAbits 0 1 + &U _tempInput * -> . `E793 5 `x -> -> # *U &U _tempInput `i `x *U + &U _inputs * -> . `E793 5 `ux -> -> # *U &U _inputs `ui `ux ]
-[; ;main.c: 162: if (1 == buttonMode)
+[e = *U + &U _inputs * -> . `E791 2 `ux -> -> # *U &U _inputs `ui `ux ( _DebounceInput (3 , , . . _PORTAbits 0 6 + &U _tempInput * -> . `E791 2 `x -> -> # *U &U _tempInput `i `x *U + &U _inputs * -> . `E791 2 `ux -> -> # *U &U _inputs `ui `ux ]
+[; ;main.c: 161: inputs[DELIMITER_DOWN_POS] = DebounceInput(PORTAbits.RA7,tempInput + DELIMITER_DOWN_POS, inputs[DELIMITER_DOWN_POS]);
+"161
+[e = *U + &U _inputs * -> . `E791 3 `ux -> -> # *U &U _inputs `ui `ux ( _DebounceInput (3 , , . . _PORTAbits 0 7 + &U _tempInput * -> . `E791 3 `x -> -> # *U &U _tempInput `i `x *U + &U _inputs * -> . `E791 3 `ux -> -> # *U &U _inputs `ui `ux ]
+[; ;main.c: 162: inputs[DELIMITER_UP_POS] = DebounceInput(PORTAbits.RA0,tempInput + DELIMITER_UP_POS, inputs[DELIMITER_UP_POS]);
 "162
-[e $ ! == -> 1 `i -> _buttonMode `i 82  ]
-[; ;main.c: 163: {
+[e = *U + &U _inputs * -> . `E791 4 `ux -> -> # *U &U _inputs `ui `ux ( _DebounceInput (3 , , . . _PORTAbits 0 0 + &U _tempInput * -> . `E791 4 `x -> -> # *U &U _tempInput `i `x *U + &U _inputs * -> . `E791 4 `ux -> -> # *U &U _inputs `ui `ux ]
+[; ;main.c: 163: inputs[COUNTER_POS] = DebounceInput(PORTAbits.RA1,tempInput + COUNTER_POS, inputs[COUNTER_POS]);
 "163
-{
-[; ;main.c: 164: buttonPressed = 0;
-"164
-[e = _buttonPressed -> -> 0 `i `uc ]
-[; ;main.c: 165: inputs[BUTTON_0_POS] = DebounceInput(PORTAbits.RA5,tempInput + BUTTON_0_POS, inputs[BUTTON_0_POS]);
+[e = *U + &U _inputs * -> . `E791 5 `ux -> -> # *U &U _inputs `ui `ux ( _DebounceInput (3 , , . . _PORTAbits 0 1 + &U _tempInput * -> . `E791 5 `x -> -> # *U &U _tempInput `i `x *U + &U _inputs * -> . `E791 5 `ux -> -> # *U &U _inputs `ui `ux ]
+[; ;main.c: 165: if (1 == buttonMode)
 "165
-[e = *U + &U _inputs * -> . `E793 6 `ux -> -> # *U &U _inputs `ui `ux ( _DebounceInput (3 , , . . _PORTAbits 0 5 + &U _tempInput * -> . `E793 6 `x -> -> # *U &U _tempInput `i `x *U + &U _inputs * -> . `E793 6 `ux -> -> # *U &U _inputs `ui `ux ]
-[; ;main.c: 166: buttonPressed = inputs[BUTTON_0_POS];
+[e $ ! == -> 1 `i -> _buttonMode `i 87  ]
+[; ;main.c: 166: {
 "166
-[e = _buttonPressed *U + &U _inputs * -> . `E793 6 `ux -> -> # *U &U _inputs `ui `ux ]
-[; ;main.c: 167: inputs[BUTTON_1_POS] = DebounceInput(PORTBbits.RB0,tempInput + BUTTON_1_POS, inputs[BUTTON_1_POS]);
-"167
-[e = *U + &U _inputs * -> . `E793 7 `ux -> -> # *U &U _inputs `ui `ux ( _DebounceInput (3 , , . . _PORTBbits 0 0 + &U _tempInput * -> . `E793 7 `x -> -> # *U &U _tempInput `i `x *U + &U _inputs * -> . `E793 7 `ux -> -> # *U &U _inputs `ui `ux ]
-[; ;main.c: 168: buttonPressed |= (inputs[BUTTON_1_POS] << 1);
-"168
-[e =| _buttonPressed -> << -> *U + &U _inputs * -> . `E793 7 `ux -> -> # *U &U _inputs `ui `ux `i -> 1 `i `uc ]
-[; ;main.c: 169: inputs[BUTTON_2_POS] = DebounceInput(PORTBbits.RB3,tempInput + BUTTON_2_POS, inputs[BUTTON_2_POS]);
-"169
-[e = *U + &U _inputs * -> . `E793 8 `ux -> -> # *U &U _inputs `ui `ux ( _DebounceInput (3 , , . . _PORTBbits 0 3 + &U _tempInput * -> . `E793 8 `x -> -> # *U &U _tempInput `i `x *U + &U _inputs * -> . `E793 8 `ux -> -> # *U &U _inputs `ui `ux ]
-[; ;main.c: 170: buttonPressed |= (inputs[BUTTON_2_POS] << 2);
-"170
-[e =| _buttonPressed -> << -> *U + &U _inputs * -> . `E793 8 `ux -> -> # *U &U _inputs `ui `ux `i -> 2 `i `uc ]
-"172
-}
-[e :U 82 ]
-[; ;main.c: 172: }
-[; ;main.c: 173: }
-"173
-[e :UE 81 ]
-}
-[v F835 `(v ~T0 @X0 1 tf ]
-"175
-[v _MainInterrupt `IF835 ~T0 @X0 1 e ]
-"176
 {
-[; ;main.c: 175: void interrupt MainInterrupt()
-[; ;main.c: 176: {
-[e :U _MainInterrupt ]
-[f ]
-[; ;main.c: 178: if ( 1 == PIR1bits.TMR1IF )
+[; ;main.c: 167: buttonPressed = 0;
+"167
+[e = _buttonPressed -> -> 0 `i `uc ]
+[; ;main.c: 168: inputs[BUTTON_0_POS] = DebounceInput(PORTAbits.RA5,tempInput + BUTTON_0_POS, inputs[BUTTON_0_POS]);
+"168
+[e = *U + &U _inputs * -> . `E791 6 `ux -> -> # *U &U _inputs `ui `ux ( _DebounceInput (3 , , . . _PORTAbits 0 5 + &U _tempInput * -> . `E791 6 `x -> -> # *U &U _tempInput `i `x *U + &U _inputs * -> . `E791 6 `ux -> -> # *U &U _inputs `ui `ux ]
+[; ;main.c: 169: buttonPressed = inputs[BUTTON_0_POS];
+"169
+[e = _buttonPressed *U + &U _inputs * -> . `E791 6 `ux -> -> # *U &U _inputs `ui `ux ]
+[; ;main.c: 170: inputs[BUTTON_1_POS] = DebounceInput(PORTBbits.RB0,tempInput + BUTTON_1_POS, inputs[BUTTON_1_POS]);
+"170
+[e = *U + &U _inputs * -> . `E791 7 `ux -> -> # *U &U _inputs `ui `ux ( _DebounceInput (3 , , . . _PORTBbits 0 0 + &U _tempInput * -> . `E791 7 `x -> -> # *U &U _tempInput `i `x *U + &U _inputs * -> . `E791 7 `ux -> -> # *U &U _inputs `ui `ux ]
+[; ;main.c: 171: buttonPressed |= (inputs[BUTTON_1_POS] << 1);
+"171
+[e =| _buttonPressed -> << -> *U + &U _inputs * -> . `E791 7 `ux -> -> # *U &U _inputs `ui `ux `i -> 1 `i `uc ]
+[; ;main.c: 172: inputs[BUTTON_2_POS] = DebounceInput(PORTBbits.RB3,tempInput + BUTTON_2_POS, inputs[BUTTON_2_POS]);
+"172
+[e = *U + &U _inputs * -> . `E791 8 `ux -> -> # *U &U _inputs `ui `ux ( _DebounceInput (3 , , . . _PORTBbits 0 3 + &U _tempInput * -> . `E791 8 `x -> -> # *U &U _tempInput `i `x *U + &U _inputs * -> . `E791 8 `ux -> -> # *U &U _inputs `ui `ux ]
+[; ;main.c: 173: buttonPressed |= (inputs[BUTTON_2_POS] << 2);
+"173
+[e =| _buttonPressed -> << -> *U + &U _inputs * -> . `E791 8 `ux -> -> # *U &U _inputs `ui `ux `i -> 2 `i `uc ]
+"175
+}
+[e :U 87 ]
+[; ;main.c: 175: }
+[; ;main.c: 176: }
+"176
+[e :UE 86 ]
+}
 "178
-[e $ ! == -> 1 `i -> . . _PIR1bits 0 0 `i 84  ]
-[; ;main.c: 179: {
+[v _checkLevelChange `(uc ~T0 @X0 1 ef ]
 "179
 {
-[; ;main.c: 180: msPassed++;
+[; ;main.c: 178: unsigned char checkLevelChange()
+[; ;main.c: 179: {
+[e :U _checkLevelChange ]
+[f ]
 "180
-[e ++ _msPassed -> -> 1 `i `ui ]
-[; ;main.c: 182: if ( REACHED == readCurrentState )
-"182
-[e $ ! == -> . `E786 5 `i -> _readCurrentState `i 85  ]
-[; ;main.c: 183: {
+[v F833 `uc ~T0 @X0 1 s pastCounter ]
+"181
+[v _returnValue `uc ~T0 @X0 1 a ]
+[; ;main.c: 180: static unsigned char pastCounter;
+[; ;main.c: 181: unsigned char returnValue = 0;
+[e = _returnValue -> -> 0 `i `uc ]
+[; ;main.c: 183: if ( 1 == pastCounter && 0 == inputs[COUNTER_POS])
 "183
-{
-[; ;main.c: 184: waiting++;
+[e $ ! && == -> 1 `i -> F833 `i == -> 0 `i -> *U + &U _inputs * -> . `E791 5 `ux -> -> # *U &U _inputs `ui `ux `i 89  ]
+[; ;main.c: 184: {
 "184
-[e ++ _waiting -> -> 1 `i `ui ]
-"185
+{
+"186
 }
-[e :U 85 ]
-[; ;main.c: 185: }
-[; ;main.c: 187: if (msPassed % 4 == 0)
+[; ;main.c: 186: }
+[e $U 90  ]
 "187
-[e $ ! == % _msPassed -> -> 4 `i `ui -> -> 0 `i `ui 86  ]
+[e :U 89 ]
+[; ;main.c: 187: else if ( 0 == pastCounter && 1 == inputs[COUNTER_POS])
+[e $ ! && == -> 0 `i -> F833 `i == -> 1 `i -> *U + &U _inputs * -> . `E791 5 `ux -> -> # *U &U _inputs `ui `ux `i 91  ]
 [; ;main.c: 188: {
 "188
 {
-[; ;main.c: 189: Debounce();
-"189
-[e ( _Debounce ..  ]
+[; ;main.c: 190: returnValue = 1;
 "190
-}
-[e :U 86 ]
+[e = _returnValue -> -> 1 `i `uc ]
 "191
 }
-[e :U 84 ]
-[; ;main.c: 190: }
+[e :U 91 ]
+"193
+[e :U 90 ]
 [; ;main.c: 191: }
-[; ;main.c: 194: PIR1 = 0;
-"194
-[e = _PIR1 -> -> 0 `i `uc ]
-[; ;main.c: 195: }
+[; ;main.c: 193: pastCounter = inputs[COUNTER_POS];
+[e = F833 *U + &U _inputs * -> . `E791 5 `ux -> -> # *U &U _inputs `ui `ux ]
+[; ;main.c: 195: return returnValue;
 "195
-[e :UE 83 ]
+[e ) _returnValue ]
+[e $UE 88  ]
+[; ;main.c: 196: }
+"196
+[e :UE 88 ]
+}
+[v F836 `(v ~T0 @X0 1 tf ]
+"198
+[v _MainInterrupt `IF836 ~T0 @X0 1 e ]
+"199
+{
+[; ;main.c: 198: void interrupt MainInterrupt()
+[; ;main.c: 199: {
+[e :U _MainInterrupt ]
+[f ]
+[; ;main.c: 201: if ( 1 == PIR1bits.TMR1IF )
+"201
+[e $ ! == -> 1 `i -> . . _PIR1bits 0 0 `i 93  ]
+[; ;main.c: 202: {
+"202
+{
+[; ;main.c: 203: msPassed++;
+"203
+[e ++ _msPassed -> -> 1 `i `ui ]
+[; ;main.c: 205: if ( STATE_REACHED == readCurrentState )
+"205
+[e $ ! == -> . `E786 3 `i -> _readCurrentState `i 94  ]
+[; ;main.c: 206: {
+"206
+{
+[; ;main.c: 207: waiting++;
+"207
+[e ++ _waiting -> -> 1 `i `ui ]
+"208
+}
+[e :U 94 ]
+[; ;main.c: 208: }
+[; ;main.c: 210: if (msPassed % 4 == 0)
+"210
+[e $ ! == % _msPassed -> -> 4 `i `ui -> -> 0 `i `ui 95  ]
+[; ;main.c: 211: {
+"211
+{
+[; ;main.c: 212: Debounce();
+"212
+[e ( _Debounce ..  ]
+"213
+}
+[e :U 95 ]
+"214
+}
+[e :U 93 ]
+[; ;main.c: 213: }
+[; ;main.c: 214: }
+[; ;main.c: 217: PIR1 = 0;
+"217
+[e = _PIR1 -> -> 0 `i `uc ]
+[; ;main.c: 218: }
+"218
+[e :UE 92 ]
 }

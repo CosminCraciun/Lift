@@ -3,8 +3,8 @@
 [d edition pro ]
 [d chip 16F628A ]
 [d frameptr 6 ]
-"24 C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
-[e E793 . `uc
+"25 C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
+[e E791 . `uc
 SAFETY_1_POS 0
 SAFETY_2_POS 1
 SAFETY_3_POS 2
@@ -16,14 +16,12 @@ BUTTON_1_POS 7
 BUTTON_2_POS 8
 INPUT_MAX 9
 ]
-"32
+"33
 [e E786 . `uc
-STATE_IDLE 0
-STOP 1
-CHECK 2
-GO 3
-WAIT 4
-REACHED 5
+STATE_STOP 0
+STATE_CHECK 1
+STATE_RUN 2
+STATE_REACHED 3
 ]
 "62 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
@@ -33,25 +31,27 @@ REACHED 5
 [v _eecpymem eecpymem `(v  1 e 1 0 ]
 "39
 [v _memcpyee memcpyee `(v  1 e 1 0 ]
-"29 C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
+"30 C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
 [v _main main `(i  1 e 2 0 ]
-"153
+"156
 [v _Debounce Debounce `(v  1 e 1 0 ]
-"175
+"178
+[v _checkLevelChange checkLevelChange `(uc  1 e 1 0 ]
+"198
 [v _MainInterrupt MainInterrupt `II(v  1 e 1 0 ]
-"13 C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
+"13 C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
 [v _InitPorts InitPorts `(v  1 e 1 0 ]
 "38
 [v _TurnOnButtons TurnOnButtons `(v  1 e 1 0 ]
 "47
 [v _TurnOnLeds TurnOnLeds `(v  1 e 1 0 ]
-"56
+"58
 [v _SetLeds SetLeds `(v  1 e 1 0 ]
-"63
+"65
 [v _DebounceInput DebounceInput `(uc  1 e 1 0 ]
-"8 C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\timer.c
+"8 C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\timer.c
 [v _InitTimer InitTimer `(v  1 e 1 0 ]
-[s S87 . 1 `uc 1 RA0 1 0 :1:0 
+[s S79 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -61,9 +61,9 @@ REACHED 5
 `uc 1 RA7 1 0 :1:7 
 ]
 "177 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic16f628a.h
-[u S96 . 1 `S87 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES96  1 e 1 @5 ]
-[s S45 . 1 `uc 1 RB0 1 0 :1:0 
+[u S88 . 1 `S79 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES88  1 e 1 @5 ]
+[s S43 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -73,11 +73,11 @@ REACHED 5
 `uc 1 RB7 1 0 :1:7 
 ]
 "238
-[u S54 . 1 `S45 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES54  1 e 1 @6 ]
+[u S52 . 1 `S43 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES52  1 e 1 @6 ]
 "378
 [v _PIR1 PIR1 `VEuc  1 e 1 @12 ]
-[s S109 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S111 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -87,28 +87,28 @@ REACHED 5
 `uc 1 EEIF 1 0 :1:7 
 ]
 "395
-[u S118 . 1 `S109 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES118  1 e 1 @12 ]
+[u S120 . 1 `S111 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES120  1 e 1 @12 ]
 "434
 [v _TMR1 TMR1 `VEus  1 e 2 @14 ]
 "452
 [v _T1CON T1CON `VEuc  1 e 1 @16 ]
-[s S172 . 1 `uc 1 TMR1ON 1 0 :1:0 
+[s S177 . 1 `uc 1 TMR1ON 1 0 :1:0 
 `uc 1 TMR1CS 1 0 :1:1 
 `uc 1 nT1SYNC 1 0 :1:2 
 `uc 1 T1OSCEN 1 0 :1:3 
 `uc 1 T1CKPS 1 0 :2:4 
 ]
 "471
-[s S178 . 1 `uc 1 . 1 0 :4:0 
+[s S183 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 T1CKPS0 1 0 :1:4 
 `uc 1 T1CKPS1 1 0 :1:5 
 ]
-[u S182 . 1 `S172 1 . 1 0 `S178 1 . 1 0 ]
-[v _T1CONbits T1CONbits `VES182  1 e 1 @16 ]
+[u S187 . 1 `S177 1 . 1 0 `S183 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES187  1 e 1 @16 ]
 "881
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
-[s S247 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S252 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -118,11 +118,11 @@ REACHED 5
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "898
-[u S256 . 1 `S247 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES256  1 e 1 @133 ]
+[u S261 . 1 `S252 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES261  1 e 1 @133 ]
 "942
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
-[s S269 . 1 `uc 1 TRISB0 1 0 :1:0 
+[s S274 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -132,9 +132,9 @@ REACHED 5
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "959
-[u S278 . 1 `S269 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES278  1 e 1 @134 ]
-[s S209 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[u S283 . 1 `S274 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES283  1 e 1 @134 ]
+[s S214 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -144,55 +144,64 @@ REACHED 5
 `uc 1 EEIE 1 0 :1:7 
 ]
 "1020
-[u S218 . 1 `S209 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES218  1 e 1 @140 ]
-"24 C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
+[u S223 . 1 `S214 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES223  1 e 1 @140 ]
+"25 C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
 [v _inputs inputs `[9]uc  1 e 9 0 ]
-"25
-[v _tempInput tempInput `[9]uc  1 e 9 0 ]
 "26
-[v _readCurrentState readCurrentState `uc  1 e 1 0 ]
+[v _tempInput tempInput `[9]uc  1 e 9 0 ]
 "27
+[v _readCurrentState readCurrentState `uc  1 e 1 0 ]
+"28
 [v _waiting waiting `ui  1 e 2 0 ]
-"10 C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
+"10 C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
 [v _buttonMode buttonMode `uc  1 e 1 0 ]
 "11
 [v _buttonPressed buttonPressed `uc  1 e 1 0 ]
-"6 C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\timer.c
+"6 C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\timer.c
 [v _msPassed msPassed `ui  1 e 2 0 ]
-"29 C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
+"30 C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"32
-[v main@mainState mainState `uc  1 a 1 11 ]
-"31
-[v main@currentLevel currentLevel `uc  1 a 1 10 ]
-"33
-[v main@movingDirection movingDirection `uc  1 a 1 9 ]
 "34
+[v main@movingDirection movingDirection `uc  1 a 1 11 ]
+"33
+[v main@mainState mainState `uc  1 a 1 10 ]
+"32
+[v main@currentLevel currentLevel `uc  1 a 1 9 ]
+"35
 [v main@emergencyStop emergencyStop `uc  1 a 1 8 ]
-"151
+"154
 } 0
-"47 C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
+"178
+[v _checkLevelChange checkLevelChange `(uc  1 e 1 0 ]
+{
+"181
+[v checkLevelChange@returnValue returnValue `uc  1 a 1 1 ]
+"180
+[v checkLevelChange@pastCounter pastCounter `uc  1 s 1 pastCounter ]
+"196
+} 0
+"47 C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
 [v _TurnOnLeds TurnOnLeds `(v  1 e 1 0 ]
 {
-"54
-} 0
 "56
+} 0
+"58
 [v _SetLeds SetLeds `(v  1 e 1 0 ]
 {
 [v SetLeds@leds leds `uc  1 a 1 wreg ]
 [v SetLeds@leds leds `uc  1 a 1 wreg ]
-"58
+"60
 [v SetLeds@leds leds `uc  1 a 1 2 ]
-"61
+"63
 } 0
-"8 C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\timer.c
+"8 C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\timer.c
 [v _InitTimer InitTimer `(v  1 e 1 0 ]
 {
 "27
 } 0
-"13 C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
+"13 C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
 [v _InitPorts InitPorts `(v  1 e 1 0 ]
 {
 "36
@@ -202,24 +211,24 @@ REACHED 5
 {
 "45
 } 0
-"175 C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\main.c
+"198 C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\main.c
 [v _MainInterrupt MainInterrupt `II(v  1 e 1 0 ]
 {
-"195
+"218
 } 0
-"153
+"156
 [v _Debounce Debounce `(v  1 e 1 0 ]
 {
-"173
+"176
 } 0
-"63 C:\Users\cosmi\Documents\GitHub\Lift\Lift.X\ports.c
+"65 C:\Users\cosmin.craciun\Documents\GitHub\Lift\Lift.X\ports.c
 [v _DebounceInput DebounceInput `(uc  1 e 1 0 ]
 {
 [v DebounceInput@input input `uc  1 a 1 wreg ]
 [v DebounceInput@input input `uc  1 a 1 wreg ]
 [v DebounceInput@tempState tempState `*.4uc  1 p 1 0 ]
 [v DebounceInput@currentState currentState `uc  1 p 1 1 ]
-"65
+"67
 [v DebounceInput@input input `uc  1 a 1 3 ]
-"77
+"79
 } 0

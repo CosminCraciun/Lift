@@ -51,6 +51,8 @@ void TurnOnLeds()
     BUTTON_0_DIR = OUTPUT;
     BUTTON_1_DIR = OUTPUT;
     BUTTON_2_DIR = OUTPUT;
+    
+    SetLeds(buttonPressed);
 }
 
 void SetLeds(unsigned char leds)

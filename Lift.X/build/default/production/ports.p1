@@ -29,7 +29,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S8 . . ]
 "238
 [v _PORTBbits `VS8 ~T0 @X0 0 e@6 ]
-"166
+"71 ports.h
+[v _SetLeds `(v ~T0 @X0 0 ef1`uc ]
+"166 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic16f628a.h
 [s S7 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S7 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
 "165
@@ -605,13 +607,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 186: extern unsigned char __resetbits;
 [; ;pic.h: 187: extern __bit __powerdown;
 [; ;pic.h: 188: extern __bit __timeout;
-[; ;defines.h: 22: enum{
-[; ;defines.h: 23: STATE_IDLE,
-[; ;defines.h: 24: STOP,
-[; ;defines.h: 25: CHECK,
-[; ;defines.h: 26: GO,
-[; ;defines.h: 27: WAIT,
-[; ;defines.h: 28: REACHED
+[; ;defines.h: 24: enum{
+[; ;defines.h: 25: STATE_STOP,
+[; ;defines.h: 26: STATE_CHECK,
+[; ;defines.h: 27: STATE_RUN,
+[; ;defines.h: 28: STATE_REACHED
 [; ;defines.h: 29: };
 [; ;defines.h: 33: enum{
 [; ;defines.h: 34: SAFETY_1_POS,
@@ -739,90 +739,93 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ports.c: 53: TRISBbits.TRISB3 = 0;
 "53
 [e = . . _TRISBbits 0 3 -> -> 0 `i `uc ]
-[; ;ports.c: 54: }
-"54
+[; ;ports.c: 55: SetLeds(buttonPressed);
+"55
+[e ( _SetLeds (1 _buttonPressed ]
+[; ;ports.c: 56: }
+"56
 [e :UE 54 ]
 }
-"56
-[v _SetLeds `(v ~T0 @X0 1 ef1`uc ]
-"57
-{
-[; ;ports.c: 56: void SetLeds(unsigned char leds)
-[; ;ports.c: 57: {
-[e :U _SetLeds ]
-"56
-[v _leds `uc ~T0 @X0 1 r1 ]
-"57
-[f ]
-[; ;ports.c: 58: PORTAbits.RA5 = leds & 0x01;
 "58
-[e = . . _PORTAbits 0 5 -> & -> _leds `i -> 1 `i `uc ]
-[; ;ports.c: 59: PORTBbits.RB0 = (leds >> 1) & 0x01;
+[v _SetLeds `(v ~T0 @X0 1 ef1`uc ]
 "59
-[e = . . _PORTBbits 0 0 -> & >> -> _leds `i -> 1 `i -> 1 `i `uc ]
-[; ;ports.c: 60: PORTBbits.RB3 = (leds >> 2) & 0x01;
+{
+[; ;ports.c: 58: void SetLeds(unsigned char leds)
+[; ;ports.c: 59: {
+[e :U _SetLeds ]
+"58
+[v _leds `uc ~T0 @X0 1 r1 ]
+"59
+[f ]
+[; ;ports.c: 60: PORTAbits.RA5 = leds & 0x01;
 "60
-[e = . . _PORTBbits 0 3 -> & >> -> _leds `i -> 2 `i -> 1 `i `uc ]
-[; ;ports.c: 61: }
+[e = . . _PORTAbits 0 5 -> & -> _leds `i -> 1 `i `uc ]
+[; ;ports.c: 61: PORTBbits.RB0 = (leds >> 1) & 0x01;
 "61
+[e = . . _PORTBbits 0 0 -> & >> -> _leds `i -> 1 `i -> 1 `i `uc ]
+[; ;ports.c: 62: PORTBbits.RB3 = (leds >> 2) & 0x01;
+"62
+[e = . . _PORTBbits 0 3 -> & >> -> _leds `i -> 2 `i -> 1 `i `uc ]
+[; ;ports.c: 63: }
+"63
 [e :UE 55 ]
 }
-"63
+"65
 [v _DebounceInput `(uc ~T0 @X0 1 ef3`uc`*uc`uc ]
-"64
+"66
 {
-[; ;ports.c: 63: unsigned char DebounceInput(unsigned char input, unsigned char *tempState, unsigned char currentState)
-[; ;ports.c: 64: {
+[; ;ports.c: 65: unsigned char DebounceInput(unsigned char input, unsigned char *tempState, unsigned char currentState)
+[; ;ports.c: 66: {
 [e :U _DebounceInput ]
-"63
+"65
 [v _input `uc ~T0 @X0 1 r1 ]
 [v _tempState `*uc ~T0 @X0 1 r2 ]
 [v _currentState `uc ~T0 @X0 1 r3 ]
-"64
-[f ]
-[; ;ports.c: 65: *tempState <<= 1;
-"65
-[e =<< *U _tempState -> 1 `i ]
-[; ;ports.c: 66: *tempState |= input;
 "66
-[e =| *U _tempState _input ]
-[; ;ports.c: 68: if ( 0 == 0xFF & *tempState)
+[f ]
+[; ;ports.c: 67: *tempState <<= 1;
+"67
+[e =<< *U _tempState -> 1 `i ]
+[; ;ports.c: 68: *tempState |= input;
 "68
-[e $ ! != & -> == -> 0 `i -> 255 `i `i -> *U _tempState `i -> 0 `i 57  ]
-[; ;ports.c: 69: {
-"69
-{
-[; ;ports.c: 70: return 0;
+[e =| *U _tempState _input ]
+[; ;ports.c: 70: if ( 0 == 0xFF & *tempState)
 "70
+[e $ ! != & -> == -> 0 `i -> 255 `i `i -> *U _tempState `i -> 0 `i 57  ]
+[; ;ports.c: 71: {
+"71
+{
+[; ;ports.c: 72: return 0;
+"72
 [e ) -> -> 0 `i `uc ]
 [e $UE 56  ]
-"71
-}
-[; ;ports.c: 71: }
-[e $U 58  ]
-"72
-[e :U 57 ]
-[; ;ports.c: 72: else if ( 0xFF == 0xFF & *tempState)
-[e $ ! != & -> == -> 255 `i -> 255 `i `i -> *U _tempState `i -> 0 `i 59  ]
-[; ;ports.c: 73: {
 "73
-{
-[; ;ports.c: 74: return 1;
+}
+[; ;ports.c: 73: }
+[e $U 58  ]
 "74
+[e :U 57 ]
+[; ;ports.c: 74: else if ( 0xFF == 0xFF & *tempState)
+[e $ ! != & -> == -> 255 `i -> 255 `i `i -> *U _tempState `i -> 0 `i 59  ]
+[; ;ports.c: 75: {
+"75
+{
+[; ;ports.c: 76: return 1;
+"76
 [e ) -> -> 1 `i `uc ]
 [e $UE 56  ]
-"75
+"77
 }
-[; ;ports.c: 75: }
+[; ;ports.c: 77: }
 [e $U 60  ]
-"76
+"78
 [e :U 59 ]
-[; ;ports.c: 76: else return currentState;
+[; ;ports.c: 78: else return currentState;
 [e ) _currentState ]
 [e $UE 56  ]
 [e :U 60 ]
 [e :U 58 ]
-[; ;ports.c: 77: }
-"77
+[; ;ports.c: 79: }
+"79
 [e :UE 56 ]
 }
