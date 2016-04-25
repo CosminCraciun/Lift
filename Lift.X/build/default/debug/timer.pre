@@ -1,147 +1,5 @@
 
-# 1 "main.c"
-
-# 4 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\__size_t.h"
-typedef unsigned size_t;
-
-# 7 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\stdarg.h"
-typedef void * va_list[1];
-
-#pragma intrinsic(__va_start)
-extern void * __va_start(void);
-
-#pragma intrinsic(__va_arg)
-extern void * __va_arg(void *, ...);
-
-# 43 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\stdio.h"
-struct __prbuf
-{
-char * ptr;
-void (* func)(char);
-};
-
-# 29 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\errno.h"
-extern int errno;
-
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\conio.h"
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-# 23
-extern char * cgets(char *);
-extern void cputs(const char *);
-
-# 88 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\stdio.h"
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
-
-
-
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-
-
-# 180
-#pragma printf_check(vprintf) const
-#pragma printf_check(vsprintf) const
-
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
-
-# 7 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\stdlib.h"
-typedef unsigned short wchar_t;
-
-# 15
-typedef struct {
-int rem;
-int quot;
-} div_t;
-typedef struct {
-unsigned rem;
-unsigned quot;
-} udiv_t;
-typedef struct {
-long quot;
-long rem;
-} ldiv_t;
-typedef struct {
-unsigned long quot;
-unsigned long rem;
-} uldiv_t;
-
-# 53
-extern double atof(const char *);
-extern double strtod(const char *, const char **);
-extern int atoi(const char *);
-extern unsigned xtoi(const char *);
-extern long atol(const char *);
-extern long strtol(const char *, char **, int);
-
-extern int rand(void);
-extern void srand(unsigned int);
-extern void * calloc(size_t, size_t);
-extern div_t div(int numer, int denom);
-extern udiv_t udiv(unsigned numer, unsigned denom);
-extern ldiv_t ldiv(long numer, long denom);
-extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
-extern unsigned long _lrotl(unsigned long value, unsigned int shift);
-extern unsigned long _lrotr(unsigned long value, unsigned int shift);
-extern unsigned int _rotl(unsigned int value, unsigned int shift);
-extern unsigned int _rotr(unsigned int value, unsigned int shift);
-
-
-
-
-extern void * malloc(size_t);
-extern void free(void *);
-extern void * realloc(void *, size_t);
-
-
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\xc8debug.h"
-#pragma intrinsic(__builtin_software_breakpoint)
-extern void __builtin_software_breakpoint(void);
-
-# 86 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\stdlib.h"
-extern int atexit(void (*)(void));
-extern char * getenv(const char *);
-extern char ** environ;
-extern int system(char *);
-extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
-extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
-extern int abs(int);
-extern long labs(long);
-
-extern char * itoa(char * buf, int val, int base);
-extern char * utoa(char * buf, unsigned val, int base);
-
-
-
-
-extern char * ltoa(char * buf, long val, int base);
-extern char * ultoa(char * buf, unsigned long val, int base);
-
-extern char * ftoa(float f, int * status);
-
-# 26 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\htc.h"
-extern const char __xc8_OPTIM_SPEED;
-
-extern double __fpnormalize(double);
+# 1 "timer.c"
 
 # 49 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic16f628a.h"
 extern volatile unsigned char INDF @ 0x000;
@@ -922,6 +780,16 @@ extern volatile __bit nT1SYNC @ (((unsigned) &T1CON)*8) + 2;
 
 extern volatile __bit nTO @ (((unsigned) &STATUS)*8) + 4;
 
+# 26 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\htc.h"
+extern const char __xc8_OPTIM_SPEED;
+
+extern double __fpnormalize(double);
+
+
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\xc8debug.h"
+#pragma intrinsic(__builtin_software_breakpoint)
+extern void __builtin_software_breakpoint(void);
+
 
 # 27 "C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic.h"
 #pragma intrinsic(__nop)
@@ -949,243 +817,31 @@ extern unsigned char __resetbits;
 extern __bit __powerdown;
 extern __bit __timeout;
 
-# 24 "defines.h"
-enum{
-STATE_STOP,
-STATE_CHECK,
-STATE_RUN,
-STATE_REACHED
-};
-
-
-
-enum{
-SAFETY_1_POS,
-SAFETY_2_POS,
-SAFETY_3_POS,
-DELIMITER_DOWN_POS,
-DELIMITER_UP_POS,
-COUNTER_POS,
-BUTTON_0_POS,
-BUTTON_1_POS,
-BUTTON_2_POS,
-
-INPUT_MAX
-};
-
-# 65 "ports.h"
-extern unsigned char buttonPressed;
-extern unsigned char buttonMode;
-
-void InitPorts(void);
-void TurnOnButtons(void);
-void TurnOnLeds(void);
-void SetLeds(unsigned char leds);
-
-unsigned char DebounceInput(unsigned char input, unsigned char *tempState, unsigned char currentState);
-
 # 11 "timer.h"
 extern unsigned int msPassed;
 
 void InitTimer(void);
 
-# 18 "main.c"
-void debounce();
-unsigned char checkLevelChange();
+# 6 "timer.c"
+unsigned int msPassed;
 
-# 25
-unsigned char inputs[INPUT_MAX];
-unsigned char tempInput[INPUT_MAX];
-unsigned char readCurrentState;
-unsigned int waiting;
-
-int main(int argc, char** argv)
+void InitTimer()
 {
-unsigned char currentLevel = 0;
-unsigned char mainState = STATE_STOP;
-unsigned char movingDirection = 0;
-unsigned char emergencyStop = 0;
-
-InitPorts();
-InitTimer();
+msPassed = 0;
 
 
-while (1)
-{
-readCurrentState = mainState;
-
-switch (mainState)
-{
-case STATE_STOP :
-{
-
-PORTBbits.RB4 = PORTBbits.RB5 = 0;
-
-if ( 0 == buttonMode )
-{
-TurnOnButtons();
-}
-
-if (buttonPressed != currentLevel && buttonPressed != 0)
-{
-TurnOnLeds();
-
-if (buttonPressed > currentLevel)
-{
-movingDirection = 1;
-}
-else
-{
-movingDirection = 2;
-}
-
-mainState = STATE_CHECK;
-}
-}
-break;
-case STATE_CHECK :
-{
-
-if ( ( 1 == inputs[SAFETY_1_POS] ) ||
-( 1 == inputs[SAFETY_2_POS] ) ||
-( 1 == inputs[SAFETY_3_POS] ) )
-{
-mainState = STATE_STOP;
-PORTBbits.RB4 = PORTBbits.RB5 = 0;
-SetLeds(0);
-}
-else if ( currentLevel == buttonPressed )
-{
-waiting = 0;
-mainState = STATE_REACHED;
-}
-else if ( 2 == movingDirection && 0 != inputs[DELIMITER_DOWN_POS] )
-{
-mainState = STATE_STOP;
-currentLevel = 1;
-}
-else if ( 1 == movingDirection && 0 != inputs[DELIMITER_UP_POS] )
-{
-mainState = STATE_STOP;
-currentLevel = 3;
-}
-else
-{
-mainState = STATE_RUN;
-}
-}
-break;
-case STATE_RUN :
-{
-if ( 1 == movingDirection )
-{
-PORTBbits.RB5 = 0;
-PORTBbits.RB4 = 1;
-}
-else
-{
-PORTBbits.RB5 = 1;
-PORTBbits.RB4 = 0;
-}
-if ( 1 == movingDirection)
-{
-currentLevel += checkLevelChange();
-}
-else
-{
-currentLevel -= checkLevelChange();
-}
-
-mainState = STATE_CHECK;
-}
-break;
-case STATE_REACHED :
-{
-PORTBbits.RB4 = PORTBbits.RB5 = 0;
-
-if ( 5000 < waiting )
-{
-SetLeds(0);
-TurnOnButtons();
-mainState = STATE_STOP;
-}
-else
-{
-mainState = STATE_REACHED;
-}
-
-}
-break;
-default:
-{
-mainState = STATE_STOP;
-}
-}
-}
-
-return (0);
-}
-
-void Debounce()
-{
-inputs[SAFETY_1_POS] = DebounceInput(PORTBbits.RB6,tempInput + SAFETY_1_POS, inputs[SAFETY_1_POS]);
-inputs[SAFETY_2_POS] = DebounceInput(PORTBbits.RB7,tempInput + SAFETY_2_POS, inputs[SAFETY_2_POS]);
-inputs[SAFETY_3_POS] = DebounceInput(PORTAbits.RA6,tempInput + SAFETY_3_POS, inputs[SAFETY_3_POS]);
-inputs[DELIMITER_DOWN_POS] = DebounceInput(PORTAbits.RA7,tempInput + DELIMITER_DOWN_POS, inputs[DELIMITER_DOWN_POS]);
-inputs[DELIMITER_UP_POS] = DebounceInput(PORTAbits.RA0,tempInput + DELIMITER_UP_POS, inputs[DELIMITER_UP_POS]);
-inputs[COUNTER_POS] = DebounceInput(PORTAbits.RA1,tempInput + COUNTER_POS, inputs[COUNTER_POS]);
-
-if (1 == buttonMode)
-{
-buttonPressed = 0;
-inputs[BUTTON_0_POS] = DebounceInput(PORTAbits.RA5,tempInput + BUTTON_0_POS, inputs[BUTTON_0_POS]);
-buttonPressed = inputs[BUTTON_0_POS];
-inputs[BUTTON_1_POS] = DebounceInput(PORTBbits.RB0,tempInput + BUTTON_1_POS, inputs[BUTTON_1_POS]);
-buttonPressed |= (inputs[BUTTON_1_POS] << 1);
-inputs[BUTTON_2_POS] = DebounceInput(PORTBbits.RB3,tempInput + BUTTON_2_POS, inputs[BUTTON_2_POS]);
-buttonPressed |= (inputs[BUTTON_2_POS] << 2);
-
-}
-}
-
-unsigned char checkLevelChange()
-{
-static unsigned char pastCounter;
-unsigned char returnValue = 0;
-
-if ( 1 == pastCounter && 0 == inputs[COUNTER_POS])
-{
-
-}
-else if ( 0 == pastCounter && 1 == inputs[COUNTER_POS])
-{
-
-returnValue = 1;
-}
-
-pastCounter = inputs[COUNTER_POS];
-
-return returnValue;
-}
-
-void interrupt MainInterrupt()
-{
-
-if ( 1 == PIR1bits.TMR1IF )
-{
-msPassed++;
-
-if ( STATE_REACHED == readCurrentState )
-{
-waiting++;
-}
-
-if (msPassed % 4 == 0)
-{
-Debounce();
-}
-}
+T1CON = 0;
 
 
-PIR1 = 0;
+T1CONbits.T1CKPS = 0b11;
+TMR1 = 0xFFFF - 625;
+
+
+PIR1bits.TMR1IF = 0;
+
+
+T1CONbits.TMR1ON = 1;
+
+
+PIE1bits.TMR1IE = 1;
 }

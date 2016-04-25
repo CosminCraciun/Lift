@@ -74,9 +74,9 @@ int main(int argc, char** argv)
             case STATE_CHECK :
             {
                 // check for security glitches
-                if (    ( PRESSED == inputs[SAFETY_1_POS] ) &&
-                        ( PRESSED == inputs[SAFETY_1_POS] ) &&
-                        ( PRESSED == inputs[SAFETY_1_POS] ) )
+                if (    ( PRESSED == inputs[SAFETY_1_POS] ) ||
+                        ( PRESSED == inputs[SAFETY_2_POS] ) ||
+                        ( PRESSED == inputs[SAFETY_3_POS] ) )
                 {
                     mainState = STATE_STOP;
                     UP = DOWN = 0;
@@ -87,12 +87,12 @@ int main(int argc, char** argv)
                     waiting = 0;
                     mainState = STATE_REACHED;
                 }
-                else if ( GOING_DOWN == movingDirection && 0 != inputs[DELIMITER_DOWN] )
+                else if ( GOING_DOWN == movingDirection && 0 != inputs[DELIMITER_DOWN_POS] )
                 {
                     mainState = STATE_STOP;
                     currentLevel = 1;
                 }
-                else if ( GOING_UP == movingDirection && 0 != inputs[DELIMITER_UP] )
+                else if ( GOING_UP == movingDirection && 0 != inputs[DELIMITER_UP_POS] )
                 {
                     mainState = STATE_STOP;
                     currentLevel = LAST_LEVEL;
@@ -124,6 +124,7 @@ int main(int argc, char** argv)
                     currentLevel -= checkLevelChange();
                 }
                 
+                mainState = STATE_CHECK;                
             }
             break;
             case STATE_REACHED :

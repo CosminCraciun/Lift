@@ -194,8 +194,8 @@ cstackCOMMON 70 7D COMMON 70 1
 bssBANK0 20 4F BANK0 20 1
 swtext1 476 47D CONST 476 0
 %locals
-dist/default/production\Lift.X.production.obj
-C:\Users\cosmi\AppData\Local\Temp\s8c8.
+dist/default/debug\Lift.X.debug.obj
+C:\Users\cosmi\AppData\Local\Temp\s870.
 324 11 0 CODE 0
 327 11 0 CODE 0
 371 11 0 CODE 0

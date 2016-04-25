@@ -3,22 +3,22 @@ Microchip MPLAB XC8 Compiler V1.37 ()
 Linker command line:
 
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.37\dat\en_msgs.txt -cs \
-  -h+dist/default/production\Lift.X.production.sym \
-  --cmf=dist/default/production\Lift.X.production.cmf -z -Q16F628A \
-  -oC:\Users\cosmi\AppData\Local\Temp\s8c8.2 \
-  -Mdist/default/production/Lift.X.production.map -E1 -ver=XC8 \
-  -ASTACK=0A0h-0efh -pstack=STACK -ACODE=00h-07FFh -ASTRCODE=00h-07FFh \
-  -ASTRING=00h-0FFhx8 -ACONST=00h-0FFhx8 -AENTRY=00h-0FFhx8 \
-  -ACOMMON=070h-07Fh -ABANK0=020h-06Fh -ABANK1=0A0h-0EFh \
-  -ABANK2=0120h-014Fh -ARAM=020h-06Fh,0A0h-0EFh,0120h-014Fh \
+  -h+dist/default/debug\Lift.X.debug.sym \
+  --cmf=dist/default/debug\Lift.X.debug.cmf -z -Q16F628A \
+  -oC:\Users\cosmi\AppData\Local\Temp\s870.2 \
+  -Mdist/default/debug/Lift.X.debug.map -E1 -ver=XC8 -ASTACK=0A0h-0efh \
+  -pstack=STACK -ACODE=00h-07FFh -ASTRCODE=00h-07FFh -ASTRING=00h-0FFhx8 \
+  -ACONST=00h-0FFhx8 -AENTRY=00h-0FFhx8 -ACOMMON=070h-07Fh \
+  -ABANK0=020h-06Fh -ABANK1=0A0h-0EFh -ABANK2=0120h-014Fh \
+  -ARAM=020h-06Fh,0A0h-0EFh,0120h-014Fh \
   -AABS1=020h-07Fh,0A0h-0EFh,0120h-014Fh -ASFR0=00h-01Fh -ASFR1=080h-09Fh \
   -ASFR2=0100h-011Fh -ASFR3=0180h-01EFh \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
   -pfunctab=CODE -ACONFIG=02007h-02007h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=02000h-02003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-07Fh/02100h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\cosmi\AppData\Local\Temp\s8c8.obj \
-  dist/default/production\Lift.X.production.obj 
+  -DENTRY=2 -k C:\Users\cosmi\AppData\Local\Temp\s870.obj \
+  dist/default/debug\Lift.X.debug.obj 
 
 Object code version is 3.11
 
@@ -27,10 +27,10 @@ Machine type is 16F628A
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\cosmi\AppData\Local\Temp\s8c8.obj
+C:\Users\cosmi\AppData\Local\Temp\s870.obj
                 end_init                             10       10        1        8       0
                 reset_vec                             0        0        1        0       0
-dist/default/production\Lift.X.production.obj
+dist/default/debug\Lift.X.debug.obj
                 cinit                                11       11        7        8       0
                 intentry                              4        4        C        8       0
                 text9                               1F7      1F7       14        8       0
